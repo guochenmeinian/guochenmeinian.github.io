@@ -1,0 +1,35 @@
+# The URL the site will be built for
+base_url = "https://blog-testing.com"
+
+# Whether to automatically compile all Sass files in the sass directory
+compile_sass = false
+
+# Whether to build a search index to be used later on by a JavaScript library
+build_search_index = true
+
+theme = "anemone"
+
+taxonomies = [
+    # You can enable/disable RSS
+    {name = "tags"},
+]
+
+
+[markdown]
+# Whether to do syntax highlighting
+# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
+highlight_code = true
+
+[extra]
+# Put all your custom variables here
+
+[[extra.header_nav]]
+en = { name = "/about/", url = "/about" }
+
+[[extra.header_nav]]
+en = { name = "/blogs", url = "/blogs" }
+
+[[extra.header_nav]]
+en = { name = "/tags/", url = "/tags" }
+
+features = ["image_processing"]
