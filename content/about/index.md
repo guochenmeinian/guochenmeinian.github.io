@@ -8,7 +8,7 @@ tags = []
 
 👋 Hello 
 
-Chenmeinian Guo (郭陈美年), is a graduating senior at the Ohio State University majored in computer science. He is currently applying for grad schools.
+Chenmeinian Guo 郭陈美年, is a senior computer science student at the Ohio State University. Currently, he is applying for computer science related graduate programs.
 
 {{ resize_image(path="about/avatar.png", height=200, width=120, op="fit", format="png") }}
 
