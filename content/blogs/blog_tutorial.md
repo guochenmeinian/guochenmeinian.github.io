@@ -21,7 +21,9 @@ Find the installation methods for your machine in the official [website](https:/
 ### Zola Init
 
 To initialize a new Zola project called blog:
-```$ zola init blog```
+```
+$ zola init blog
+```
 
 During the initialization process, you can go with all the default options. Any modifications needed can be made in the configuration file later.
 
@@ -37,17 +39,23 @@ The directory structure after initialization looks like:
 ```
 
 Now, you can run:
-```zola serve```
+```
+zola serve
+```
 And view Zola's default welcome page at http://127.0.0.1:1111.
 
 
 ### Zola Themes
 Choose your desired theme for your personal blog from Zola Themes. This guide (my blog) uses the "anemone" theme.
 To add the theme repository to your local project using the git submodule command:
-```git submodule add https://github.com/Speyll/anemone themes/anemone```
+```
+git submodule add https://github.com/Speyll/anemone themes/anemone
+```
 
 Then, enable the theme in your config.toml file:
-```theme = "anemone"```
+```
+theme = "anemone"
+```
 
 This theme also requires the following configurations:
 ```
@@ -55,14 +63,6 @@ taxonomies = [
     # You can enable/disable RSS
     {name = "tags", feed = true}
 ]
-```
-
-By default, this theme doesn't paginate. If you wish to use pagination, enable it in content/_index.md:
-```
-+++
-paginate_by = 5
-sort_by = "date"
-+++
 ```
 
 Finally, set the top menu paths in config.toml:
@@ -80,6 +80,66 @@ en = { name = "/tags/", url = "/tags" }
 
 If all the above steps go smoothly, you should be able to see the main page with the newly applied theme!
 
+
+### Github
+Use github for version control, collaboration, code sharing, and continuous deployment: 
+
+```
+git add .              
+```
+- Stages all modified files for commit.
+```
+git commit -m "Finalize blog and ready for deployment"   
+```
+- Commits the staged changes with a provided message.
+```
+git push origin master  
+```
+- Pushes the committed changes to your GitHub repository.
+
+
+### Connect to Netlify:
+Once your code is on GitHub:
+- Sign in to Netlify.
+- Click "New site from Git" > select GitHub.
+- Link your GitHub repo containing your Zola project.
+
+
+
+### Build Configuration:
+Zola requires a specific build command to be executed on Netlify to ensure your site is constructed correctly.
+```
+wget -q -O - https://github.com/getzola/zola/releases/download/v0.17.2/zola-v0.17.2-x86_64-unknown-linux-gnu.tar.gz | tar xvz -C . && ./zola build --base-url $DEPLOY_URL
+```
+After setting this command in the "Build command" field on Netlify, it will use it every time you push changes to your GitHub repository, automatically rebuilding and redeploying your site.
+
+
+
+### (Optional) 
+1. By default, this theme doesn't paginate. If you wish to use pagination, enable it in content/_index.md:
+```
++++
+paginate_by = 5
+sort_by = "date"
++++
+```
+
+
+2. For those curious, below is a breakdown of the build command:
+```
+wget -q -O - https://github.com/getzola/zola/releases/download/v0.17.2/zola-v0.17.2-x86_64-unknown-linux-gnu.tar.gz 
+```
+- This command fetches the content of the specified URL. In this context, it's downloading the Zola binary.
+
+```
+tar xvz -C . 
+```
+- This command extracts the downloaded tarball in the current directory.
+  
+```
+./zola build --base-url $DEPLOY_URL
+```
+- Runs the Zola build command and sets the base URL for the site to the value of the DEPLOY_URL environment variable provided by Netlify.
 
 
 ## References
