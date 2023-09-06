@@ -8,7 +8,7 @@ tags = ['computer science']
 
 👋 Hello
 
-**This is the tutorial for making this blog website** 🌱 2023.9.1 
+**This is the tutorial for making this blog website**
 
 Zola is a static site generator (SSG), similar to Hugo, Pelican, and Jekyll (for a comprehensive list of SSGs, please see Jamstack). It is written in Rust and uses the Tera template engine, which is similar to Jinja2, Django templates, Liquid, and Twig.
 

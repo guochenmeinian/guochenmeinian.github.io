@@ -8,7 +8,7 @@ tags = ['computer science', 'leetcode']
 
 👋 Hello
 
-**This is solution for leetcode problem [surrounded region](https://leetcode.com/problems/surrounded-regions/) from [neetcode.io](https://neetcode.io/practice)** 🌱 2023.9.2 
+**This is solution for leetcode problem [surrounded region](https://leetcode.com/problems/surrounded-regions/) from [neetcode.io](https://neetcode.io/practice)** 
 
 
 ## Python BFS Solution

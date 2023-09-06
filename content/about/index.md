@@ -12,11 +12,11 @@ Chenmeinian Guo (郭陈美年), is a graduating senior at the Ohio State Univers
 
 {{ resize_image(path="about/avatar.png", height=200, width=120, op="fit", format="png") }}
 
+> "Attention is all you need."  
+
 **Latest status** 🎸 \
 Eager to try out the latest VR game and learn to play guitar, but swamped with work.
 
-
-> "Attention is all you need." 
 
 
 
@@ -27,8 +27,9 @@ Eager to try out the latest VR game and learn to play guitar, but swamped with w
   
 
 ### More
-- 🔗 [resume](/resume)
+- 🔗 [Resume/CV](/resume)
+- 💻 [Links for CS Study](/blogs/cs-resources/)
 - 🐩 [Avatar Generator](https://txstc55.github.io/simple-avatar/)
 - 🎼 [Markdown (Music)](https://github.com/music-markdown/music-markdown)
-- ⚡ [Markdown (Emoji)](https://gist.github.com/rxaviers/7360908)
+- 😰 [Markdown (Emoji)](https://gist.github.com/rxaviers/7360908)
 
