@@ -14,6 +14,12 @@ tags = ['computer science']
 ### Learn to code
 1. [CS wiki](https://csdiy.wiki/) \
 
+2. [Developer Roadmaps](https://roadmap.sh/) \
+
+3. [iCodeThis](https://icodethis.com/) \
+
+4. [30 Days of JavaScript](https://leetcode.com/studyplan/30-days-of-javascript/) \
+
 
 
 ### Machine Learning
