@@ -8,7 +8,12 @@ tags = ['computer science']
 
 👋 Hello
 
-**This blog contains useful links for cs study**
+**This blog contains useful links for learning cs**
+
+
+### Learn to code
+1. [CS wiki](https://csdiy.wiki/) \
+
 
 
 ### Machine Learning
@@ -18,7 +23,9 @@ tags = ['computer science']
    
 3. [Projects: Unofficial Google Colaboratory Notebook and Repository Gallery](https://github.com/firmai/awesome-google-colab) \
 
-4. [AI-Job-Notes](https://github.com/amusi/AI-Job-Notes)
+4. [国内算法岗攻略](https://github.com/amusi/AI-Job-Notes)
+
+
 
 ### System Design
 1. [System Design Cheatsheet](/blogs/system-design-cheatsheet) \

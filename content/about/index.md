@@ -23,12 +23,13 @@ Eager to try out the latest VR game and learn to play guitar, but swamped with w
 ### Online presence
 - **Email**: guo.2034@osu.edu
 - **Code repositories**: [guochenmeinian@github.com](https://github.com/guochenmeinian)
-- **Social**: [instagram](https://www.instagram.com/__arist/) | [linkedin](https://www.linkedin.com/in/chenmeinianguo/)
+- **Social**: [instagram](https://www.instagram.com/__arist/) | [linkedin](https://www.linkedin.com/in/chenmeinianguo/) | [leetcode](https://leetcode.com/guochenmeinian/)
   
 
 ### More
 - 🔗 [Resume/CV](/resume)
-- 💻 [Links for CS Study](/blogs/cs-resources/)
+- 💻 [CS](/blogs/cs-resources/)
+- 🎼 [Music](/blogs/music-resources/)
 - 🐩 [Avatar Generator](https://txstc55.github.io/simple-avatar/)
 - 🎼 [Markdown (Music)](https://github.com/music-markdown/music-markdown)
 - 😰 [Markdown (Emoji)](https://gist.github.com/rxaviers/7360908)
