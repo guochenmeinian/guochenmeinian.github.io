@@ -8,7 +8,7 @@ tags = ['computer science']
 
 👋 Hello
 
-**This blog contains useful links for learning cs**
+> "Attention is all you need."  
 
 
 ### Learn to code

@@ -7,7 +7,9 @@ tags = ['music']
 
 👋 Hello
 
-**This blog is for music content**
+
+> Be Kind to Yourself, Don't Compare, Don't Expect Too Fast, and Don't Worry.
+
 
 ### Guitar
 1. [Guitar Wisdom - Tomo Fujita](https://tomovhxtv.vhx.tv/browse) 

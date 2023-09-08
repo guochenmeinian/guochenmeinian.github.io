@@ -12,18 +12,15 @@ Chenmeinian Guo 郭陈美年, is a senior computer science student at the Ohio S
 
 {{ resize_image(path="about/avatar.png", height=200, width=120, op="fit", format="png") }}
 
-> "Attention is all you need."  
 
 **Latest status** 🎸 \
-Eager to learn to play guitar, but swamped with work.
-
-
+Eager to learn and practice guitar, but swamped with work.
 
 
 ### Online presence
 - **Email**: guo.2034@osu.edu
 - **Code repositories**: [guochenmeinian@github.com](https://github.com/guochenmeinian)
-- **Social**: [instagram](https://www.instagram.com/__arist/) | [linkedin](https://www.linkedin.com/in/chenmeinianguo/) | [leetcode](https://leetcode.com/guochenmeinian/)
+- **Social**: [instagram](https://www.instagram.com/__arist/) | [linkedin](www.linkedin.com/in/chenmeinianguo) | [leetcode](https://leetcode.com/guochenmeinian/)
   
 
 ### More
