@@ -44,6 +44,6 @@ i-VII-VI-V: Used frequently in rock and pop songs.
 
 ### the famous song: 
 
-**B F# A E G D E-**
+**B F# A E G D E- F#**
 
 I - V - VII - IV - VI - III - iv - V 
