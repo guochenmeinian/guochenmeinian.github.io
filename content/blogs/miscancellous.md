@@ -11,4 +11,4 @@ tags = ['miscancellous']
 
 1. [Word to PDF](https://www.ilovepdf.com/word_to_pdf)
 
-2. [Web-based Music Game](https://aidn.jp/mikutap/)
+2. [An interesting web-based music game](https://aidn.jp/mikutap/)
