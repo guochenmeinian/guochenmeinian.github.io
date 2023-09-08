@@ -10,4 +10,4 @@ tags = []
 +++
 
 ![resume](resume.png)
-<a href="{{ page.extra.path }}" download="MyResume.png" class="download-btn">Download Resume</a>
+<a href="{{ page.extra.path }}" download="MyResume.png" class="download-btn">Download Resume/CV</a>
