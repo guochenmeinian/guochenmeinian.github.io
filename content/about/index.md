@@ -28,7 +28,7 @@ Eager to try out the latest VR game and learn to play guitar, but swamped with w
 
 ### More
 - 🔗 [Resume/CV](/resume)
-- 📰 [CS](/blogs/cs-resources/) | 
+- 📰 [CS](/blogs/cs-resources/) 
 - 🎼 [Music](/blogs/music-resources/)
 - 📃 [Miscancellous](/blogs/miscancellous/)
 - 🐩 [Avatar Generator](https://txstc55.github.io/simple-avatar/)
