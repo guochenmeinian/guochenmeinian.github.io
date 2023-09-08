@@ -10,7 +10,7 @@ tags = ['music']
 **This blog is for music content**
 
 ### Guitar
-1. [Tomo Fujita](https://tomovhxtv.vhx.tv/browse) 
+1. [Guitar Wisdom - Tomo Fujita](https://tomovhxtv.vhx.tv/browse) 
    
 2. [B Minor Blues Rhythm Guitar - Tomo Fujita](https://www.youtube.com/watch?v=vMe7zONYGA0)
 
