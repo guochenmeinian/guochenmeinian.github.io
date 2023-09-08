@@ -1,6 +1,6 @@
 +++
 title = "blog tutorial"
-date = 2023-09-01
+date = 2023-09-07
 [taxonomies]
 tags = ['computer science']
 +++

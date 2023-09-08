@@ -1,6 +1,6 @@
 +++
 title = "cs recourses"
-date = 2023-09-06
+date = 2023-09-01
 [taxonomies]
 tags = ['computer science']
 +++
