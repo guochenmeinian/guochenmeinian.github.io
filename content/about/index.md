@@ -15,7 +15,7 @@ Chenmeinian Guo 郭陈美年, is a senior computer science student at the Ohio S
 > "Attention is all you need."  
 
 **Latest status** 🎸 \
-Eager to try out the latest VR game and learn to play guitar, but swamped with work.
+Eager to learn to play guitar, but swamped with work.
 
 
 

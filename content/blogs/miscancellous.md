@@ -1,5 +1,5 @@
 +++
-title = "other resources"
+title = "miscancellous"
 date = 2023-09-01
 [taxonomies]
 tags = ['miscancellous']
