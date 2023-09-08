@@ -31,6 +31,6 @@ Eager to try out the latest VR game and learn to play guitar, but swamped with w
 - 💻 [CS](/blogs/cs-resources/)
 - 🎼 [Music](/blogs/music-resources/)
 - 🐩 [Avatar Generator](https://txstc55.github.io/simple-avatar/)
-- 🎼 [Markdown (Music)](https://github.com/music-markdown/music-markdown)
+- 🎹 [Markdown (Music)](https://github.com/music-markdown/music-markdown)
 - 😰 [Markdown (Emoji)](https://gist.github.com/rxaviers/7360908)
 

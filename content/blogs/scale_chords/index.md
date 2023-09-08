@@ -23,7 +23,7 @@ ii-V-I: Common in jazz music. While many jazz standards like ["Autumn Leaves"](h
 
 I-vi-IV-V (or I-vi-II-V): Also known as the 50s progression because of its popularity during that decade. 
 
-vi-IV-I-V: A variant of the previous progression, popular in many modern pop and rock songs. (eg. [I just called to say love you](https://open.spotify.com/track/0nJW01T7XtvILxQgC5J7Wh?si=a006a5259dee4f99), [When I was your man](https://open.spotify.com/track/0nJW01T7XtvILxQgC5J7Wh?si=a006a5259dee4f99))
+vi-IV-I-V: A variant of the previous progression, popular in many modern pop and rock songs. (eg. [I just called to say love you](https://open.spotify.com/track/6RNDeRnWsRMjPdNVgupZCs?si=c5d3c70f2bb44d23), [When I was your man](https://open.spotify.com/track/0nJW01T7XtvILxQgC5J7Wh?si=a006a5259dee4f99))
 
 ### Minor Scale Chords
 In contrast to the major scale, the minor scale has a moodier, more introspective sound. The chords derived from this scale echo its melancholic tone. While major chords sound resolved and complete, minor chords possess a yearning quality, often evoking emotions of sadness, nostalgia, or introspection. 
@@ -39,3 +39,11 @@ ii°-v-i: A common minor jazz progression.
 i-iv-VII-III: Another popular progression in minor keys. (eg. [Comfortably Numb](https://music.apple.com/us/album/comfortably-numb/1065975633?i=1065976170))
 
 i-VII-VI-V: Used frequently in rock and pop songs. 
+
+
+
+### the famous song: 
+
+**B F# A E G D E-**
+
+I - V - VII - IV - VI - III - iv - V 
