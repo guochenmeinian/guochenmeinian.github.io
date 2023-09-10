@@ -35,3 +35,4 @@ en = { name = "/blogs", url = "/blogs" }
 en = { name = "/tags/", url = "/tags" }
 
 features = ["image_processing"]
+twitter_card = false
