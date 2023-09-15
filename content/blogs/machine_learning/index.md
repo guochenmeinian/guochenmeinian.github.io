@@ -1,5 +1,5 @@
 +++
-title = "cse 5523 review"
+title = "machine learning cheatsheet"
 date = 2023-09-08
 [taxonomies]
 tags = ['computer science']
