@@ -20,11 +20,12 @@ tags = ['computer science']
 
 4. [30 Days of JavaScript](https://leetcode.com/studyplan/30-days-of-javascript/) 
 
-5. [Free Projects Collection](https://github.com/resumejob/free-project-course)
+5. [Beginner Projects](https://github.com/resumejob/free-project-course)
+
+6. [Guide to x86-64](https://web.stanford.edu/class/cs107/guide/x86-64.html)
 
 
-
-### Machine Learning
+### Data
 1. [A Step by Step Backpropagation Example for Regression using an One-hot Encoded Categorical Variable by hand and in Tensorflow](https://mmuratarat.github.io/2020-01-09/backpropagation) 
    
 2. [Understanding Machine Learning Theory Algorithms](https://www.cs.huji.ac.il/w~shais/UnderstandingMachineLearning/) 
@@ -37,14 +38,14 @@ tags = ['computer science']
 
 6. [PyTorch Implementation with Detailed Documentation](https://nn.labml.ai/)
 
+7. [Data Engineering Roadmap](https://docs.google.com/document/d/1MEFXQhtcOZrJGztsAhAu7SJj181toHL0IEVNbVmr61o/edit)
+
 
 
 ### System Design
 1. [System Design Cheatsheet](https://gist.github.com/vasanthk/485d1c25737e8e72759f) 
    
 2. [The System Design Primer](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md)
-
-3. [Guide to x86-64](https://web.stanford.edu/class/cs107/guide/x86-64.html)
 
 
 
