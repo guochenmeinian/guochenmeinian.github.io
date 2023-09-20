@@ -40,6 +40,7 @@ tags = ['computer science']
 
 7. [Data Engineering Roadmap](https://docs.google.com/document/d/1MEFXQhtcOZrJGztsAhAu7SJj181toHL0IEVNbVmr61o/edit)
 
+8. [Fundamentals of Data Visualization](https://clauswilke.com/dataviz/)
 
 
 ### System Design
