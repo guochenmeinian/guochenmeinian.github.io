@@ -19,5 +19,7 @@ tags = ['music']
 ### Music Theory
 1. [Chord Functions](../chord-functions/)
 
-2. [Chords in Major/Minor Scales](../scale-chords/) 
+2. [Chords in Major/Minor Scales](../scale-chords/)
+
+3. [Circle of Fifths](../circle_of_fifths)
 
