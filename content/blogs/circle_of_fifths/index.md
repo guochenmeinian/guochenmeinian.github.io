@@ -27,7 +27,7 @@ Transitioning between relatives can inject contrasting emotions into a piece, to
 ### Examining Songs:
 "While My Guitar Gently Weeps" by The Beatles: Within the A minor framework, it gracefully integrates chords from the relative C major, enriching its harmonic fabric.
 
-"Autumn Leaves": A showcase of the Circle, this jazz staple meanders through II-V-I sequences, emphasizing key relationships.
+"Autumn Leaves": A showcase of the Circle; In "Autumn Leaves," the II-V-I in C Major plays out as: Treat G (V of C) as a reference point. Its fifth is Dm. Within C Major, this sequence becomes Dm (II), G (V), and C (I).
 
 Conclusion
 Understanding music theory unveils a landscape of endless possibilities. The Circle of Fifths and the concept of relative major/minor are tools, not rules. They inspire creators to experiment while ensuring harmonic coherence, letting music resonate deeply with listeners.

@@ -21,5 +21,5 @@ tags = ['music']
 
 2. [Chords in Major/Minor Scales](../scale-chords/)
 
-3. [Circle of Fifths](../circle_of_fifths)
+3. [Circle of Fifths](../circle-of-fifths)
 
