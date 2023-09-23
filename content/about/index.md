@@ -24,7 +24,7 @@ Eager to learn and practice guitar, but swamped with work.
   
 
 ### More
-- 🔗 [Resume/CV](/resume)
+- 🔗 [Resume](/resume)
 - 📰 [CS](/blogs/cs-resources/) 
 - 🎼 [Music](/blogs/music-resources/)
 - 📃 [Miscancellous](/blogs/miscancellous/)
