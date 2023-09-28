@@ -24,10 +24,16 @@ From Major to Minor: Descend three semitones. E.g., C Major links to A minor.
 From Minor to Major: Ascend three semitones. E.g., F# minor corresponds with A major.
 Transitioning between relatives can inject contrasting emotions into a piece, toggling between bright and introspective tones.
 
-### Examining Songs:
-"While My Guitar Gently Weeps" by The Beatles: Within the A minor framework, it gracefully integrates chords from the relative C major, enriching its harmonic fabric.
 
-"Autumn Leaves": A showcase of the Circle; In "Autumn Leaves," the II-V-I in C Major plays out as: Treat G (V of C) as a reference point. Its fifth is Dm. Within C Major, this sequence becomes Dm (II), G (V), and C (I).
+### 一些心得
+五度一般不加说明的话，就是代表纯五度的音程关系。按照上图耳熟能详的C大调为例，上行五度就是G（顺时针，往右），下行五度就是F（逆时针，往左）。由于五度还有一个叫发是“属”，我们也会把上行五度音称为属音，下行五度称为下属音。
 
-Conclusion
-Understanding music theory unveils a landscape of endless possibilities. The Circle of Fifths and the concept of relative major/minor are tools, not rules. They inspire creators to experiment while ensuring harmonic coherence, letting music resonate deeply with listeners.
+学琴以来 我越来越觉得不管是对于键盘类还是弦类管类乐器的学习者 我们最终学习的还是音乐本身 而学习演奏乐器的技巧只是为了辅助我们达成这个目标的过程 随着越来越了解了解每个风格独特的地方 我也开始欣赏许多以前听不来的风格
+
+从2022年初从零开始学习电吉他以来 熟悉五度圈是我体验下来最好的学习音乐的方式 不管是对于即兴 和弦 乐理 还是熟悉指板（乐器） 练习五度圈都是极佳的一项练习  
+
+
+### Reference
+[一次性搞懂“五度圈”！！！](https://zhuanlan.zhihu.com/p/29877318)
+
+
