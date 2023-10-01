@@ -47,3 +47,7 @@ i-VII-VI-V: Used frequently in rock and pop songs.
 **B- F# A E G D E- F#**
 
 I - V - VII - IV - VI - III - iv - V 
+
+
+### References:
+[How to practice ARPEGGIOS](https://www.bilibili.com/video/BV1fF411m7Nz/?spm_id_from=333.1007.top_right_bar_window_default_collection.content.click&vd_source=556f5227e28f4968779c511711e8c5e8)

@@ -24,6 +24,9 @@ tags = ['computer science']
 
 6. [Guide to x86-64](https://web.stanford.edu/class/cs107/guide/x86-64.html)
 
+7. [Deploy a Web App on AWS Amplify](https://aws.amazon.com/getting-started/guides/deploy-webapp-amplify/?pg=webappamplify)
+
+
 
 ### Data
 1. [A Step by Step Backpropagation Example for Regression using an One-hot Encoded Categorical Variable by hand and in Tensorflow](https://mmuratarat.github.io/2020-01-09/backpropagation) 
