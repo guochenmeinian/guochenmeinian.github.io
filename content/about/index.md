@@ -20,7 +20,7 @@ Eager to learn and practice guitar, but swamped with work.
 ### Online presence
 - **Email**: guo.2034@osu.edu
 - **Code repositories**: [guochenmeinian@github.com](https://github.com/guochenmeinian)
-- **Social**: [instagram](https://www.instagram.com/__arist/) | [linkedin](www.linkedin.com/in/chenmeinianguo) | [leetcode](https://leetcode.com/guochenmeinian/)
+- **Social**: [instagram](https://www.instagram.com/__arist/) | [linkedin](www.linkedin.com/in/guochenmeinian) | [leetcode](https://leetcode.com/guochenmeinian/)
   
 
 ### More
