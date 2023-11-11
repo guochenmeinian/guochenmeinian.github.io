@@ -1,0 +1,58 @@
+/* Base Styles */
+:root {
+    --bgColor: #EEEEEE;
+    --fgColor: #41474E;
+    --metaColor: #D26878;
+    --linkColor: #5690AF;
+    --hovColor: #22453F;
+    --bgSelect: #FFFAE1;
+}
+
+body {
+    font-family: monospace;
+    font-size: 1.6rem;
+    line-height: 1.35;
+    max-width: 64rem;
+    margin: auto;
+    padding: 1rem;
+    overflow-wrap: break-word;
+    background: var(--bgColor);
+    color: var(--fgColor);
+}
+
+a {
+    color: var(--linkColor);
+}
+
+a:focus, a:hover {
+    background-color: var(--linkColor);
+    color: var(--bgColor);
+}
+
+img {
+    max-width: 90%;
+    height: auto;
+    margin: .2rem;
+    padding: .2rem;
+    border: dashed 2px var(--metaColor);
+    border-radius: 15px;
+}
+
+/* Resume Page Specific Styles */
+.resume-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.download-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 15px;
+    background-color: var(--metaColor);
+    color: var(--bgColor);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+}
