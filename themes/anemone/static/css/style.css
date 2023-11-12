@@ -25,13 +25,13 @@
 }
 
 :root.light {
-    --bgColor: #EEEEEE;
+    --bgColor: #e1f1fd;
     --fgColor: #41474E;
-    --metaColor: #D26878;
+    --metaColor: #4663ac;
     --headColor: #;
     --linkColor: #5690AF;
     --hovColor: #22453F;
-    --bgSelect: #FFFAE1;
+    --bgSelect: #4663ac;
     --bgUrl: url(https://i.ibb.co/Qpkrw4V/tile-Light.webp) repeat;
     --red: #D26878;
     --dimRed: #623039;
