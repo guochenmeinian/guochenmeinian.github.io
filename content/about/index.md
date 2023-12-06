@@ -18,7 +18,7 @@ Eager to learn and practice guitar, but swamped with work.
 
 
 ### Online presence
-- **Email**: cg3972@nyu.edu
+- **Email**: guochenmeinian@nyu.edu
 - **Code repositories**: [guochenmeinian@github.com](https://github.com/guochenmeinian)
 - **Social**: [instagram](https://www.instagram.com/__arist/) | [linkedin](https://www.linkedin.com/in/guochenmeinian) | [leetcode](https://leetcode.com/guochenmeinian/)
   
