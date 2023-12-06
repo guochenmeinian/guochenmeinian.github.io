@@ -6,9 +6,9 @@ tags = []
 +++
 
 
-👋 Hello 
+👋 Hello
 
-Chenmeinian Guo 郭陈美年, is a senior computer science student at the Ohio State University. Currently, he is applying for computer science related graduate programs.
+Chenmeinian Guo 郭陈美年, is a first-year Computer Science Grad student at [NYU Courant](cs.nyu.edu). 
 
 {{ resize_image(path="about/avatar.png", height=200, width=120, op="fit", format="png") }}
 
@@ -18,9 +18,9 @@ Eager to learn and practice guitar, but swamped with work.
 
 
 ### Online presence
-- **Email**: guo.2034@osu.edu
+- **Email**: cg3972@nyu.edu
 - **Code repositories**: [guochenmeinian@github.com](https://github.com/guochenmeinian)
-- **Social**: [instagram](https://www.instagram.com/__arist/) | [linkedin](www.linkedin.com/in/guochenmeinian) | [leetcode](https://leetcode.com/guochenmeinian/)
+- **Social**: [instagram](https://www.instagram.com/__arist/) | [linkedin](https://www.linkedin.com/in/guochenmeinian) | [leetcode](https://leetcode.com/guochenmeinian/)
   
 
 ### More
