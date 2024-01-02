@@ -5,10 +5,10 @@ date = 2023-09-04
 tags = []
 +++
 
+👋Hello
 
-👋 Hello
-
-Chenmeinian Guo 郭陈美年, is a first-year Computer Science Grad student at [NYU Courant](cs.nyu.edu). 
+I'm Chenmeinian Guo 郭陈美年, a first year Computer Science Master's student at [NYU Courant](cs.nyu.edu). I recently completed my Bachlor's degree in Computer and Information Science at [the Ohio State University](https://www.osu.edu/).
+My primary interests lie in the fields of software development and deep learning.
 
 {{ resize_image(path="about/lay.png", height=1400, width=650, op="fit", format="png") }}
 

@@ -46,7 +46,8 @@ And view Zola's default welcome page at http://127.0.0.1:1111.
 
 
 ### Zola Themes
-Choose your desired theme for your personal blog from Zola Themes. This guide (my blog) uses the "anemone" theme.
+This guide (my blog) uses the "anemone" theme. Feel free to explore the existing [themes](https://www.getzola.org/themes/) available on Zola pick one and tweak it to your style just like I did with mine or you could even imlement your own theme. 
+
 To add the theme repository to your local project using the git submodule command:
 ```
 git submodule add https://github.com/Speyll/anemone themes/anemone
