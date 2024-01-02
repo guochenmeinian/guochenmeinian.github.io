@@ -10,7 +10,7 @@ tags = []
 
 Chenmeinian Guo 郭陈美年, is a first-year Computer Science Grad student at [NYU Courant](cs.nyu.edu). 
 
-{{ resize_image(path="about/avatar.png", height=200, width=120, op="fit", format="png") }}
+{{ resize_image(path="about/lay.png", height=1400, width=650, op="fit", format="png") }}
 
 
 **Latest status** 🎸 \
