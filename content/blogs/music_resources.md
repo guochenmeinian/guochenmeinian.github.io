@@ -8,7 +8,7 @@ tags = ['music']
 👋 Hello
 
 
-> Be Kind to Yourself, Don't Compare, Don't Expect Too Fast, and Don't Worry.
+> "Be Kind to Yourself, Don't Compare, Don't Expect Too Fast, and Don't Worry."
 
 
 ### Guitar

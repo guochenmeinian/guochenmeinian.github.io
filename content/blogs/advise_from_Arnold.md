@@ -1,5 +1,5 @@
 +++
-title = "Arnold Schwarzenegger"
+title = "advise from Arnold Schwarzenegger"
 date = 2023-11-02
 [taxonomies]
 tags = ['fitness']
