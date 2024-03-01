@@ -7,8 +7,8 @@ tags = []
 
 👋Hello
 
-I'm Chenmeinian Guo 郭陈美年, a new grad from [the Ohio State University](https://www.osu.edu). I recently completed my Bachlor's degree in Computer and Information Science at [the Ohio State University](https://www.osu.edu).
-My primary interests lie in the fields of software development and deep learning. Beyond coding and algorithms, I enjoy playing guitar and learning about finance.
+Hi there 👋 My name is Chenmeinian Guo「郭陈美年」, a graduate student pursuing Master's in Computer Science at [NYU Courant](https://cims.nyu.edu/dynamic/). I recently completed my Bachlor's degree in Computer and Information Science at [the Ohio State University](https://www.osu.edu).
+My primary interests lie in the fields of software development and machine learning. Beyond coding and algorithms, I enjoy playing guitar and learning about finance.
 
 {{ resize_image(path="about/lay.png", height=1400, width=650, op="fit", format="png") }}
 
