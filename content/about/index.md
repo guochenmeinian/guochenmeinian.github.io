@@ -7,7 +7,7 @@ tags = []
 
 👋Hello
 
-Hi there 👋 My name is Chenmeinian Guo「郭陈美年」, a graduate student pursuing Master's in Computer Science at [NYU Courant](https://cims.nyu.edu/dynamic/). I recently completed my Bachlor's degree in Computer and Information Science at [the Ohio State University](https://www.osu.edu).
+Hi there 👋 My name is Chenmeinian Guo「郭陈美年」. I recently completed my Bachlor's degree in Computer and Information Science at [the Ohio State University](https://www.osu.edu).
 My primary interests lie in the fields of software development and machine learning. Beyond coding and algorithms, I enjoy playing guitar and learning about finance.
 
 {{ resize_image(path="about/lay.png", height=1400, width=650, op="fit", format="png") }}
@@ -18,7 +18,7 @@ Eager to learn and practice guitar, but swamped with work.
 
 
 ### Online presence
-- **Email**: guochenmeinian@nyu.edu
+- **Email**: guochenmeinian@outlook.com
 - **Code repositories**: [guochenmeinian@github.com](https://github.com/guochenmeinian)
 - **Social**: [instagram](https://www.instagram.com/__arist/) | [linkedin](https://www.linkedin.com/in/guochenmeinian) | [leetcode](https://leetcode.com/guochenmeinian/)
   
