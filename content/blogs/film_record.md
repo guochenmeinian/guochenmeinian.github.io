@@ -1,6 +1,6 @@
 +++
 title = "how to FILM & RECORD with Cubase and OBS (SCREEN AND CAMERA AT ONCE)"
-date = 2024-4-30
+date = 2024-04-30
 [taxonomies]
 tags = ['music']
 +++
