@@ -1,5 +1,5 @@
 +++
-title = "how to FILM & RECORD with Cubase and OBS (SCREEN AND CAMERA AT ONCE)"
+title = "how to film & record auido at once"
 date = 2024-04-30
 [taxonomies]
 tags = ['music']
@@ -13,7 +13,9 @@ As a musician or producer, effectively showcasing your work is essential, and wh
 #### Step 1: Configure Audio in Cubase
 
 If you are using windows and not have access to Pro version Cubase like me, you can follow my path to use the loopback plugin to output the processed sound to OBS as input. without that plugin, the input from your audio interface will likely be clean tone from you device (e.g. guitar) with no effects and you probably won't hear the tracks from Cubase.
-   
+
+{{ youtube(id="IlelvEbFE3s", height="400", width="800") }}
+
 Watch this detailed tutorial to understand how to configure the settings: [DAW Cubase to OBS using loopback plugin.](https://www.youtube.com/watch?v=IlelvEbFE3s)
 
 #### Step 2: Prepare OBS for Video, Screen, and Audio Capture
@@ -47,6 +49,6 @@ With Cubase for audio and OBS for video, this setup can help you to capture your
 
 
 ### Reference
-[How to RECORD AUDIO with CUBASE and OBS](https://www.youtube.com/watch?v=X1Bduqqnr9g)
-[How to FILM & RECORD any DAW! (SCREEN AND CAMERA AT ONCE)](https://www.youtube.com/watch?v=Q3s-appprns)
+[How to RECORD AUDIO with CUBASE and OBS](https://www.youtube.com/watch?v=X1Bduqqnr9g) \
+[How to FILM & RECORD any DAW! (SCREEN AND CAMERA AT ONCE)](https://www.youtube.com/watch?v=Q3s-appprns) \
 [DAW Cubase to OBS using loopback plugin.](https://www.youtube.com/watch?v=IlelvEbFE3s)

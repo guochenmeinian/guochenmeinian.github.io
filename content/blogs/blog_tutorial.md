@@ -1,5 +1,5 @@
 +++
-title = "blog tutorial"
+title = "how to make this blog website"
 date = 2023-09-07
 [taxonomies]
 tags = ['computer science']
