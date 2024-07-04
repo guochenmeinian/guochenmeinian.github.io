@@ -7,7 +7,7 @@ tags = []
 
 Hi there 👋 
 
-My name is Chenmeinian Guo「郭陈美年」. I am currently a Master's student at [NYU Courant](https://cims.nyu.edu/dynamic/). I completed my Bachlor's degree in Computer and Information Science at [the Ohio State University](https://www.osu.edu).
+My name is Chenmeinian Guo「郭陈美年」. I am currently a Master's student at [NYU Courant](https://cims.nyu.edu/dynamic/) studying Computer Science. I completed my Bachlor's degree in Computer and Information Science at [the Ohio State University](https://www.osu.edu).
 My primary interests lie in the fields of software development and machine learning. Beyond coding and algorithms, I enjoy playing guitar and learning about music and finance.
 
 {{ resize_image(path="about/lay.png", height=1400, width=650, op="fit", format="png") }}
