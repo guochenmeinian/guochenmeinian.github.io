@@ -12,7 +12,7 @@ tags = ['computer science', 'leetcode']
 
 
 ## Python BFS Solution
-```
+```python
 class Solution:
     def solve(self, board: List[List[str]]) -> None:
         ROWS, COLS = len(board), len(board[0])

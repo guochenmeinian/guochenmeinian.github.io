@@ -1,5 +1,5 @@
 +++
-title = "how to film & record auido at once"
+title = "film & record at once"
 date = 2024-04-30
 [taxonomies]
 tags = ['music']
