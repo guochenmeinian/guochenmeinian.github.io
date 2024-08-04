@@ -7,7 +7,7 @@ tags = ['music']
 
 ### Major
 
-{{ resize_image(path="blogs/guitar_scales/MajorShape.png", height=1400, width=650, op="fit", format="png") }}
+{{ resize_image(path="blogs/guitar_cheatsheet/MajorShape.png", height=1400, width=650, op="fit", format="png") }}
 
 \
 \
@@ -19,4 +19,4 @@ tags = ['music']
 
 ### Minor 
 
-{{ resize_image(path="blogs/guitar_scales/MinorShape.png", height=1400, width=650, op="fit", format="png") }}
+{{ resize_image(path="blogs/guitar_cheatsheet/MinorShape.png", height=1400, width=650, op="fit", format="png") }}
