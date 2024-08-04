@@ -143,6 +143,9 @@ tar xvz -C .
 - Runs the Zola build command and sets the base URL for the site to the value of the DEPLOY_URL environment variable provided by Netlify.
 
 
+3. I later deployed this site on Github Pages because that customized domain name costs 70+ dollars after first year trial. Integrating Zola with Github Action is also fairly straightforward. You can check out their blog on how to deploy on Gihub: https://www.getzola.org/documentation/deployment/github-pages/.
+
+
 ## References
 
 - [Zola Overview](https://www.getzola.org/documentation/getting-started/overview/)

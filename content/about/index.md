@@ -23,11 +23,12 @@ My primary interests lie in the fields of software development and deep learning
 
 
 
-Beyond coding and algorithms, I enjoy playing guitar. Music, especially exploring different genres and blending them, fascinates me just as much as any coding puzzle. Although I'm currently striving to transcend the beginner level, my goal is to become an intermediate player who can jam confidently with friends and fellow music enthusiasts. I also have a keen interest in finance, always trying to understand more about the economic forces shaping our world. Additionally, I love traveling and recently had the chance to experience the vibrant atmosphere at the I-Days Milano during the Metallica M72 World Tour.
+Beyond coding and algorithms, I enjoy playing guitar. Music, especially exploring different genres and blending them, fascinates me just as much as any coding puzzle. Although I'm currently striving to transcend the beginner level, my goal is to become an intermediate player who can jam confidently with friends and fellow music enthusiasts. I also have a keen interest in finance, always trying to understand more about the economic forces shaping our world. On the travel front, I recently had the opportunity to attend my first live metal concert this summer in Milano, Italy.
 
-{{ resize_image(path="about/metallica_red.jpg", height=1000, width=650, op="fit", format="png") }}
+{{ double_image(path1="about/metallica_green.jpg", path2="about/metallica_red.jpg", height=1400, width=650, op="fit_height") }}
 
-⬆ A pic of I-Days Milano - [Metallica](https://www.metallica.com/)
+⬆ I-Days Milano - [Metallica](https://www.metallica.com/)
+
 
 
 Whether you're into tech, tunes, or just talking about life's curious twists, feel free to reach out. Let’s share insights, jam, or just chat about anything under the sun :)
@@ -43,7 +44,7 @@ Eager to learn and practice guitar, but swamped with work.
 - **Email**: guochenmeinian@nyu.edu
 - **Code repositories**: [guochenmeinian@github.com](https://github.com/guochenmeinian)
 - **Social**: [instagram](https://www.instagram.com/__arist/) | [linkedin](https://www.linkedin.com/in/guochenmeinian) | [leetcode](https://leetcode.com/guochenmeinian/)
-  
+
 
 ### More
 - 🔗 [Resume](/resume)

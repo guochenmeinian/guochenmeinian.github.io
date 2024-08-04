@@ -1,5 +1,5 @@
 +++
-title = "guitar scale shape cheatsheet"
+title = "guitar's shape cheatsheet"
 date = 2024-08-04
 [taxonomies]
 tags = ['music']

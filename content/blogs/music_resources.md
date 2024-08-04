@@ -16,10 +16,14 @@ tags = ['music']
    
 2. [B Minor Blues Rhythm Guitar - Tomo Fujita](https://www.youtube.com/watch?v=vMe7zONYGA0)
 
+3. [Guitar Cheatseet](../guitar_cheatsheet/) (includes both major & minor shapes for triads and scales)
+
 ### Music Theory
 1. [Chord Functions](../chord-functions/)
 
 2. [Chords in Major/Minor Scales](../scale-chords/)
 
-3. [Circle of Fifths](../circle-of-fifths)
+3. [Circle of Fifths](../circle-of-fifths/)
+
+
 

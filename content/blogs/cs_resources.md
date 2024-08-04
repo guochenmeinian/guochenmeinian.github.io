@@ -26,6 +26,7 @@ tags = ['computer science']
 
 7. [Deploy a Web App on AWS Amplify](https://aws.amazon.com/getting-started/guides/deploy-webapp-amplify/?pg=webappamplify)
 
+8. [Introduction to video & audio development with FFmpeg & SDL2](../blogs/ffmpeg.md)
 
 
 ### Data
