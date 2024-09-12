@@ -9,5 +9,5 @@ path = "Resume_MLE.png"
 tags = []
 +++
 
-![resume](Resume_MLE.png)
-<a href="{{ page.extra.path }}" download="Resume_MLE.png" class="download-btn">Download Resume</a>
+![resume](Resume.png)
+<a href="{{ page.extra.path }}" download="Resume.png" class="download-btn">Download Resume</a>
