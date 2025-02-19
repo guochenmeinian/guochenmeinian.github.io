@@ -1,5 +1,5 @@
 +++
-title = "workout tips from Arnold"
+title = "施瓦辛格健身原则"
 date = 2023-11-02
 [taxonomies]
 tags = ['fitness']
