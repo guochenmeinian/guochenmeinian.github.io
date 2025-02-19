@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+      <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+      <meta name="robots" content="index, follow">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <title>film &amp; record at once</title>
+      
+      
+      
+      <meta name="title" content="film &amp; record at once">
+      
+      
+      
+      <meta property="og:type" content="website">
+      <meta property="og:url" content="https://guochenmeinian.github.io/blogs/film-record/">
+      
+      <meta property="og:site_name" content="">
+      
+      
+      <meta property="og:title" content="film &amp; record at once">
+      
+      
+      
+      
+      
+      <meta property="twitter:card" content="summary_large_image">
+      <meta property="twitter:url" content="https://guochenmeinian.github.io/blogs/film-record/">
+      
+      <meta property="twitter:title" content="film &amp; record at once">
+      
+      
+      
+      
+      <link rel="canonical" href="https://guochenmeinian.github.io/blogs/film-record/">
+      
+      
+      
+      
+      <link rel="stylesheet" href="https://guochenmeinian.github.io/css/style.css"/>
+      
+   </head>
+   <body>
+      <div class="wrapper">
+         <header>
+            
+            <nav class="navBar">
+               
+               
+               
+               <a href="/about" >&#x2F;about&#x2F;</a>
+               
+               
+               
+               
+               <a href="/blogs" >&#x2F;blogs</a>
+               
+               
+               
+               
+               <a href="/tags" >&#x2F;tags&#x2F;</a>
+               
+               
+
+               <div class="themeSwitch">
+                  <button class="themeButton light" onclick="setTheme('light')" title="Light mode">◐</button>
+                  <button class="themeButton dark" onclick="setTheme('dark')" title="Dark mode">◑</button>
+               </div>
+            </nav>
+            
+
+            <script>
+               const setTheme = (theme) => {
+                   document.documentElement.className = theme;
+                   localStorage.setItem('theme', theme);
+               }
+               const getTheme = () => {
+                   const theme = localStorage.getItem('theme');
+                   theme && setTheme(theme);
+               }
+               getTheme()
+            </script>
+         </header>
+
+         <main>
+            
+
+
+
+<p>👋 Hello</p>
+<p>As a musician or producer, effectively showcasing your work is essential, and what better way to do this than by filming and recording your sessions. This guide will walk through the process of using Cubase and OBS (Open Broadcaster Software) to capture the screen, camera, and audio tracks simultaneously. For those who are not into music production, learning how to use these tools can enhance your editing skills for other projects, such as streaming and vlogging. So, feel free to stick around to learn how these powerful tools can benefit a wide range of creative endeavors :)</p>
+<h3 id="setting-up-cubase-with-obs">Setting Up Cubase with OBS</h3>
+<h4 id="step-1-configure-audio-in-cubase">Step 1: Configure Audio in Cubase</h4>
+<p>If you are using windows and not have access to Pro version Cubase like me, you can follow my path to ReaPlugs and add ReaStream Plugin to output the processed sound to OBS as input. Without that plugin, your audio interface will likely not be able to receive the input audio or just simply receive the clean tone from you device (e.g. guitar) with no effects and you probably won't hear the tracks from Cubase.</p>
+<p>Here’s how:</p>
+<ol>
+<li>Download ReaPlugs: Go to Google and search for ReaPlugs. Click on the link to download the bundle from the Reaper website. (Link: ReaPlugs Bundle).</li>
+<li>Install the bundle like any other plugin and restart Cubase.</li>
+</ol>
+<div >
+    <iframe
+        width=800, 
+        height=400,
+        src="https://www.youtube.com/embed/IlelvEbFE3s"
+        webkitallowfullscreen
+        mozallowfullscreen
+        allowfullscreen>
+    </iframe>
+</div>
+<p>Watch this detailed tutorial to understand how to configure the settings: <a href="https://www.youtube.com/watch?v=Y3nfyrzPPfc">Cubase How to Stream/Record Audio Output to OBS</a>.</p>
+<h4 id="step-2-add-reastream-plugin-to-cubase">Step 2: Add ReaStream Plugin to Cubase</h4>
+<ol>
+<li>Open Cubase, go to the Mixer, and select the Stereo Out channel (your master output).</li>
+<li>Add the ReaStream Standalone plugin to the Stereo Out channel.</li>
+<li>In the ReaStream plugin interface:
+<ul>
+<li>Change the mode from Receive Audio to Send Audio.</li>
+<li>Set the Send mode to Local Broadcast from the dropdown menu.</li>
+</ul>
+</li>
+</ol>
+<p>At this point, Cubase is ready to send its audio output to OBS.</p>
+<h4 id="step-3-configure-obs-for-audio-video-and-screen-capture">Step 3: Configure OBS for Audio, Video, and Screen Capture</h4>
+<p>Install OBS if it's not already set up.</p>
+<ol>
+<li><strong>Camera:</strong> Add a new source by clicking the + under the 'Sources' window. Select Video Capture Device and configure it to capture video from your camera.</li>
+<li><strong>Display:</strong> Choose Display Capture, select the monitor displaying Cubase, and confirm. Make sure to capture the entire screen to show all aspects of your production environment.</li>
+<li><strong>Audio:</strong> Instead of Audio Output Capture, add an Audio Input Capture.
+<ul>
+<li>Name it appropriately (e.g., “Cubase Audio”).</li>
+<li>Mute your microphone input, as the default audio input may capture your voice.</li>
+</ul>
+</li>
+</ol>
+<h4 id="step-4-set-up-vst-plugin-in-obs-to-capture-cubase-audio">Step 4: Set Up VST Plugin in OBS to Capture Cubase Audio</h4>
+<ol>
+<li>In OBS, click the cogwheel next to your <strong>Audio Input Capture</strong> and select Filters.</li>
+<li>Add a new <strong>VST2 Plugin</strong> by clicking the "+" under the Filters section.</li>
+<li>Select <strong>ReaStream Standalone</strong> from the dropdown as the plugin.</li>
+<li>You don't need to modify anything else within the plugin; it's already set to receive the audio from Cubase.</li>
+</ol>
+<h4 id="step-5-recording-your-session">Step 5: Recording Your Session</h4>
+<p>Hit Start Recording in OBS to begin your session recording while Cubase handles the audio and OBS captures the screen and camera.</p>
+<h3 id="tips-for-optimal-recording">Tips for Optimal Recording</h3>
+<ul>
+<li>Ensure good lighting and proper camera placement for the best video quality.</li>
+<li>Wear headphones to avoid feedback or echo in the audio.</li>
+<li>Conduct a test run before the actual recording to fix any sync issues between audio and video.</li>
+</ul>
+<h3 id="conclusion">Conclusion</h3>
+<p>With Cubase for audio and OBS for video, this setup can help you to capture your music production sessions and I hope this helps you :)</p>
+<h3 id="reference">Reference</h3>
+<p><a href="https://www.youtube.com/watch?v=Y3nfyrzPPfc">Cubase How to Stream/Record Audio Output to OBS</a>
+<a href="https://www.youtube.com/watch?v=X1Bduqqnr9g">How to RECORD AUDIO with CUBASE and OBS</a> <br />
+<a href="https://www.youtube.com/watch?v=Q3s-appprns">How to FILM &amp; RECORD any DAW! (SCREEN AND CAMERA AT ONCE)</a> <br />
+<a href="https://www.youtube.com/watch?v=IlelvEbFE3s">DAW Cubase to OBS using loopback plugin.</a></p>
+
+
+         </main>
+
+         <footer>
+            
+<p class="tagsData">
+
+
+<a href="/tags/music">&#47;music&#47;</a>
+
+
+</p>
+
+            <hr>
+            <div class=footContainer>
+               <div class="footLeft">
+                  <p>Licensed under <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Licence_MIT">MIT</a><br>
+                     Built with <a target="_blank" rel="noopener noreferrer" href="https://www.getzola.org">Zola</a> using <a target="_blank" rel="noopener noreferrer" href="https://github.com/Speyll/anemone">anemone</a> theme &amp; <a target="_blank" rel="noopener noreferrer" href="https://github.com/Speyll/veqev">veqev</a> colors.<br>
+                  </p>
+               </div>
+               <div class="footRight">
+                  <!-- Size 46x46 -->
+                  <img class="footGif noStyle" loading="lazy" src="https://i.ibb.co/XYDpfcs/foot.gif" alt="footGif">
+                  <a class="metaData" target="_blank" rel="noopener noreferrer" href="https://guochenmeinian.github.io/atom.xml" title="Subscribe via RSS for updates.">RSS</a>
+               </div>
+            </div>
+         </footer>
+      </div>
+   </body>
+</html>
