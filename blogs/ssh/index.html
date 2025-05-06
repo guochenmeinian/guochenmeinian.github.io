@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+      <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+      <meta name="robots" content="index, follow">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <title>surrounded region</title>
+      
+      
+      
+      <meta name="title" content="surrounded region">
+      
+      
+      
+      <meta property="og:type" content="website">
+      <meta property="og:url" content="https://guochenmeinian.github.io/blogs/ssh/">
+      
+      <meta property="og:site_name" content="">
+      
+      
+      <meta property="og:title" content="surrounded region">
+      
+      
+      
+      
+      
+      <meta property="twitter:card" content="summary_large_image">
+      <meta property="twitter:url" content="https://guochenmeinian.github.io/blogs/ssh/">
+      
+      <meta property="twitter:title" content="surrounded region">
+      
+      
+      
+      
+      <link rel="canonical" href="https://guochenmeinian.github.io/blogs/ssh/">
+      
+      
+      
+      
+      <link rel="stylesheet" href="https://guochenmeinian.github.io/css/style.css"/>
+      
+   </head>
+   <body>
+      <div class="wrapper">
+         <header>
+            
+            <nav class="navBar">
+               
+               
+               
+               <a href="/about" >&#x2F;about&#x2F;</a>
+               
+               
+               
+               
+               <a href="/blogs" >&#x2F;blogs</a>
+               
+               
+               
+               
+               <a href="/tags" >&#x2F;tags&#x2F;</a>
+               
+               
+
+               <div class="themeSwitch">
+                  <button class="themeButton light" onclick="setTheme('light')" title="Light mode">◐</button>
+                  <button class="themeButton dark" onclick="setTheme('dark')" title="Dark mode">◑</button>
+               </div>
+            </nav>
+            
+
+            <script>
+               const setTheme = (theme) => {
+                   document.documentElement.className = theme;
+                   localStorage.setItem('theme', theme);
+               }
+               const getTheme = () => {
+                   const theme = localStorage.getItem('theme');
+                   theme && setTheme(theme);
+               }
+               getTheme()
+            </script>
+         </header>
+
+         <main>
+            
+
+
+
+<h2 id="closed-lock-with-key-useful-ssh-techniques">🔐 Useful SSH Techniques</h2>
+<p>Here are some practical SSH techniques I’ve learned and found worth documenting — especially for situations like connecting to remote machines, securely accessing internal web interfaces (e.g. TensorBoard or Jupyter), and managing your own devices (e.g. PC and Mac) across different networks.</p>
+<p>Whether you're setting up a home lab, working remotely, or doing machine learning experiments on a server, these techniques can save you a lot of time.</p>
+<hr />
+<h3 id="adult-computer-zerotier">🧑‍💻 ZeroTier</h3>
+<p><a href="https://www.zerotier.com/">ZeroTier</a> allows you to create a virtual network, making it easy to connect devices like your Mac and PC as if they were on the same LAN.</p>
+<h4 id="to-make-your-pc-the-server">To make your PC the server</h4>
+<h5 id="1-install-ssh-client-to-connect-to-other-devices">1. Install SSH client (to connect to other devices)</h5>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span># Install SSH client (to connect to other devices)
+</span><span>Add-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0
+</span><span>
+</span><span># Install SSH server (to allow incoming connections)
+</span><span>Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
+</span><span>
+</span><span># Verify installation
+</span><span>Get-WindowsCapability -Online | Where-Object Name -like &#39;OpenSSH*&#39;
+</span></code></pre>
+<h5 id="2-start-and-enable-the-ssh-server">2. Start and Enable the SSH Server</h5>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span># Start the SSH service
+</span><span>Start-Service sshd
+</span><span>
+</span><span># Set SSH service to start automatically
+</span><span>Set-Service -Name sshd -StartupType &#39;Automatic&#39;
+</span></code></pre>
+<h5 id="3-find-your-local-ip-no-need-to-do-this-if-you-re-using-zerotier-though">3. Find Your Local IP (No need to do this if you're using ZeroTier though)</h5>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>ipconfig
+</span></code></pre>
+<h4 id="arrows-counterclockwise-bonus-set-wsl-default-user-to-root-optional">🔄 Bonus: Set WSL Default User to Root (Optional)</h4>
+<h5 id="1-edit-your-wsl-config-file">1. Edit your WSL config file:</h5>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>sudo vi /etc/wsl.conf
+</span></code></pre>
+<h5 id="2-add-the-following">2. Add the following:</h5>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>[user]
+</span><span>default=root
+</span></code></pre>
+<h5 id="3-restart-wsl-to-apply-the-changes">3. Restart WSL to apply the changes.</h5>
+<hr />
+<h3 id="globe-with-meridians-ssh-port-forwarding-access-remote-web-uis-locally">🌐 SSH Port Forwarding (Access Remote Web UIs Locally)</h3>
+<p>After connecting to a remote server via SSH, you can access web interfaces (like TensorBoard running on localhost:6006) from your local machine using SSH port forwarding.</p>
+<h4 id="basic-command-format">Basic Command Format</h4>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>ssh -L local_port:remote_address:remote_port username@remote_ip
+</span></code></pre>
+<h4 id="example-accessing-remote-tensorboard">Example: Accessing Remote TensorBoard</h4>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>ssh -L 6006:localhost:6006 username@remote_ip
+</span></code></pre>
+<p>Then open your browser and visit:</p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>http://localhost:6006
+</span></code></pre>
+<h4 id="tips">Tips</h4>
+<ul>
+<li>
+<p>You can forward multiple ports at once. For example:</p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>ssh -L 6006:localhost:6006 -L 8888:localhost:8888 username@remote_ip
+</span></code></pre>
+<p>This maps both TensorBoard (port 6006) and Jupyter Notebook (port 8888) to your local machine.</p>
+</li>
+<li>
+<p>This works even if the remote service is bound to 127.0.0.1 on the server, because the forwarding is executed from within the SSH session.</p>
+</li>
+</ul>
+<hr />
+<h3 id="desktop-gnu-screen">🖥️ GNU Screen</h3>
+<p><code>screen</code> lets you create persistent terminal sessions that keep running even if you disconnect (perfect for long-running tasks like training models, servers, etc).</p>
+<p>🔧 Common Commands</p>
+<p>🎯 Start a new session</p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>screen -S mysession
+</span></code></pre>
+<p>🔍 List all screen sessions</p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>screen -ls
+</span></code></pre>
+<p>🔁 Reconnect to a session</p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>screen -r mysession
+</span></code></pre>
+<p>🔚 Detach (leave it running in background)
+Inside screen, press:</p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>Ctrl + A, then D
+</span></code></pre>
+<p>🏃 Now your process continues even if you close the terminal.</p>
+<p>Hopefully that helps.</p>
+
+
+         </main>
+
+         <footer>
+            
+<p class="tagsData">
+
+
+<a href="/tags/computer-science">&#47;computer science&#47;</a>
+
+
+</p>
+
+            <hr>
+            <div class=footContainer>
+               <div class="footLeft">
+                  <p>Licensed under <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Licence_MIT">MIT</a><br>
+                     Built with <a target="_blank" rel="noopener noreferrer" href="https://www.getzola.org">Zola</a> using <a target="_blank" rel="noopener noreferrer" href="https://github.com/Speyll/anemone">anemone</a> theme &amp; <a target="_blank" rel="noopener noreferrer" href="https://github.com/Speyll/veqev">veqev</a> colors.<br>
+                  </p>
+               </div>
+               <div class="footRight">
+                  <!-- Size 46x46 -->
+                  <img class="footGif noStyle" loading="lazy" src="https://i.ibb.co/XYDpfcs/foot.gif" alt="footGif">
+                  <a class="metaData" target="_blank" rel="noopener noreferrer" href="https://guochenmeinian.github.io/atom.xml" title="Subscribe via RSS for updates.">RSS</a>
+               </div>
+            </div>
+         </footer>
+      </div>
+   </body>
+</html>
