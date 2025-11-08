@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+      <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+      <meta name="robots" content="index, follow">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <title>resume</title>
+      
+      
+      
+      <meta name="title" content="resume">
+      
+      
+      
+      <meta property="og:type" content="website">
+      <meta property="og:url" content="https://guochenmeinian.github.io/resume/">
+      
+      <meta property="og:site_name" content="">
+      
+      
+      <meta property="og:title" content="resume">
+      
+      
+      
+      
+      
+      <meta property="twitter:card" content="summary_large_image">
+      <meta property="twitter:url" content="https://guochenmeinian.github.io/resume/">
+      
+      <meta property="twitter:title" content="resume">
+      
+      
+      
+      
+      <link rel="canonical" href="https://guochenmeinian.github.io/resume/">
+      
+      
+      
+      
+      <link rel="stylesheet" href="https://guochenmeinian.github.io/css/style.css"/>
+      
+   </head>
+   <body>
+      <div class="wrapper">
+         <header>
+            
+            <nav class="navBar">
+               
+               
+               
+               <a href="/about" >&#x2F;about&#x2F;</a>
+               
+               
+               
+               
+               <a href="/blogs" >&#x2F;blogs</a>
+               
+               
+               
+               
+               <a href="/tags" >&#x2F;tags&#x2F;</a>
+               
+               
+
+               <div class="themeSwitch">
+                  <button class="themeButton light" onclick="setTheme('light')" title="Light mode">◐</button>
+                  <button class="themeButton dark" onclick="setTheme('dark')" title="Dark mode">◑</button>
+               </div>
+            </nav>
+            
+
+            <script>
+               const setTheme = (theme) => {
+                   document.documentElement.className = theme;
+                   localStorage.setItem('theme', theme);
+               }
+               const getTheme = () => {
+                   const theme = localStorage.getItem('theme');
+                   theme && setTheme(theme);
+               }
+               getTheme()
+            </script>
+         </header>
+
+         <main>
+            
+
+
+
+<p>Hi there 👋</p>
+<p>Here's a short summary/selection of my past experiences.</p>
+<!-- templates/shortcodes/double_image.html -->
+<style>
+    .double-image-container {
+        display: flex;
+        flex-direction: column; /* Stack images vertically by default */
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .double-image-container img {
+        width: 100%; /* Make images full width on smaller screens */
+        max-height: 300px; /* Limit image height */
+        object-fit: cover;
+    }
+    
+    @media (min-width: 600px) { /* Adjust for larger screens */
+        .double-image-container {
+            flex-direction: row; /* Place images side by side */
+        }
+        .double-image-container img {
+            max-width: 50%; /* Limit width to half of the container */
+            height: auto; /* Maintain aspect ratio */
+        }
+    }
+    </style>
+    
+    <div class="double-image-container">
+        <img src="https://guochenmeinian.github.io/about/tezign_window.png" alt="Image 1">
+        <img src="https://guochenmeinian.github.io/about/meituan_building.jpeg" alt="Image 2">
+    </div>
+    
+<p>⬆ Tezign &amp; Meituan</p>
+<p>I started out with software engineering — during my time at <a href="https://en.wikipedia.org/wiki/Bilibili">Bilibili</a> as a software engineer intern, I worked on gRPC integration, audio–video decoding, and network protocols, which gave me hands-on experience with low-level systems and playback engineering.</p>
+<p>Later, at <a href="https://en.tezign.com/">Tezign</a>, I gained hands-on experience building AI agents and working in fast-paced startup environments.
+I became familiar with a modern TypeScript stack — including React, Node.js, Prisma (PostgreSQL), and Redis — and learned how to iterate quickly in production while developing a stronger sense for both functionality and product design.</p>
+<p>Most recently, at <a href="https://en.wikipedia.org/wiki/Meituan">Meituan</a>, I’ve been working on data preparation, model evaluation, and pre-training support for multimodal large models as part of the <a href="https://huggingface.co/meituan-longcat/LongCat-Flash-Omni">LongCat-Flash-Omni</a> project — involving data filtering, deduplication, importance sampling, as well as data annealing and pre-training experiments.</p>
+<p>Here's my resume:</p>
+<p><img src="https://guochenmeinian.github.io/resume/resume_sde.png" alt="resume" />
+<a href="{{ page.extra.path }}" download="Resume.png" class="download-btn">Download Resume</a></p>
+
+
+         </main>
+
+         <footer>
+            
+<p class="tagsData">
+
+</p>
+
+            <hr>
+            <div class=footContainer>
+               <div class="footLeft">
+                  <p>Licensed under <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Licence_MIT">MIT</a><br>
+                     Built with <a target="_blank" rel="noopener noreferrer" href="https://www.getzola.org">Zola</a> using <a target="_blank" rel="noopener noreferrer" href="https://github.com/Speyll/anemone">anemone</a> theme &amp; <a target="_blank" rel="noopener noreferrer" href="https://github.com/Speyll/veqev">veqev</a> colors.<br>
+                  </p>
+               </div>
+               <div class="footRight">
+                  <!-- Size 46x46 -->
+                  <img class="footGif noStyle" loading="lazy" src="https://i.ibb.co/XYDpfcs/foot.gif" alt="footGif">
+                  <a class="metaData" target="_blank" rel="noopener noreferrer" href="https://guochenmeinian.github.io/atom.xml" title="Subscribe via RSS for updates.">RSS</a>
+               </div>
+            </div>
+         </footer>
+      </div>
+   </body>
+</html>

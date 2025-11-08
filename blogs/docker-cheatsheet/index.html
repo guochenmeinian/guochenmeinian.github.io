@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+      <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+      <meta name="robots" content="index, follow">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <title>docker cheatsheet</title>
+      
+      
+      
+      <meta name="title" content="docker cheatsheet">
+      
+      
+      
+      <meta property="og:type" content="website">
+      <meta property="og:url" content="https://guochenmeinian.github.io/blogs/docker-cheatsheet/">
+      
+      <meta property="og:site_name" content="">
+      
+      
+      <meta property="og:title" content="docker cheatsheet">
+      
+      
+      
+      
+      
+      <meta property="twitter:card" content="summary_large_image">
+      <meta property="twitter:url" content="https://guochenmeinian.github.io/blogs/docker-cheatsheet/">
+      
+      <meta property="twitter:title" content="docker cheatsheet">
+      
+      
+      
+      
+      <link rel="canonical" href="https://guochenmeinian.github.io/blogs/docker-cheatsheet/">
+      
+      
+      
+      
+      <link rel="stylesheet" href="https://guochenmeinian.github.io/css/style.css"/>
+      
+   </head>
+   <body>
+      <div class="wrapper">
+         <header>
+            
+            <nav class="navBar">
+               
+               
+               
+               <a href="/about" >&#x2F;about&#x2F;</a>
+               
+               
+               
+               
+               <a href="/blogs" >&#x2F;blogs</a>
+               
+               
+               
+               
+               <a href="/tags" >&#x2F;tags&#x2F;</a>
+               
+               
+
+               <div class="themeSwitch">
+                  <button class="themeButton light" onclick="setTheme('light')" title="Light mode">◐</button>
+                  <button class="themeButton dark" onclick="setTheme('dark')" title="Dark mode">◑</button>
+               </div>
+            </nav>
+            
+
+            <script>
+               const setTheme = (theme) => {
+                   document.documentElement.className = theme;
+                   localStorage.setItem('theme', theme);
+               }
+               const getTheme = () => {
+                   const theme = localStorage.getItem('theme');
+                   theme && setTheme(theme);
+               }
+               getTheme()
+            </script>
+         </header>
+
+         <main>
+            
+
+
+
+<p>👋 Hello</p>
+<p><strong>This is the docker cheatsheet</strong></p>
+<h3 id="general-info">General info</h3>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>docker --version
+</span><span>docker info
+</span></code></pre>
+<h3 id="containers">Containers</h3>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>docker container ls
+</span><span>docker container ls --all     # see stopped containers also
+</span><span>docker container ls --all -q  # see stopped containers; get the id only
+</span><span>docker container ls -aq       # see stopped containers; get the id only
+</span></code></pre>
+<h3 id="images">Images</h3>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>docker images           # see what is available
+</span><span>docker image ls         # see what is available
+</span><span>docker rmi &lt;image id&gt;   # remove an image
+</span></code></pre>
+<h3 id="running-containers">Running containers</h3>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>docker ps          # see what is running
+</span><span>docker ps -a       # see everything, even stopped containers
+</span><span>docker ps -a -q    # get just the container IDs for all jobs
+</span><span>docker create      # &quot;stage&quot; a container (then `start` it)
+</span><span>docker stop        # stop a container
+</span><span>docker kill        # kill a container
+</span><span>docker start       # start a container
+</span><span>docker restart     # restart a container
+</span><span>docker rm          # remove the container (can&#39;t `restart` it then)
+</span><span>docker stop $(docker ps -q)     # stop all containers
+</span><span>docker rm $(docker ps -a -q)    # remove all stopped containers
+</span></code></pre>
+<h3 id="connect-to-a-service-in-a-container-e-g-tensorflow">Connect to a service in a container, e.g. <strong>TensorFlow</strong></h3>
+<p>First we map 8888 (Jupyter notebook) on the "inside" to 5000 on the "outside"
+and run the image containing TensorFlow:</p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>docker run -it -v &quot;$PWD&quot;:/mnist -p 5000:8888 b.gcr.io/tensorflow/tensorflow:latest-devel
+</span></code></pre>
+<p>(This also maps the current directory to a mount in the docker container.)
+Then, we launch <em><strong>ipython notebook</strong></em> inside the image. Next, we get the correct
+host IP address with:</p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>docker-machine ls
+</span></code></pre>
+<p>This will provide a URL, e.g. <em><strong>tcp://192.168.XYZ.XYZ:ABCD</strong></em>. Point a browser to
+<em><strong>192.168.XYZ.XYZ:5000</strong></em> and we will see the notebook.</p>
+<h3 id="pushing-to-dockerhub">Pushing to DockerHub</h3>
+<p>e.g., the <em><strong>iqsharp</strong></em> container:</p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>docker login
+</span><span>docker tag iqsharp gnperdue/iqsharp
+</span><span>docker push gnperdue/iqsharp
+</span></code></pre>
+<h3 id="pulling-from-dockerhub">Pulling from DockerHub</h3>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>docker pull gnperdue/kubia
+</span></code></pre>
+
+
+         </main>
+
+         <footer>
+            
+<p class="tagsData">
+
+
+<a href="/tags/computer-science">&#47;computer science&#47;</a>
+
+<a href="/tags/cheatsheet">&#47;cheatsheet&#47;</a>
+
+
+</p>
+
+            <hr>
+            <div class=footContainer>
+               <div class="footLeft">
+                  <p>Licensed under <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Licence_MIT">MIT</a><br>
+                     Built with <a target="_blank" rel="noopener noreferrer" href="https://www.getzola.org">Zola</a> using <a target="_blank" rel="noopener noreferrer" href="https://github.com/Speyll/anemone">anemone</a> theme &amp; <a target="_blank" rel="noopener noreferrer" href="https://github.com/Speyll/veqev">veqev</a> colors.<br>
+                  </p>
+               </div>
+               <div class="footRight">
+                  <!-- Size 46x46 -->
+                  <img class="footGif noStyle" loading="lazy" src="https://i.ibb.co/XYDpfcs/foot.gif" alt="footGif">
+                  <a class="metaData" target="_blank" rel="noopener noreferrer" href="https://guochenmeinian.github.io/atom.xml" title="Subscribe via RSS for updates.">RSS</a>
+               </div>
+            </div>
+         </footer>
+      </div>
+   </body>
+</html>

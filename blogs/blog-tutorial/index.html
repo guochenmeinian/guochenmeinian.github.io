@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+      <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+      <meta name="robots" content="index, follow">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <title>how to make this blog website</title>
+      
+      
+      
+      <meta name="title" content="how to make this blog website">
+      
+      
+      
+      <meta property="og:type" content="website">
+      <meta property="og:url" content="https://guochenmeinian.github.io/blogs/blog-tutorial/">
+      
+      <meta property="og:site_name" content="">
+      
+      
+      <meta property="og:title" content="how to make this blog website">
+      
+      
+      
+      
+      
+      <meta property="twitter:card" content="summary_large_image">
+      <meta property="twitter:url" content="https://guochenmeinian.github.io/blogs/blog-tutorial/">
+      
+      <meta property="twitter:title" content="how to make this blog website">
+      
+      
+      
+      
+      <link rel="canonical" href="https://guochenmeinian.github.io/blogs/blog-tutorial/">
+      
+      
+      
+      
+      <link rel="stylesheet" href="https://guochenmeinian.github.io/css/style.css"/>
+      
+   </head>
+   <body>
+      <div class="wrapper">
+         <header>
+            
+            <nav class="navBar">
+               
+               
+               
+               <a href="/about" >&#x2F;about&#x2F;</a>
+               
+               
+               
+               
+               <a href="/blogs" >&#x2F;blogs</a>
+               
+               
+               
+               
+               <a href="/tags" >&#x2F;tags&#x2F;</a>
+               
+               
+
+               <div class="themeSwitch">
+                  <button class="themeButton light" onclick="setTheme('light')" title="Light mode">◐</button>
+                  <button class="themeButton dark" onclick="setTheme('dark')" title="Dark mode">◑</button>
+               </div>
+            </nav>
+            
+
+            <script>
+               const setTheme = (theme) => {
+                   document.documentElement.className = theme;
+                   localStorage.setItem('theme', theme);
+               }
+               const getTheme = () => {
+                   const theme = localStorage.getItem('theme');
+                   theme && setTheme(theme);
+               }
+               getTheme()
+            </script>
+         </header>
+
+         <main>
+            
+
+
+
+<p>👋 Hello</p>
+<p><strong>This is the tutorial for making this blog website</strong></p>
+<p>Zola is a static site generator (SSG), similar to Hugo, Pelican, and Jekyll (for a comprehensive list of SSGs, please see Jamstack). It is written in Rust and uses the Tera template engine, which is similar to Jinja2, Django templates, Liquid, and Twig.</p>
+<h3 id="install-zola">Install Zola</h3>
+<p>Zola provides pre-built binaries for MacOS, Linux and Windows on the <a href="https://github.com/getzola/zola/releases">GitHub release page</a>. <br />
+Find the installation methods for your machine in the official <a href="https://www.getzola.org/documentation/getting-started/installation/">website</a>.</p>
+<h3 id="zola-init">Zola Init</h3>
+<p>To initialize a new Zola project called blog:</p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>$ zola init blog
+</span></code></pre>
+<p>During the initialization process, you can go with all the default options. Any modifications needed can be made in the configuration file later.</p>
+<p>The directory structure after initialization looks like:</p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>.
+</span><span>├── config.toml       # Zola configuration file
+</span><span>├── content           # Place to store Markdown files
+</span><span>├── sass              # CSS extension
+</span><span>├── static            # Global static resources
+</span><span>├── templates         # Template files
+</span><span>└── theme             # Zola themes
+</span></code></pre>
+<p>Now, you can run:</p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>zola serve
+</span></code></pre>
+<p>And view Zola's default welcome page at http://127.0.0.1:1111.</p>
+<h3 id="zola-themes">Zola Themes</h3>
+<p>This guide (my blog) uses the "anemone" theme. Feel free to explore the existing <a href="https://www.getzola.org/themes/">themes</a> available on Zola pick one and tweak it to your style just like I did with mine or you could even imlement your own theme.</p>
+<p>To add the theme repository to your local project using the git submodule command:</p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>git submodule add https://github.com/Speyll/anemone themes/anemone
+</span></code></pre>
+<p>Then, enable the theme in your config.toml file:</p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>theme = &quot;anemone&quot;
+</span></code></pre>
+<p>This theme also requires the following configurations:</p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>taxonomies = [
+</span><span>    # You can enable/disable RSS
+</span><span>    {name = &quot;tags&quot;, feed = true}
+</span><span>]
+</span></code></pre>
+<p>Finally, set the top menu paths in config.toml:</p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span># Customize the header navigation links with the following code in the extra section of config.toml:
+</span><span>[[extra.header_nav]]
+</span><span>en = { name = &quot;/about/&quot;, url = &quot;/about&quot; }
+</span><span>
+</span><span>[[extra.header_nav]]
+</span><span>en = { name = &quot;/blogs&quot;, url = &quot;/blogs&quot; }
+</span><span>
+</span><span>[[extra.header_nav]]
+</span><span>en = { name = &quot;/tags/&quot;, url = &quot;/tags&quot; }
+</span></code></pre>
+<p>If all the above steps go smoothly, you should be able to see the main page with the newly applied theme!</p>
+<h3 id="github">Github</h3>
+<p>Use github for version control, collaboration, code sharing, and continuous deployment:</p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>git add .              
+</span></code></pre>
+<ul>
+<li>Stages all modified files for commit.</li>
+</ul>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>git commit -m &quot;Finalize blog and ready for deployment&quot;   
+</span></code></pre>
+<ul>
+<li>Commits the staged changes with a provided message.</li>
+</ul>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>git push origin master  
+</span></code></pre>
+<ul>
+<li>Pushes the committed changes to your GitHub repository.</li>
+</ul>
+<h3 id="connect-to-netlify">Connect to Netlify:</h3>
+<p>Once your code is on GitHub:</p>
+<ul>
+<li>Sign in to Netlify.</li>
+<li>Click "New site from Git" &gt; select GitHub.</li>
+<li>Link your GitHub repo containing your Zola project.</li>
+</ul>
+<h3 id="build-configuration">Build Configuration:</h3>
+<p>Zola requires a specific build command to be executed on Netlify to ensure your site is constructed correctly.</p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>wget -q -O - https://github.com/getzola/zola/releases/download/v0.17.2/zola-v0.17.2-x86_64-unknown-linux-gnu.tar.gz | tar xvz -C . &amp;&amp; ./zola build --base-url $DEPLOY_URL
+</span></code></pre>
+<p>After setting this command in the "Build command" field on Netlify, it will use it every time you push changes to your GitHub repository, automatically rebuilding and redeploying your site.</p>
+<h3 id="optional">(Optional)</h3>
+<ol>
+<li>By default, this theme doesn't paginate. If you wish to use pagination, enable it in content/_index.md:</li>
+</ol>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>+++
+</span><span>paginate_by = 5
+</span><span>sort_by = &quot;date&quot;
+</span><span>+++
+</span></code></pre>
+<ol start="2">
+<li>For those curious, below is a breakdown of the build command:</li>
+</ol>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>wget -q -O - https://github.com/getzola/zola/releases/download/v0.17.2/zola-v0.17.2-x86_64-unknown-linux-gnu.tar.gz 
+</span></code></pre>
+<ul>
+<li>This command fetches the content of the specified URL. In this context, it's downloading the Zola binary.</li>
+</ul>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>tar xvz -C . 
+</span></code></pre>
+<ul>
+<li>This command extracts the downloaded tarball in the current directory.</li>
+</ul>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>./zola build --base-url $DEPLOY_URL
+</span></code></pre>
+<ul>
+<li>Runs the Zola build command and sets the base URL for the site to the value of the DEPLOY_URL environment variable provided by Netlify.</li>
+</ul>
+<ol start="3">
+<li>I later deployed this site on Github Pages because that customized domain name costs 70+ dollars after first year trial. Integrating Zola with Github Action is also fairly straightforward. You can check out their blog on how to deploy on Gihub: https://www.getzola.org/documentation/deployment/github-pages/.</li>
+</ol>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://www.getzola.org/documentation/getting-started/overview/">Zola Overview</a></li>
+<li><a href="https://www.getzola.org/documentation/getting-started/installation/">Zola Installation</a></li>
+<li><a href="https://snowfall99.github.io/zola/">Even Theme Blog for Zola</a></li>
+</ul>
+
+
+         </main>
+
+         <footer>
+            
+<p class="tagsData">
+
+
+<a href="/tags/computer-science">&#47;computer science&#47;</a>
+
+
+</p>
+
+            <hr>
+            <div class=footContainer>
+               <div class="footLeft">
+                  <p>Licensed under <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Licence_MIT">MIT</a><br>
+                     Built with <a target="_blank" rel="noopener noreferrer" href="https://www.getzola.org">Zola</a> using <a target="_blank" rel="noopener noreferrer" href="https://github.com/Speyll/anemone">anemone</a> theme &amp; <a target="_blank" rel="noopener noreferrer" href="https://github.com/Speyll/veqev">veqev</a> colors.<br>
+                  </p>
+               </div>
+               <div class="footRight">
+                  <!-- Size 46x46 -->
+                  <img class="footGif noStyle" loading="lazy" src="https://i.ibb.co/XYDpfcs/foot.gif" alt="footGif">
+                  <a class="metaData" target="_blank" rel="noopener noreferrer" href="https://guochenmeinian.github.io/atom.xml" title="Subscribe via RSS for updates.">RSS</a>
+               </div>
+            </div>
+         </footer>
+      </div>
+   </body>
+</html>

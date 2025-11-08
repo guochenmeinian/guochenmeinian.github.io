@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+      <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+      <meta name="robots" content="index, follow">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <title>intro to FFmpeg &amp; SDL2</title>
+      
+      
+      
+      <meta name="title" content="intro to FFmpeg &amp; SDL2">
+      
+      
+      
+      <meta property="og:type" content="website">
+      <meta property="og:url" content="https://guochenmeinian.github.io/blogs/ffmpeg/">
+      
+      <meta property="og:site_name" content="">
+      
+      
+      <meta property="og:title" content="intro to FFmpeg &amp; SDL2">
+      
+      
+      
+      
+      
+      <meta property="twitter:card" content="summary_large_image">
+      <meta property="twitter:url" content="https://guochenmeinian.github.io/blogs/ffmpeg/">
+      
+      <meta property="twitter:title" content="intro to FFmpeg &amp; SDL2">
+      
+      
+      
+      
+      <link rel="canonical" href="https://guochenmeinian.github.io/blogs/ffmpeg/">
+      
+      
+      
+      
+      <link rel="stylesheet" href="https://guochenmeinian.github.io/css/style.css"/>
+      
+   </head>
+   <body>
+      <div class="wrapper">
+         <header>
+            
+            <nav class="navBar">
+               
+               
+               
+               <a href="/about" >&#x2F;about&#x2F;</a>
+               
+               
+               
+               
+               <a href="/blogs" >&#x2F;blogs</a>
+               
+               
+               
+               
+               <a href="/tags" >&#x2F;tags&#x2F;</a>
+               
+               
+
+               <div class="themeSwitch">
+                  <button class="themeButton light" onclick="setTheme('light')" title="Light mode">◐</button>
+                  <button class="themeButton dark" onclick="setTheme('dark')" title="Dark mode">◑</button>
+               </div>
+            </nav>
+            
+
+            <script>
+               const setTheme = (theme) => {
+                   document.documentElement.className = theme;
+                   localStorage.setItem('theme', theme);
+               }
+               const getTheme = () => {
+                   const theme = localStorage.getItem('theme');
+                   theme && setTheme(theme);
+               }
+               getTheme()
+            </script>
+         </header>
+
+         <main>
+            
+
+
+
+<p>👋 Hello</p>
+<p>How to Process Video with FFmpeg and SDL2 - C++ Demo</p>
+<p><strong>FFmpeg</strong> is a comprehensive, cross-platform solution to record, convert, and stream audio and video. It includes libavcodec - the leading audio/video codec library. FFmpeg is crucial for video processing applications as it can decode, encode, transcode, mux, demux, stream, filter, and play almost anything that humans and machines have created.</p>
+<p><strong>SDL</strong> (Simple DirectMedia Layer) is a library that allows developers to create cross-platform software that can handle rich media content, including video, sound, and interactive gaming. SDL2, specifically, provides APIs to render graphics and play audio, making it a perfect complement to FFmpeg for developing multimedia software.</p>
+<p>Integrating FFmpeg with SDL2 allows developers to build applications that can decode video files into frames, convert them into textures, and then render these textures. This process is essential for creating custom video players or multimedia applications that require direct control over video playback.</p>
+<p><strong>Example and Code</strong>:  For those interested in seeing actual code and detailed implementations using FFmpeg and SDL2, you can visit my GitHub repository which includes a demo I created when doing an intern at <a href="https://en.wikipedia.org/wiki/Bilibili">Bilibili</a> that shows how to:</p>
+<ul>
+<li>Retrieve video information.</li>
+<li>Demultiplex video and audio streams.</li>
+<li>Decode video to YUV format.</li>
+<li>Display YUV video and play PCM audio using SDL2.</li>
+</ul>
+<p><strong>GitHub Repository</strong>: <a href="https://github.com/guochenmeinian/FFmpeg-SDL2-Demo">FFmpeg-SDL2-Demo</a></p>
+<p>This repository will provide you with hands-on examples and the necessary code to get started with video processing using these technologies.</p>
+<h3 id="references">References:</h3>
+<ul>
+<li><a href="https://img.ly/blog/ultimate-guide-to-ffmpeg/#editing-video">FFmpeg - The Ultimate Guide</a></li>
+<li><a href="https://www.cnblogs.com/vczf/p/13541559.html">FFmpeg简单使用</a></li>
+</ul>
+
+
+         </main>
+
+         <footer>
+            
+<p class="tagsData">
+
+
+<a href="/tags/computer-science">&#47;computer science&#47;</a>
+
+
+</p>
+
+            <hr>
+            <div class=footContainer>
+               <div class="footLeft">
+                  <p>Licensed under <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Licence_MIT">MIT</a><br>
+                     Built with <a target="_blank" rel="noopener noreferrer" href="https://www.getzola.org">Zola</a> using <a target="_blank" rel="noopener noreferrer" href="https://github.com/Speyll/anemone">anemone</a> theme &amp; <a target="_blank" rel="noopener noreferrer" href="https://github.com/Speyll/veqev">veqev</a> colors.<br>
+                  </p>
+               </div>
+               <div class="footRight">
+                  <!-- Size 46x46 -->
+                  <img class="footGif noStyle" loading="lazy" src="https://i.ibb.co/XYDpfcs/foot.gif" alt="footGif">
+                  <a class="metaData" target="_blank" rel="noopener noreferrer" href="https://guochenmeinian.github.io/atom.xml" title="Subscribe via RSS for updates.">RSS</a>
+               </div>
+            </div>
+         </footer>
+      </div>
+   </body>
+</html>
