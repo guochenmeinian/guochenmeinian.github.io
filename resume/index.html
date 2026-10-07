@@ -49,7 +49,11 @@
       
       
       
-      <link rel="stylesheet" href="https://guochenmeinian.github.io/css/style.css"/>
+      <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
+      
+      
+      
+      <link rel="stylesheet" href="/css/style.css"/>
       
    </head>
    <body>
@@ -59,18 +63,15 @@
             <nav class="navBar">
                
                
-               
-               <a href="/about" >&#x2F;about&#x2F;</a>
-               
+               <a href="/about" >/about/</a>
                
                
                
-               <a href="/blogs" >&#x2F;blogs</a>
+               <a href="/work" >/work/</a>
                
                
                
-               
-               <a href="/tags" >&#x2F;tags&#x2F;</a>
+               <a href="/interests" >/interests/</a>
                
                
 
@@ -101,45 +102,26 @@
 
 <p>Hi there 👋</p>
 <p>Here's a short summary/selection of my past experiences.</p>
-<!-- templates/shortcodes/double_image.html -->
 <style>
-    .double-image-container {
-        display: flex;
-        flex-direction: column; /* Stack images vertically by default */
-        align-items: center;
-        gap: 10px;
+    .double-image-container { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+    .double-image-container img { width: 100%; max-height: 300px; object-fit: cover; }
+    @media (min-width: 600px) {
+        .double-image-container { flex-direction: row; }
+        .double-image-container img { max-width: 50%; height: auto; }
     }
-    
-    .double-image-container img {
-        width: 100%; /* Make images full width on smaller screens */
-        max-height: 300px; /* Limit image height */
-        object-fit: cover;
-    }
-    
-    @media (min-width: 600px) { /* Adjust for larger screens */
-        .double-image-container {
-            flex-direction: row; /* Place images side by side */
-        }
-        .double-image-container img {
-            max-width: 50%; /* Limit width to half of the container */
-            height: auto; /* Maintain aspect ratio */
-        }
-    }
-    </style>
-    
-    <div class="double-image-container">
-        <img src="https://guochenmeinian.github.io/about/tezign_window.png" alt="Image 1">
-        <img src="https://guochenmeinian.github.io/about/meituan_building.jpeg" alt="Image 2">
-    </div>
-    
+</style>
+<div class="double-image-container">
+    <img src="/about/tezign_window.png" alt="Image 1">
+    <img src="/about/meituan_building.jpeg" alt="Image 2">
+</div>
 <p>⬆ Tezign &amp; Meituan</p>
 <p>I started out with software engineering — during my time at <a href="https://en.wikipedia.org/wiki/Bilibili">Bilibili</a> as a software engineer intern, I worked on gRPC integration, audio–video decoding, and network protocols, which gave me hands-on experience with low-level systems and playback engineering.</p>
 <p>Later, at <a href="https://en.tezign.com/">Tezign</a>, I gained hands-on experience building AI agents and working in fast-paced startup environments.
 I became familiar with a modern TypeScript stack — including React, Node.js, Prisma (PostgreSQL), and Redis — and learned how to iterate quickly in production while developing a stronger sense for both functionality and product design.</p>
 <p>Most recently, at <a href="https://en.wikipedia.org/wiki/Meituan">Meituan</a>, I’ve been working on data preparation, model evaluation, and pre-training support for multimodal large models as part of the <a href="https://huggingface.co/meituan-longcat/LongCat-Flash-Omni">LongCat-Flash-Omni</a> project — involving data filtering, deduplication, importance sampling, as well as data annealing and pre-training experiments.</p>
 <p>Here's my resume:</p>
-<p><img src="https://guochenmeinian.github.io/resume/resume_sde.png" alt="resume" />
-<a href="{{ page.extra.path }}" download="Resume.png" class="download-btn">Download Resume</a></p>
+<p><img src="resume_sde.png" alt="resume">
+<a href="Resume_MLE.png" download="Resume.png" class="download-btn">Download Resume</a></p>
 
 
          </main>
@@ -154,13 +136,13 @@ I became familiar with a modern TypeScript stack — including React, Node.js, P
             <div class=footContainer>
                <div class="footLeft">
                   <p>Licensed under <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Licence_MIT">MIT</a><br>
-                     Built with <a target="_blank" rel="noopener noreferrer" href="https://www.getzola.org">Zola</a> using <a target="_blank" rel="noopener noreferrer" href="https://github.com/Speyll/anemone">anemone</a> theme &amp; <a target="_blank" rel="noopener noreferrer" href="https://github.com/Speyll/veqev">veqev</a> colors.<br>
+                     Built with <a target="_blank" rel="noopener noreferrer" href="https://jinja.palletsprojects.com/">Jinja</a> using <a target="_blank" rel="noopener noreferrer" href="https://github.com/Speyll/anemone">anemone</a> theme &amp; <a target="_blank" rel="noopener noreferrer" href="https://github.com/Speyll/veqev">veqev</a> colors.<br>
                   </p>
                </div>
                <div class="footRight">
                   <!-- Size 46x46 -->
                   <img class="footGif noStyle" loading="lazy" src="https://i.ibb.co/XYDpfcs/foot.gif" alt="footGif">
-                  <a class="metaData" target="_blank" rel="noopener noreferrer" href="https://guochenmeinian.github.io/atom.xml" title="Subscribe via RSS for updates.">RSS</a>
+                  <a class="metaData" target="_blank" rel="noopener noreferrer" href="/atom.xml" title="Subscribe via RSS for updates.">RSS</a>
                </div>
             </div>
          </footer>

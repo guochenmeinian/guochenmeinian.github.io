@@ -49,7 +49,11 @@
       
       
       
-      <link rel="stylesheet" href="https://guochenmeinian.github.io/css/style.css"/>
+      <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
+      
+      
+      
+      <link rel="stylesheet" href="/css/style.css"/>
       
    </head>
    <body>
@@ -59,18 +63,15 @@
             <nav class="navBar">
                
                
-               
-               <a href="/about" >&#x2F;about&#x2F;</a>
-               
+               <a href="/about" >/about/</a>
                
                
                
-               <a href="/blogs" >&#x2F;blogs</a>
+               <a href="/work" >/work/</a>
                
                
                
-               
-               <a href="/tags" >&#x2F;tags&#x2F;</a>
+               <a href="/interests" >/interests/</a>
                
                
 
@@ -101,55 +102,55 @@
 
 <p>👋 Hello</p>
 <p><strong>This is the docker cheatsheet</strong></p>
-<h3 id="general-info">General info</h3>
-<pre style="background-color:#151515;color:#e8e8d3;"><code><span>docker --version
-</span><span>docker info
-</span></code></pre>
-<h3 id="containers">Containers</h3>
-<pre style="background-color:#151515;color:#e8e8d3;"><code><span>docker container ls
-</span><span>docker container ls --all     # see stopped containers also
-</span><span>docker container ls --all -q  # see stopped containers; get the id only
-</span><span>docker container ls -aq       # see stopped containers; get the id only
-</span></code></pre>
-<h3 id="images">Images</h3>
-<pre style="background-color:#151515;color:#e8e8d3;"><code><span>docker images           # see what is available
-</span><span>docker image ls         # see what is available
-</span><span>docker rmi &lt;image id&gt;   # remove an image
-</span></code></pre>
-<h3 id="running-containers">Running containers</h3>
-<pre style="background-color:#151515;color:#e8e8d3;"><code><span>docker ps          # see what is running
-</span><span>docker ps -a       # see everything, even stopped containers
-</span><span>docker ps -a -q    # get just the container IDs for all jobs
-</span><span>docker create      # &quot;stage&quot; a container (then `start` it)
-</span><span>docker stop        # stop a container
-</span><span>docker kill        # kill a container
-</span><span>docker start       # start a container
-</span><span>docker restart     # restart a container
-</span><span>docker rm          # remove the container (can&#39;t `restart` it then)
-</span><span>docker stop $(docker ps -q)     # stop all containers
-</span><span>docker rm $(docker ps -a -q)    # remove all stopped containers
-</span></code></pre>
-<h3 id="connect-to-a-service-in-a-container-e-g-tensorflow">Connect to a service in a container, e.g. <strong>TensorFlow</strong></h3>
-<p>First we map 8888 (Jupyter notebook) on the "inside" to 5000 on the "outside"
+<h3>General info</h3>
+<pre style="background-color:#151515;color:#e8e8d3;"><code>docker --version
+docker info
+</code></pre>
+<h3>Containers</h3>
+<pre style="background-color:#151515;color:#e8e8d3;"><code>docker container ls
+docker container ls --all     # see stopped containers also
+docker container ls --all -q  # see stopped containers; get the id only
+docker container ls -aq       # see stopped containers; get the id only
+</code></pre>
+<h3>Images</h3>
+<pre style="background-color:#151515;color:#e8e8d3;"><code>docker images           # see what is available
+docker image ls         # see what is available
+docker rmi &lt;image id&gt;   # remove an image
+</code></pre>
+<h3>Running containers</h3>
+<pre style="background-color:#151515;color:#e8e8d3;"><code>docker ps          # see what is running
+docker ps -a       # see everything, even stopped containers
+docker ps -a -q    # get just the container IDs for all jobs
+docker create      # &quot;stage&quot; a container (then `start` it)
+docker stop        # stop a container
+docker kill        # kill a container
+docker start       # start a container
+docker restart     # restart a container
+docker rm          # remove the container (can&#x27;t `restart` it then)
+docker stop $(docker ps -q)     # stop all containers
+docker rm $(docker ps -a -q)    # remove all stopped containers
+</code></pre>
+<h3>Connect to a service in a container, e.g. <strong>TensorFlow</strong></h3>
+<p>First we map 8888 (Jupyter notebook) on the &quot;inside&quot; to 5000 on the &quot;outside&quot;
 and run the image containing TensorFlow:</p>
-<pre style="background-color:#151515;color:#e8e8d3;"><code><span>docker run -it -v &quot;$PWD&quot;:/mnist -p 5000:8888 b.gcr.io/tensorflow/tensorflow:latest-devel
-</span></code></pre>
+<pre style="background-color:#151515;color:#e8e8d3;"><code>docker run -it -v &quot;$PWD&quot;:/mnist -p 5000:8888 b.gcr.io/tensorflow/tensorflow:latest-devel
+</code></pre>
 <p>(This also maps the current directory to a mount in the docker container.)
 Then, we launch <em><strong>ipython notebook</strong></em> inside the image. Next, we get the correct
 host IP address with:</p>
-<pre style="background-color:#151515;color:#e8e8d3;"><code><span>docker-machine ls
-</span></code></pre>
+<pre style="background-color:#151515;color:#e8e8d3;"><code>docker-machine ls
+</code></pre>
 <p>This will provide a URL, e.g. <em><strong>tcp://192.168.XYZ.XYZ:ABCD</strong></em>. Point a browser to
 <em><strong>192.168.XYZ.XYZ:5000</strong></em> and we will see the notebook.</p>
-<h3 id="pushing-to-dockerhub">Pushing to DockerHub</h3>
+<h3>Pushing to DockerHub</h3>
 <p>e.g., the <em><strong>iqsharp</strong></em> container:</p>
-<pre style="background-color:#151515;color:#e8e8d3;"><code><span>docker login
-</span><span>docker tag iqsharp gnperdue/iqsharp
-</span><span>docker push gnperdue/iqsharp
-</span></code></pre>
-<h3 id="pulling-from-dockerhub">Pulling from DockerHub</h3>
-<pre style="background-color:#151515;color:#e8e8d3;"><code><span>docker pull gnperdue/kubia
-</span></code></pre>
+<pre style="background-color:#151515;color:#e8e8d3;"><code>docker login
+docker tag iqsharp gnperdue/iqsharp
+docker push gnperdue/iqsharp
+</code></pre>
+<h3>Pulling from DockerHub</h3>
+<pre style="background-color:#151515;color:#e8e8d3;"><code>docker pull gnperdue/kubia
+</code></pre>
 
 
          </main>
@@ -170,13 +171,13 @@ host IP address with:</p>
             <div class=footContainer>
                <div class="footLeft">
                   <p>Licensed under <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Licence_MIT">MIT</a><br>
-                     Built with <a target="_blank" rel="noopener noreferrer" href="https://www.getzola.org">Zola</a> using <a target="_blank" rel="noopener noreferrer" href="https://github.com/Speyll/anemone">anemone</a> theme &amp; <a target="_blank" rel="noopener noreferrer" href="https://github.com/Speyll/veqev">veqev</a> colors.<br>
+                     Built with <a target="_blank" rel="noopener noreferrer" href="https://jinja.palletsprojects.com/">Jinja</a> using <a target="_blank" rel="noopener noreferrer" href="https://github.com/Speyll/anemone">anemone</a> theme &amp; <a target="_blank" rel="noopener noreferrer" href="https://github.com/Speyll/veqev">veqev</a> colors.<br>
                   </p>
                </div>
                <div class="footRight">
                   <!-- Size 46x46 -->
                   <img class="footGif noStyle" loading="lazy" src="https://i.ibb.co/XYDpfcs/foot.gif" alt="footGif">
-                  <a class="metaData" target="_blank" rel="noopener noreferrer" href="https://guochenmeinian.github.io/atom.xml" title="Subscribe via RSS for updates.">RSS</a>
+                  <a class="metaData" target="_blank" rel="noopener noreferrer" href="/atom.xml" title="Subscribe via RSS for updates.">RSS</a>
                </div>
             </div>
          </footer>
