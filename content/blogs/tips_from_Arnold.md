@@ -1,5 +1,6 @@
 +++
 title = "施瓦辛格健身原则"
+category = "interests"
 date = 2023-11-02
 [taxonomies]
 tags = ['fitness']

@@ -1,5 +1,6 @@
 +++
 title = "music recourses"
+category = "interests"
 date = 2023-09-01
 [taxonomies]
 tags = ['music']
@@ -24,6 +25,5 @@ tags = ['music']
 2. [Chords in Major/Minor Scales](../scale-chords/)
 
 3. [Circle of Fifths](../circle-of-fifths/)
-
 
 

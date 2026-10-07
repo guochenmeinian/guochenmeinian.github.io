@@ -1,5 +1,6 @@
 +++
 title = "intro to FFmpeg & SDL2"
+category = "work"
 date = 2024-07-14
 [taxonomies]
 tags = ['computer science']

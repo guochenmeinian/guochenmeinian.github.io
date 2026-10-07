@@ -1,5 +1,6 @@
 +++
 title = "chord functions"
+category = "interests"
 date = 2023-09-08
 [taxonomies]
 tags = ['music']
@@ -48,4 +49,4 @@ Em（小三和弦）- iii级和弦 和 Am（小六和弦）- vi级和弦:
 ### Reference
 [和弦有什麼功能？ - 好和弦](https://www.youtube.com/watch?v=kMlJSwFAiTU&list=RDCMUCVXstWyJeO6No3jYELxYrjg&index=3)
 
-[和弦還有什麼功能？（續集） - 好和弦](https://www.youtube.com/watch?v=1USZt8fx82U) 
+[和弦還有什麼功能？（續集） - 好和弦](https://www.youtube.com/watch?v=1USZt8fx82U)

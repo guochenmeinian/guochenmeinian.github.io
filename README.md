@@ -1,23 +1,32 @@
 # Guochenmeinian's Blog
 
-Welcome to the repository for my personal blog. This site is built using [Zola](https://www.getzola.org/)'s [anemone theme](https://www.getzola.org/themes/anemone/) and is deployed using GitHub Actions and hosted on GitHub Pages.
+This personal site keeps the original Anemone appearance. The navigation has
+three sections: About, Work, and Interests. Technical articles appear under
+Work; music, finance, fitness, and other personal writing appear under
+Interests. Existing article URLs under `/blogs/` remain available.
 
-## Quick Start
+A small Python script builds the static HTML, tags, pagination, resized images,
+search index, sitemap, and Atom feed. Node.js builds the elasticlunr index.
+GitHub Actions publishes the output to the existing `gh-pages` branch.
 
-If you're interested in building a similar site, check out this [Tutorial](https://guochenmeinian.github.io/blogs/blog-tutorial/) that I've written. It guides you through the process of setting up a blog with Zola and deploying it via Netlify (free and simple).
+## Local development
 
-## About the Blog
-In my blog, I explore a variety of topics that capture my learning journey and interests. These include:
+```sh
+python3 -m pip install -r requirements.txt
+python3 site_builder.py
+python3 -m http.server 8000 --directory public
+```
 
-- Computer Science: Diving into machine learning, web development, algorithms, programming concepts, and more.
-- Music & Guitar Production: Sharing my experiences with music theory, production and guitar playing.
-- Finance: Discussing financial strategies and insights.
-- Fitness: Exploring health and fitness routines that work for me.
+Python 3.12 and Node.js 20 are used in the publishing workflow.
 
-## Visit the Blog
-You can read my latest posts by visiting [guochenmeinian.github.io](guochenmeinian.github.io).
+Open `http://localhost:8000`. The input content is in `content/`, the rendered
+page templates are in `site_templates/`, and the original CSS is in
+`static/css/style.css`. The theme license is retained in `ANEMONE-LICENSE.txt`.
+Publishing happens automatically when `main` is pushed.
 
-## Feedback and Contributions
-I appreciate any feedback or contributions to the blog content. Feel free to fork the repository, open issues, or submit pull requests. Your insights are valuable and warmly welcomed.
-
-Thank you for visiting, and I hope you find the contents interesting and helpful :)
+New articles can go in `content/work/` or `content/interests/` and will be
+listed in the matching section. Existing articles remain in `content/blogs/`
+to keep their URLs; each has a `category = "work"` or
+`category = "interests"` front matter field. The `/blogs/` archive and tags
+remain available for old links, but are not in the main navigation. The older
+Zola tutorial in `content/blogs/blog_tutorial.md` describes the former setup.

@@ -1,5 +1,6 @@
 +++
-title = "surrounded region"
+title = "Useful SSH Techniques"
+category = "work"
 date = 2025-05-05 
 [taxonomies]
 tags = ['computer science']

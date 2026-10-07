@@ -1,5 +1,6 @@
 +++
 title = "docker cheatsheet"
+category = "work"
 date = 2023-09-03
 [taxonomies]
 tags = ['computer science', 'cheatsheet']

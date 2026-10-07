@@ -1,5 +1,6 @@
 +++
 title = "guitar's shape cheatsheet"
+category = "interests"
 date = 2024-08-04
 [taxonomies]
 tags = ['music']

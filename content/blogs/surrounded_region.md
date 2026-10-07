@@ -1,5 +1,6 @@
 +++
 title = "surrounded region"
+category = "work"
 date = 2023-09-02 
 [taxonomies]
 tags = ['computer science', 'leetcode']
@@ -44,4 +45,3 @@ class Solution:
                 if board[r][c] == "T":
                     board[r][c] = "O"
 ```
-

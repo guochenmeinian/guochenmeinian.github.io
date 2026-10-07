@@ -68,7 +68,7 @@
       {% if image %}
       <meta property="og:image" content="{{ image }}">
       {% endif %}
-      {% set twitter_card = config.extra.twitter_card | default(value=true) %}
+      {% set twitter_card = config.extra.twitter_card | default(true) %}
       {% if twitter_card != false %}
       <meta property="twitter:card" content="summary_large_image">
       <meta property="twitter:url" content="{{ url | safe }}">
@@ -102,9 +102,8 @@
             {% if config.extra.header_nav %}
             <nav class="navBar">
                {% for nav_item in config.extra.header_nav %}
-               {% set current_nav_item = nav_item[lang] %}
-               {% if current_nav_item and current_nav_item.name %}
-               <a href="{{ current_nav_item.url | safe }}" {% if current_nav_item.new_tab %}target="_blank" rel="noreferrer noopener"{% endif %}>{{ current_nav_item.name }}</a>
+               {% if nav_item.name %}
+               <a href="{{ nav_item.url | safe }}" {% if nav_item.new_tab %}target="_blank" rel="noreferrer noopener"{% endif %}>{{ nav_item.name }}</a>
                {% endif %}
                {% endfor %}
 
@@ -138,7 +137,7 @@
             <div class=footContainer>
                <div class="footLeft">
                   <p>Licensed under <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Licence_MIT">MIT</a><br>
-                     Built with <a target="_blank" rel="noopener noreferrer" href="https://www.getzola.org">Zola</a> using <a target="_blank" rel="noopener noreferrer" href="https://github.com/Speyll/anemone">anemone</a> theme &amp; <a target="_blank" rel="noopener noreferrer" href="https://github.com/Speyll/veqev">veqev</a> colors.<br>
+                     Built with <a target="_blank" rel="noopener noreferrer" href="https://jinja.palletsprojects.com/">Jinja</a> using <a target="_blank" rel="noopener noreferrer" href="https://github.com/Speyll/anemone">anemone</a> theme &amp; <a target="_blank" rel="noopener noreferrer" href="https://github.com/Speyll/veqev">veqev</a> colors.<br>
                   </p>
                </div>
                <div class="footRight">

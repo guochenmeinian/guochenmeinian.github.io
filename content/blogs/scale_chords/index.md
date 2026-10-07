@@ -1,5 +1,6 @@
 +++
 title = "chords in scales"
+category = "interests"
 date = 2023-09-08
 [taxonomies]
 tags = ['music']

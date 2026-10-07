@@ -1,5 +1,6 @@
 +++
 title = "circle of fifths"
+category = "interests"
 date = 2023-09-19
 [taxonomies]
 tags = ['music']
@@ -33,5 +34,4 @@ Transitioning between relatives can inject contrasting emotions into a piece, to
 
 ### Reference
 [一次性搞懂“五度圈”！！！](https://zhuanlan.zhihu.com/p/29877318)
-
 

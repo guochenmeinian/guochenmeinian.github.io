@@ -1,5 +1,6 @@
 +++
 title = "finance resources"
+category = "interests"
 date = 2023-09-01
 [taxonomies]
 tags = ['finance']
@@ -11,4 +12,3 @@ tags = ['finance']
 
 ### Quant
 1. [Trading](https://github.com/jerrkill/trading)
-

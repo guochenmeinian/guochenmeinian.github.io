@@ -1,0 +1,11 @@
+{
+  "about/lay.png": {"sha256": "74d0a6ebb69fa94cbe99212b112720e04b6dfed96a54c4e2902a93b333bd6433", "width": 650, "height": 1400, "op": "fit", "format": "png", "file": "lay.b602c8a13c0d0b76.png"},
+  "blogs/guitar_cheatsheet/MajorShape.png": {"sha256": "f922a63b374c2fb1ba028421e2891603aa707d035698562b236db77dd514b4f4", "width": 650, "height": 1400, "op": "fit", "format": "png", "file": "MajorShape.a735281858af2ab9.png"},
+  "blogs/guitar_cheatsheet/MinorShape.png": {"sha256": "35da740a983c4d72edb0471ce03a73781cd48896c727709f01882410d5402104", "width": 650, "height": 1400, "op": "fit", "format": "png", "file": "MinorShape.a2b55ebbe41fa438.png"},
+  "blogs/circle_of_fifths/circle_of_fifths.png": {"sha256": "b9392e186da2308f11541ee54d4996e1a9849729c5dd936439e03a27c521c09e", "width": 800, "height": 500, "op": "fit_width", "format": "auto", "file": "circle_of_fifths.2b994d27cc223af0.png"},
+  "blogs/circle_of_fifths/relative-major-and-minor-cheat-sheet.png": {"sha256": "3312c0ff32fb4526e44727fd4b9e0d46a7a71ca261cfd70cd5908838aa5b2859", "width": 800, "height": 300, "op": "fit_width", "format": "auto", "file": "relative-major-and-minor-cheat-sheet.ce88e49e1ba44592.png"},
+  "blogs/chord_functions/chord_functions.png": {"sha256": "a17adf239a397217b667dfad590b966edfb222640f2a478ee73be9e34e0c8d2d", "width": 800, "height": 500, "op": "fit_width", "format": "auto", "file": "chord_functions.6eba80abe68b9180.png"},
+  "blogs/chord_functions/example.png": {"sha256": "43688989fa42e885bdf4cdcae15d45b11da33a4485c8cf6b53a73ba38af34d9a", "width": 800, "height": 500, "op": "fit_width", "format": "auto", "file": "example.227a3bd2092bc563.png"},
+  "blogs/scale_chords/major_scale_chords.png": {"sha256": "344a3cd61e109360b59addef09a45065fa92d3fc95ba3b59f161e5b2bde0a0ef", "width": 800, "height": 500, "op": "fit_width", "format": "auto", "file": "major_scale_chords.2cfd8c1dfaa3b2b4.png"},
+  "blogs/scale_chords/minor_scale_chords.png": {"sha256": "8f68fc9a7bef087c2e3f10fb33318cade61c47b4132546eb50b50e61b5bebcf2", "width": 1800, "height": 1000, "op": "fit_width", "format": "auto", "file": "minor_scale_chords.83625c8b1e83061d.png"}
+}

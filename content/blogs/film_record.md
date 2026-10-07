@@ -1,5 +1,6 @@
 +++
 title = "film & record at once"
+category = "interests"
 date = 2024-04-30
 [taxonomies]
 tags = ['music']
