@@ -7,14 +7,14 @@ tags = []
 
 Hi there 👋 
 
-My name is **Chenmeinian Guo 「郭陈美年」**, a Computer Science graduate student at [NYU Courant](https://cims.nyu.edu/dynamic/). Originally from Shanghai, I studied at [the Ohio State University](https://www.osu.edu) before moving to New York. These days, I spend most of my time working on large language models — and occasionally, on my guitar skills.
+My name is **Chenmeinian Guo 「郭陈美年」**. I'm from Shanghai and now work here as a machine learning engineer. I studied Computer Science at [NYU Courant](https://cims.nyu.edu/dynamic/) and [the Ohio State University](https://www.osu.edu). Outside work, I spend time on my guitar skills.
 
 {{ resize_image(path="about/lay.png", height=1400, width=650, op="fit", format="png") }}
 
 ⬆ Me on Friday night 
 
 
-My primary interests lie in the fields of software development and LLM (Large Language Model). At NYU Courant, I took courses like Efficient AI Computing, Machine Learning, Reinforcement Learning, Big Data Application, DevOps, etc. Through my courses and internships — from backend engineering to full-stack agent development to model training — I’ve seen how each part of the AI stack connects, from infra level to applications level. As a new grad, I’m excited to keep learning and find my place in this evolving field.
+My primary interests lie in software development and large language models. At NYU Courant, I took courses such as Efficient AI Computing, Machine Learning, Reinforcement Learning, Big Data Application, and DevOps. Through coursework and engineering roles — from backend systems to AI agents and model training — I’ve seen how different parts of the AI stack connect, from infrastructure to applications. I’m still learning how to build useful systems across that stack.
 
 
 {{ double_image(path1="about/view.jpg", path2="about/courant.jpg", height=1400, width=650, op="fit_height") }}
@@ -48,10 +48,7 @@ Eager to learn and practice guitar, but swamped with work.
 
 
 ### More
-- 🔗 [Resume](/resume)
-- 📰 [CS](/blogs/cs-resources/) 
+- 🔗 [Work](/work/)
 - 🎼 [Music](/blogs/music-resources/)
 - 📃 [Miscancellous](/blogs/miscancellous/)
 - 🐩 [Avatar Generator](https://txstc55.github.io/simple-avatar/)
-- 📝 [Markdown (Emoji)](https://gist.github.com/rxaviers/7360908)
-

@@ -1,5 +1,5 @@
 +++
-title = "cs recourses"
+title = "CS resources"
 category = "work"
 date = 2023-09-01
 [taxonomies]
@@ -27,7 +27,7 @@ tags = ['computer science']
 
 7. [Deploy a Web App on AWS Amplify](https://aws.amazon.com/getting-started/guides/deploy-webapp-amplify/?pg=webappamplify)
 
-8. [Introduction to video & audio development with FFmpeg & SDL2](../blogs/ffmpeg.md)
+8. [Introduction to video & audio development with FFmpeg & SDL2](/blogs/ffmpeg/)
 
 
 ### Data

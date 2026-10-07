@@ -1,9 +1,5 @@
 {% extends "base.html" %}
 
-{% block header %}
-<h1>{{ term.name }}</h1>
-{% endblock header %}
-
 {% block content %}
 {% if paginator %}
 {% set pages = paginator.pages %}
@@ -13,7 +9,7 @@
 <ul>
 {% for page in pages %}
   <li>
-    <a href="{{ page.permalink | safe }}">{% if page.date %}{{ page.date }} - {% endif %}{{ page.title }}</a>
+    <a href="{{ page.route }}">{% if page.date %}{{ page.date }} - {% endif %}{{ page.title }}</a>
   </li>
 {% endfor %}
 </ul>

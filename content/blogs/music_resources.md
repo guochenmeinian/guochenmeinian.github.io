@@ -1,5 +1,5 @@
 +++
-title = "music recourses"
+title = "Music resources"
 category = "interests"
 date = 2023-09-01
 [taxonomies]
@@ -17,13 +17,12 @@ tags = ['music']
    
 2. [B Minor Blues Rhythm Guitar - Tomo Fujita](https://www.youtube.com/watch?v=vMe7zONYGA0)
 
-3. [Guitar Cheatseet](../guitar_cheatsheet/) (includes both major & minor shapes for triads and scales)
+3. [Guitar Cheatsheet](/blogs/guitar-cheatsheet/) (includes both major & minor shapes for triads and scales)
 
 ### Music Theory
-1. [Chord Functions](../chord-functions/)
+1. [Chord Functions](/blogs/chord-functions/)
 
-2. [Chords in Major/Minor Scales](../scale-chords/)
+2. [Chords in Major/Minor Scales](/blogs/scale-chords/)
 
-3. [Circle of Fifths](../circle-of-fifths/)
-
+3. [Circle of Fifths](/blogs/circle-of-fifths/)
 

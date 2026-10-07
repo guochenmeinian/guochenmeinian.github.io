@@ -5,8 +5,12 @@
         .double-image-container { flex-direction: row; }
         .double-image-container img { max-width: 50%; height: auto; }
     }
+    .double-image-container.photo-pair img { box-sizing: border-box; width: 100%; max-width: 100%; height: 300px; max-height: none; margin: 0; object-fit: cover; }
+    @media (min-width: 600px) {
+        .double-image-container.photo-pair img { width: calc(50% - 5px); max-width: calc(50% - 5px); }
+    }
 </style>
-<div class="double-image-container">
-    <img src="{{ get_url(path1) }}" alt="Image 1">
-    <img src="{{ get_url(path2) }}" alt="Image 2">
+<div class="double-image-container{% if equal_height %} photo-pair{% endif %}">
+    <img src="{{ get_url(path1) }}" alt="{{ alt1 | default('Photo') }}" loading="lazy">
+    <img src="{{ get_url(path2) }}" alt="{{ alt2 | default('Photo') }}" loading="lazy">
 </div>

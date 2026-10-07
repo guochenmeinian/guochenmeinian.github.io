@@ -13,7 +13,6 @@ import html
 import json
 import re
 import shutil
-import subprocess
 import tomllib
 import unicodedata
 from datetime import date, datetime, timezone
@@ -22,7 +21,7 @@ from xml.etree import ElementTree as ET
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 from markdown_it import MarkdownIt
-from PIL import Image
+from PIL import Image, ImageOps
 from pygments.lexers import get_lexer_by_name
 from pygments.token import Comment, Keyword, Name, Number, String
 from pygments.util import ClassNotFound
@@ -82,17 +81,13 @@ class Builder:
         self.images: dict[tuple, str] = {}
         self.legacy_images = json.loads((ROOT / "image_manifest.json").read_text(encoding="utf-8"))
         self.config = {
-            "title": "",
+            "title": "Chenmeinian Guo",
             "base_url": BASE_URL,
-            "generate_feed": True,
-            "extra": {
-                "header_nav": [
-                    {"name": "/about/", "url": "/about"},
-                    {"name": "/work/", "url": "/work"},
-                    {"name": "/interests/", "url": "/interests"},
-                ],
-                "twitter_card": True,
-            },
+            "header_nav": [
+                {"name": "/about/", "url": "/about/"},
+                {"name": "/work/", "url": "/work/"},
+                {"name": "/interests/", "url": "/interests/"},
+            ],
         }
 
     @staticmethod
@@ -143,21 +138,23 @@ class Builder:
         kind = args.get("format", "auto")
         key = (str(source), width, height, op, kind)
         if key not in self.images:
+            source_bytes = source.read_bytes()
             original = self.legacy_images.get(args["path"])
-            if (original and original["sha256"] == hashlib.sha256(source.read_bytes()).hexdigest()
+            if (original and original["sha256"] == hashlib.sha256(source_bytes).hexdigest()
                     and all(original[field] == value for field, value in
                             {"width": width, "height": height, "op": op, "format": kind}.items())
                     and (ROOT / "static" / "processed_images" / original["file"]).is_file()):
                 self.images[key] = "/processed_images/" + original["file"]
                 return self.images[key]
-            digest = hashlib.sha256(source.read_bytes() + repr(key[1:]).encode()).hexdigest()[:12]
+            digest = hashlib.sha256(source_bytes + repr(key[1:]).encode()).hexdigest()[:12]
             suffix = ".jpg" if kind == "jpg" else source.suffix.lower()
             if suffix not in (".png", ".jpg", ".jpeg", ".webp"):
                 suffix = ".png"
             name = f"{source.stem}.{digest}{suffix}"
             destination = self.output / "processed_images" / name
             destination.parent.mkdir(parents=True, exist_ok=True)
-            with Image.open(source) as image:
+            with Image.open(source) as opened:
+                image = ImageOps.exif_transpose(opened)
                 if op == "fit_width":
                     size = (width, max(1, round(image.height * width / image.width)))
                 elif op == "fit_height":
@@ -171,19 +168,22 @@ class Builder:
             self.images[key] = "/processed_images/" + name
         return self.images[key]
 
-    def render_body(self, raw: str, metadata: dict) -> str:
+    def render_body(self, raw: str) -> str:
         def replace(match: re.Match) -> str:
             name, args = match.group(1), parse_shortcode_arguments(match.group(2))
             if name == "resize_image":
                 src = html.escape(self.resized_image(args), quote=True)
                 return f'<img src="{src}" />'
+            if name == "double_image" and args.pop("resize", False):
+                for side in ("path1", "path2"):
+                    args[side] = self.resized_image({"path": args[side], "width": args["width"],
+                                                     "height": args["height"], "op": args.get("op", "fit"),
+                                                     "format": args.get("format", "auto")})
             if name in ("double_image", "youtube"):
                 return self.env.get_template(f"shortcodes/{name}.html").render(**args)
             raise ValueError(f"Unsupported shortcode: {name}")
 
         raw = SHORTCODE.sub(replace, raw)
-        # This is used by the existing resume page, outside a shortcode.
-        raw = raw.replace("{{ page.extra.path }}", html.escape(metadata.get("extra", {}).get("path", ""), quote=True))
         return self.markdown.render(raw)
 
     def write(self, route: str, text: str) -> None:
@@ -195,7 +195,7 @@ class Builder:
         path.write_text(text, encoding="utf-8")
 
     def render(self, template: str, **context) -> str:
-        defaults = {"page": {"extra": {}, "taxonomies": {}}, "section": {"extra": {}},
+        defaults = {"page": {"taxonomies": {}}, "section": {},
                     "paginator": None, "lang": "en", "config": self.config}
         defaults.update(context)
         return self.env.get_template(template).render(**defaults)
@@ -211,10 +211,9 @@ class Builder:
                 raise ValueError(f"Blog article needs category = 'work' or 'interests': {path}")
             entry = {
                 "source": path, "route": route, "permalink": url_for(route),
-                "title": meta.get("title", ""), "description": meta.get("description", ""),
+                "title": meta.get("title", ""),
                 "date": meta.get("date"), "taxonomies": meta.get("taxonomies", {"tags": []}),
-                "extra": meta.get("extra", {}), "slug": route.rstrip("/").split("/")[-1],
-                "toc": [], "content": self.render_body(raw, meta),
+                "content": self.render_body(raw),
                 "category": category,
             }
             if path.name == "_index.md":
@@ -253,7 +252,7 @@ class Builder:
             source_dir = page["source"].parent
             if page["source"].stem == "index":
                 for asset in source_dir.iterdir():
-                    if asset.is_file() and asset.suffix.lower() != ".md":
+                    if asset.is_file() and not asset.name.startswith(".") and asset.suffix.lower() != ".md":
                         destination = self.output / page["route"].lstrip("/") / asset.name
                         destination.parent.mkdir(parents=True, exist_ok=True)
                         shutil.copy2(asset, destination)
@@ -262,13 +261,17 @@ class Builder:
         blogs = sorted((page for page in pages if page["category"] in ("work", "interests")),
                        key=lambda page: (-(page["date"].toordinal() if page["date"] else 0), page["source"].name))
         for route, section in sections.items():
-            if route in ("/blogs/", "/work/", "/interests/"):
-                listing = blogs if route == "/blogs/" else [page for page in blogs if page["category"] == route.strip("/")]
-                self.render_listing(route, section, listing)
+            if route == "/blogs/":
+                self.render_listing(route, section, blogs)
             elif route == "/":
                 self.write(route, self.env.get_template("redirect.html").render(target="/about/"))
             else:
                 self.write(route, self.render("section.html", section=section))
+
+        # Preserve URLs for content replaced by the current pages.
+        for old, new in {"/resume/": "/work/", "/about/2024/": "/about/",
+                         "/blogs/blog-tutorial/": "/work/"}.items():
+            self.write(old, self.env.get_template("redirect.html").render(target=new))
 
         tags: dict[str, list[dict]] = {}
         for page in pages:
@@ -277,11 +280,10 @@ class Builder:
         terms = []
         for tag, tagged_pages in sorted(tags.items()):
             tagged_pages.sort(key=lambda page: (-(page["date"].toordinal() if page["date"] else 0), page["source"].name))
-            term = {"name": tag, "slug": slugify(tag), "pages": tagged_pages,
-                    "permalink": url_for("/tags/" + slugify(tag) + "/")}
+            term = {"name": tag, "slug": slugify(tag), "pages": tagged_pages}
             terms.append(term)
             self.write(f"/tags/{term['slug']}/", self.render("tags-single.html", term=term))
-        self.write("/tags/", self.render("tags-list.html", taxonomy={"name": "tags"}, terms=terms))
+        self.write("/tags/", self.render("tags-list.html", terms=terms))
 
         routes = [*sections.keys(), *[page["route"] for page in pages], "/tags/",
                   *[f"/tags/{term['slug']}/" for term in terms]]
@@ -304,16 +306,6 @@ class Builder:
                 ET.SubElement(item, "updated").text = page["date"].isoformat() + "T00:00:00Z"
         self.write("/atom.xml", ET.tostring(feed, encoding="unicode", xml_declaration=True))
 
-        searchable = [sections["/"], sections["/blogs/"], sections["/work/"], sections["/interests/"],
-                      *(page for page in pages if page["route"] != "/about/2024/")]
-        search = [{"id": item["permalink"], "title": item["title"],
-                   "body": html.unescape(re.sub(r"<[^>]+>", " ", item["content"]))}
-                  for item in searchable]
-        index = subprocess.run(
-            ["node", str(ROOT / "build_search.js")], input=json.dumps(search, ensure_ascii=False),
-            text=True, capture_output=True, check=True,
-        ).stdout
-        self.write("/search_index.en.js", index)
         self.write("/404.html", self.render("404.html"))
         print(f"Built {len(pages)} pages, {len(sections)} sections, {len(terms)} tags into {self.output}")
 
