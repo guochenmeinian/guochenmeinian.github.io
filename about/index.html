@@ -2,86 +2,42 @@
 <html lang="en">
    <head>
       <meta charset="UTF-8">
-      <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
-      <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
-      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
       <meta name="robots" content="index, follow">
       
       
-      
-      
-      
-      
-      
-      
-      
-      
       <title>about</title>
-      
-      
-      
       <meta name="title" content="about">
-      
-      
-      
       <meta property="og:type" content="website">
       <meta property="og:url" content="https://guochenmeinian.github.io/about/">
-      
-      <meta property="og:site_name" content="">
-      
-      
+      <meta property="og:site_name" content="Chenmeinian Guo">
       <meta property="og:title" content="about">
-      
-      
-      
-      
-      
       <meta property="twitter:card" content="summary_large_image">
       <meta property="twitter:url" content="https://guochenmeinian.github.io/about/">
-      
       <meta property="twitter:title" content="about">
-      
-      
-      
-      
       <link rel="canonical" href="https://guochenmeinian.github.io/about/">
-      
-      
-      
-      
+      <link rel="icon" href="/favicon.ico">
       <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
-      
-      
-      
-      <link rel="stylesheet" href="/css/style.css"/>
-      
+      <link rel="stylesheet" href="/css/style.css">
    </head>
    <body>
       <div class="wrapper">
          <header>
-            
             <nav class="navBar">
                
+               <a href="/about/">/about/</a>
                
-               <a href="/about" >/about/</a>
+               <a href="/work/">/work/</a>
                
+               <a href="/interests/">/interests/</a>
                
+               <a href="/blogs/">/blogs/</a>
                
-               <a href="/work" >/work/</a>
-               
-               
-               
-               <a href="/interests" >/interests/</a>
-               
-               
-
                <div class="themeSwitch">
                   <button class="themeButton light" onclick="setTheme('light')" title="Light mode">◐</button>
                   <button class="themeButton dark" onclick="setTheme('dark')" title="Dark mode">◑</button>
                </div>
             </nav>
-            
-
             <script>
                const setTheme = (theme) => {
                    document.documentElement.className = theme;
@@ -94,42 +50,48 @@
                getTheme()
             </script>
          </header>
-
          <main>
             
-
-
-
 <p>Hi there 👋</p>
-<p>My name is <strong>Chenmeinian Guo 「郭陈美年」</strong>, a Computer Science graduate student at <a href="https://cims.nyu.edu/dynamic/">NYU Courant</a>. Originally from Shanghai, I studied at <a href="https://www.osu.edu">the Ohio State University</a> before moving to New York. These days, I spend most of my time working on large language models — and occasionally, on my guitar skills.</p>
-<img src="/processed_images/lay.b602c8a13c0d0b76.png" />
+<p>I'm <strong>Chenmeinian Guo</strong>, born and raised in Shanghai. After spending about six years studying in the US, I'm now back in Shanghai working as a machine learning engineer. I studied computer science at <a href="https://cims.nyu.edu/dynamic/">NYU Courant</a> and <a href="https://www.osu.edu">the Ohio State University</a>. Outside work, I spend much of my free time practicing guitar. I also enjoy working out, playing badminton, and playing tennis.</p>
+<img src="/processed_images/lay.b602c8a13c0d0b76.png" class="full-width-image" />
 <p>⬆ Me on Friday night</p>
-<p>My primary interests lie in the fields of software development and LLM (Large Language Model). At NYU Courant, I took courses like Efficient AI Computing, Machine Learning, Reinforcement Learning, Big Data Application, DevOps, etc. Through my courses and internships — from backend engineering to full-stack agent development to model training — I’ve seen how each part of the AI stack connects, from infra level to applications level. As a new grad, I’m excited to keep learning and find my place in this evolving field.</p>
+<p>My primary interests lie in software development and large language models. Through engineering roles — from backend systems to AI agents and model training — I’ve seen how different parts of the AI stack connect, from infrastructure to applications. I’m still learning how to build useful systems across that stack.</p>
 <style>
     .double-image-container { display: flex; flex-direction: column; align-items: center; gap: 10px; }
-    .double-image-container img { width: 100%; max-height: 300px; object-fit: cover; }
+    .double-image-container img { box-sizing: border-box; width: 100%; max-width: 100%; margin: 0; max-height: 300px; object-fit: cover; }
     @media (min-width: 600px) {
         .double-image-container { flex-direction: row; }
-        .double-image-container img { max-width: 50%; height: auto; }
+        .double-image-container img { width: calc(50% - 5px); max-width: calc(50% - 5px); height: auto; }
     }
+    .double-image-container.photo-pair img { box-sizing: border-box; width: 100%; max-width: 100%; height: 300px; max-height: none; margin: 0; object-fit: cover; }
+    @media (min-width: 600px) {
+        .double-image-container.photo-pair img { width: calc(50% - 5px); max-width: calc(50% - 5px); }
+    }
+    .double-image-container.landscape-pair img { height: auto; aspect-ratio: 3 / 2; }
 </style>
 <div class="double-image-container">
-    <img src="/about/view.jpg" alt="Image 1">
-    <img src="/about/courant.jpg" alt="Image 2">
+    <img src="/about/view.jpg" alt="Photo" loading="lazy">
+    <img src="/about/courant.jpg" alt="Photo" loading="lazy">
 </div>
 <p>⬆ Manhattan &amp; Courant</p>
-<p>Beyond coding and algorithms, I enjoy playing guitar. Music, especially exploring different genres and blending them (e.g. fusion), fascinates me just as much as any engineering puzzle. Although I’m currently at a beginer-intermediate level, my goal is to reach an advanced stage where I can play by ear and jam with friends and fellow music enthusiasts. I'm also interested in learning finance and how to invest. On the travel front, I attended my first live metal concert last summer in Milano, Italy.</p>
+<p>Music is a big part of my life, both listening and learning to play. My taste moves across genres, and I enjoy discovering new sounds and hearing familiar songs in a different way. I'm still developing my guitar skills, with the goal of playing by ear and jamming with other people. I'm also interested in learning finance and how to invest. On the travel front, I attended my first live metal concert last summer in Milano, Italy.</p>
 <style>
     .double-image-container { display: flex; flex-direction: column; align-items: center; gap: 10px; }
-    .double-image-container img { width: 100%; max-height: 300px; object-fit: cover; }
+    .double-image-container img { box-sizing: border-box; width: 100%; max-width: 100%; margin: 0; max-height: 300px; object-fit: cover; }
     @media (min-width: 600px) {
         .double-image-container { flex-direction: row; }
-        .double-image-container img { max-width: 50%; height: auto; }
+        .double-image-container img { width: calc(50% - 5px); max-width: calc(50% - 5px); height: auto; }
     }
+    .double-image-container.photo-pair img { box-sizing: border-box; width: 100%; max-width: 100%; height: 300px; max-height: none; margin: 0; object-fit: cover; }
+    @media (min-width: 600px) {
+        .double-image-container.photo-pair img { width: calc(50% - 5px); max-width: calc(50% - 5px); }
+    }
+    .double-image-container.landscape-pair img { height: auto; aspect-ratio: 3 / 2; }
 </style>
 <div class="double-image-container">
-    <img src="/about/metallica_green.jpg" alt="Image 1">
-    <img src="/about/metallica_red.jpg" alt="Image 2">
+    <img src="/about/metallica_green.jpg" alt="Photo" loading="lazy">
+    <img src="/about/metallica_red.jpg" alt="Photo" loading="lazy">
 </div>
 <p>⬆ I-Days Milano - <a href="https://www.metallica.com/">Metallica</a></p>
 <p>Whether you're into tech, tunes, or just talking about life's curious twists, feel free to reach out. Let’s share insights, jam, or just chat about anything under the sun :)</p>
@@ -143,17 +105,14 @@ Eager to learn and practice guitar, but swamped with work.</p>
 </ul>
 <h3>More</h3>
 <ul>
-<li>🔗 <a href="/resume">Resume</a></li>
-<li>📰 <a href="/blogs/cs-resources/">CS</a></li>
+<li>🔗 <a href="/work/">Work</a></li>
 <li>🎼 <a href="/blogs/music-resources/">Music</a></li>
 <li>📃 <a href="/blogs/miscancellous/">Miscancellous</a></li>
 <li>🐩 <a href="https://txstc55.github.io/simple-avatar/">Avatar Generator</a></li>
-<li>📝 <a href="https://gist.github.com/rxaviers/7360908">Markdown (Emoji)</a></li>
 </ul>
 
 
          </main>
-
          <footer>
             
 <p class="tagsData">
@@ -168,7 +127,6 @@ Eager to learn and practice guitar, but swamped with work.</p>
                   </p>
                </div>
                <div class="footRight">
-                  <!-- Size 46x46 -->
                   <img class="footGif noStyle" loading="lazy" src="https://i.ibb.co/XYDpfcs/foot.gif" alt="footGif">
                   <a class="metaData" target="_blank" rel="noopener noreferrer" href="/atom.xml" title="Subscribe via RSS for updates.">RSS</a>
                </div>

@@ -2,86 +2,42 @@
 <html lang="en">
    <head>
       <meta charset="UTF-8">
-      <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
-      <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
-      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
       <meta name="robots" content="index, follow">
       
       
-      
-      
-      
-      
-      
-      
-      
-      
-      <title>Posts by Time Created</title>
-      
-      
-      
-      <meta name="title" content="Posts by Time Created">
-      
-      
-      
+      <title>Blogs</title>
+      <meta name="title" content="Blogs">
       <meta property="og:type" content="website">
       <meta property="og:url" content="https://guochenmeinian.github.io/blogs/">
-      
-      <meta property="og:site_name" content="">
-      
-      
-      <meta property="og:title" content="Posts by Time Created">
-      
-      
-      
-      
-      
+      <meta property="og:site_name" content="Chenmeinian Guo">
+      <meta property="og:title" content="Blogs">
       <meta property="twitter:card" content="summary_large_image">
       <meta property="twitter:url" content="https://guochenmeinian.github.io/blogs/">
-      
-      <meta property="twitter:title" content="Posts by Time Created">
-      
-      
-      
-      
+      <meta property="twitter:title" content="Blogs">
       <link rel="canonical" href="https://guochenmeinian.github.io/blogs/">
-      
-      
-      
-      
+      <link rel="icon" href="/favicon.ico">
       <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
-      
-      
-      
-      <link rel="stylesheet" href="/css/style.css"/>
-      
+      <link rel="stylesheet" href="/css/style.css">
    </head>
    <body>
       <div class="wrapper">
          <header>
-            
             <nav class="navBar">
                
+               <a href="/about/">/about/</a>
                
-               <a href="/about" >/about/</a>
+               <a href="/work/">/work/</a>
                
+               <a href="/interests/">/interests/</a>
                
+               <a href="/blogs/">/blogs/</a>
                
-               <a href="/work" >/work/</a>
-               
-               
-               
-               <a href="/interests" >/interests/</a>
-               
-               
-
                <div class="themeSwitch">
                   <button class="themeButton light" onclick="setTheme('light')" title="Light mode">◐</button>
                   <button class="themeButton dark" onclick="setTheme('dark')" title="Dark mode">◑</button>
                </div>
             </nav>
-            
-
             <script>
                const setTheme = (theme) => {
                    document.documentElement.className = theme;
@@ -94,66 +50,140 @@
                getTheme()
             </script>
          </header>
-
          <main>
             
-<h2>all blogs</h2>
+<h2>Blogs</h2>
 
-
-
-
-
-
-<ul class="titleList">
-
-  <li>
-    <a href="https://guochenmeinian.github.io/blogs/ssh/">Useful SSH Techniques</a>
-  </li>
-
-  <li>
-    <a href="https://guochenmeinian.github.io/blogs/guitar-cheatsheet/">guitar&#39;s shape cheatsheet</a>
-  </li>
-
-  <li>
-    <a href="https://guochenmeinian.github.io/blogs/ffmpeg/">intro to FFmpeg &amp; SDL2</a>
-  </li>
-
-  <li>
-    <a href="https://guochenmeinian.github.io/blogs/film-record/">film &amp; record at once</a>
-  </li>
-
-  <li>
-    <a href="https://guochenmeinian.github.io/blogs/tips-from-arnold/">施瓦辛格健身原则</a>
-  </li>
-
-  <li>
-    <a href="https://guochenmeinian.github.io/blogs/circle-of-fifths/">circle of fifths</a>
-  </li>
-
-  <li>
-    <a href="https://guochenmeinian.github.io/blogs/chord-functions/">chord functions</a>
-  </li>
-
-  <li>
-    <a href="https://guochenmeinian.github.io/blogs/machine-learning/">machine learning</a>
-  </li>
-
-  <li>
-    <a href="https://guochenmeinian.github.io/blogs/scale-chords/">chords in scales</a>
-  </li>
-
-  <li>
-    <a href="https://guochenmeinian.github.io/blogs/blog-tutorial/">how to make this blog website</a>
-  </li>
-
-</ul>
-
-
-<div class="metaData"> &nbsp 1 / 2 &nbsp <a href="/blogs/page/2/">></a> &nbsp <a href="/blogs/page/2/">⥸</a></div>
-
+<div class="blog-archive">
+  <div class="blog-filters" hidden>
+    <div class="blog-categories" role="group" aria-label="Filter by category">
+      
+      <button type="button" data-category="" aria-pressed="true">All</button>
+      
+      <button type="button" data-category="work" aria-pressed="false">Work</button>
+      
+      <button type="button" data-category="interests" aria-pressed="false">Interests</button>
+      
+    </div>
+    <div class="blog-tags" role="group" aria-label="Filter by tag">
+      <button type="button" data-tag="" aria-pressed="true">all tags</button>
+      
+      <button type="button" data-tag="cheatsheet" aria-pressed="false">#cheatsheet</button>
+      
+      <button type="button" data-tag="computer science" aria-pressed="false">#computer science</button>
+      
+      <button type="button" data-tag="finance" aria-pressed="false">#finance</button>
+      
+      <button type="button" data-tag="fitness" aria-pressed="false">#fitness</button>
+      
+      <button type="button" data-tag="leetcode" aria-pressed="false">#leetcode</button>
+      
+      <button type="button" data-tag="miscancellous" aria-pressed="false">#miscancellous</button>
+      
+      <button type="button" data-tag="music" aria-pressed="false">#music</button>
+      
+    </div>
+  </div>
+  <p class="blog-count" role="status" aria-live="polite">15 posts</p>
+  <ul class="blog-list" aria-label="Blog posts">
+    
+    <li class="blog-row" data-category="work" data-tags='["computer science"]'>
+      <time datetime="2025-05-05">2025-05-05</time>
+      <a class="blog-title" href="/blogs/ssh/">Useful SSH Techniques</a>
+      <span class="blog-row-tags"><span>#computer science</span></span>
+    </li>
+    
+    <li class="blog-row" data-category="interests" data-tags='["music"]'>
+      <time datetime="2024-08-04">2024-08-04</time>
+      <a class="blog-title" href="/blogs/guitar-cheatsheet/">guitar&#39;s shape cheatsheet</a>
+      <span class="blog-row-tags"><span>#music</span></span>
+    </li>
+    
+    <li class="blog-row" data-category="work" data-tags='["computer science"]'>
+      <time datetime="2024-07-14">2024-07-14</time>
+      <a class="blog-title" href="/blogs/ffmpeg/">intro to FFmpeg &amp; SDL2</a>
+      <span class="blog-row-tags"><span>#computer science</span></span>
+    </li>
+    
+    <li class="blog-row" data-category="interests" data-tags='["music"]'>
+      <time datetime="2024-04-30">2024-04-30</time>
+      <a class="blog-title" href="/blogs/film-record/">film &amp; record at once</a>
+      <span class="blog-row-tags"><span>#music</span></span>
+    </li>
+    
+    <li class="blog-row" data-category="interests" data-tags='["fitness"]'>
+      <time datetime="2023-11-02">2023-11-02</time>
+      <a class="blog-title" href="/blogs/tips-from-arnold/">施瓦辛格健身原则</a>
+      <span class="blog-row-tags"><span>#fitness</span></span>
+    </li>
+    
+    <li class="blog-row" data-category="interests" data-tags='["music"]'>
+      <time datetime="2023-09-19">2023-09-19</time>
+      <a class="blog-title" href="/blogs/circle-of-fifths/">circle of fifths</a>
+      <span class="blog-row-tags"><span>#music</span></span>
+    </li>
+    
+    <li class="blog-row" data-category="interests" data-tags='["music"]'>
+      <time datetime="2023-09-08">2023-09-08</time>
+      <a class="blog-title" href="/blogs/chord-functions/">chord functions</a>
+      <span class="blog-row-tags"><span>#music</span></span>
+    </li>
+    
+    <li class="blog-row" data-category="work" data-tags='["computer science"]'>
+      <time datetime="2023-09-08">2023-09-08</time>
+      <a class="blog-title" href="/blogs/machine-learning/">machine learning</a>
+      <span class="blog-row-tags"><span>#computer science</span></span>
+    </li>
+    
+    <li class="blog-row" data-category="interests" data-tags='["music"]'>
+      <time datetime="2023-09-08">2023-09-08</time>
+      <a class="blog-title" href="/blogs/scale-chords/">chords in scales</a>
+      <span class="blog-row-tags"><span>#music</span></span>
+    </li>
+    
+    <li class="blog-row" data-category="work" data-tags='["computer science", "cheatsheet"]'>
+      <time datetime="2023-09-03">2023-09-03</time>
+      <a class="blog-title" href="/blogs/docker-cheatsheet/">docker cheatsheet</a>
+      <span class="blog-row-tags"><span>#computer science</span><span>#cheatsheet</span></span>
+    </li>
+    
+    <li class="blog-row" data-category="work" data-tags='["computer science", "leetcode"]'>
+      <time datetime="2023-09-02">2023-09-02</time>
+      <a class="blog-title" href="/blogs/surrounded-region/">surrounded region</a>
+      <span class="blog-row-tags"><span>#computer science</span><span>#leetcode</span></span>
+    </li>
+    
+    <li class="blog-row" data-category="work" data-tags='["computer science"]'>
+      <time datetime="2023-09-01">2023-09-01</time>
+      <a class="blog-title" href="/blogs/cs-resources/">CS resources</a>
+      <span class="blog-row-tags"><span>#computer science</span></span>
+    </li>
+    
+    <li class="blog-row" data-category="interests" data-tags='["finance"]'>
+      <time datetime="2023-09-01">2023-09-01</time>
+      <a class="blog-title" href="/blogs/finance/">finance resources</a>
+      <span class="blog-row-tags"><span>#finance</span></span>
+    </li>
+    
+    <li class="blog-row" data-category="interests" data-tags='["miscancellous"]'>
+      <time datetime="2023-09-01">2023-09-01</time>
+      <a class="blog-title" href="/blogs/miscancellous/">miscancellous</a>
+      <span class="blog-row-tags"><span>#miscancellous</span></span>
+    </li>
+    
+    <li class="blog-row" data-category="interests" data-tags='["music"]'>
+      <time datetime="2023-09-01">2023-09-01</time>
+      <a class="blog-title" href="/blogs/music-resources/">Music resources</a>
+      <span class="blog-row-tags"><span>#music</span></span>
+    </li>
+    
+  </ul>
+  <p class="blog-empty" hidden>No posts match these filters. <button type="button">Show all posts</button></p>
+  <noscript><p>Browse by <a href="/tags/">tag</a>.</p></noscript>
+</div>
+<script src="/js/blogs.js" defer></script>
 
          </main>
-
          <footer>
             
             <hr>
@@ -164,7 +194,6 @@
                   </p>
                </div>
                <div class="footRight">
-                  <!-- Size 46x46 -->
                   <img class="footGif noStyle" loading="lazy" src="https://i.ibb.co/XYDpfcs/foot.gif" alt="footGif">
                   <a class="metaData" target="_blank" rel="noopener noreferrer" href="/atom.xml" title="Subscribe via RSS for updates.">RSS</a>
                </div>

@@ -2,86 +2,42 @@
 <html lang="en">
    <head>
       <meta charset="UTF-8">
-      <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
-      <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
-      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
       <meta name="robots" content="index, follow">
       
       
-      
-      
-      
-      
-      
-      
-      
-      
       <title>Work</title>
-      
-      
-      
       <meta name="title" content="Work">
-      
-      
-      
       <meta property="og:type" content="website">
       <meta property="og:url" content="https://guochenmeinian.github.io/work/">
-      
-      <meta property="og:site_name" content="">
-      
-      
+      <meta property="og:site_name" content="Chenmeinian Guo">
       <meta property="og:title" content="Work">
-      
-      
-      
-      
-      
       <meta property="twitter:card" content="summary_large_image">
       <meta property="twitter:url" content="https://guochenmeinian.github.io/work/">
-      
       <meta property="twitter:title" content="Work">
-      
-      
-      
-      
       <link rel="canonical" href="https://guochenmeinian.github.io/work/">
-      
-      
-      
-      
+      <link rel="icon" href="/favicon.ico">
       <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
-      
-      
-      
-      <link rel="stylesheet" href="/css/style.css"/>
-      
+      <link rel="stylesheet" href="/css/style.css">
    </head>
    <body>
       <div class="wrapper">
          <header>
-            
             <nav class="navBar">
                
+               <a href="/about/">/about/</a>
                
-               <a href="/about" >/about/</a>
+               <a href="/work/">/work/</a>
                
+               <a href="/interests/">/interests/</a>
                
+               <a href="/blogs/">/blogs/</a>
                
-               <a href="/work" >/work/</a>
-               
-               
-               
-               <a href="/interests" >/interests/</a>
-               
-               
-
                <div class="themeSwitch">
                   <button class="themeButton light" onclick="setTheme('light')" title="Light mode">◐</button>
                   <button class="themeButton dark" onclick="setTheme('dark')" title="Dark mode">◑</button>
                </div>
             </nav>
-            
-
             <script>
                const setTheme = (theme) => {
                    document.documentElement.className = theme;
@@ -94,53 +50,64 @@
                getTheme()
             </script>
          </header>
-
          <main>
             
 <h2>Work</h2>
-<p>Software, machine learning, and engineering notes. <a href="/resume/">Resume</a>.</p>
+<p>Hi there 👋</p>
+<p>These days I work as a machine learning engineer at TCL in Shanghai. One project I've contributed to is <a href="https://www.tcl.com/global/en/tcl-design/design-works/tcl-ai-me-design-story">AiMe</a>, a modular AI companion robot.</p>
+<style>
+    .double-image-container { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+    .double-image-container img { box-sizing: border-box; width: 100%; max-width: 100%; margin: 0; max-height: 300px; object-fit: cover; }
+    @media (min-width: 600px) {
+        .double-image-container { flex-direction: row; }
+        .double-image-container img { width: calc(50% - 5px); max-width: calc(50% - 5px); height: auto; }
+    }
+    .double-image-container.photo-pair img { box-sizing: border-box; width: 100%; max-width: 100%; height: 300px; max-height: none; margin: 0; object-fit: cover; }
+    @media (min-width: 600px) {
+        .double-image-container.photo-pair img { width: calc(50% - 5px); max-width: calc(50% - 5px); }
+    }
+    .double-image-container.landscape-pair img { height: auto; aspect-ratio: 3 / 2; }
+</style>
+<div class="double-image-container photo-pair landscape-pair">
+    <img src="/processed_images/aime-1.672f863e7838.png" alt="TCL heyAiMe wearing a yellow knit hat" loading="lazy">
+    <img src="/processed_images/aime-2.155aad27b4b7.png" alt="TCL heyAiMe being dressed in a fluffy costume" loading="lazy">
+</div>
+<p>⬆ AiMe</p>
+<p>I began my career with my first internship at <a href="https://en.wikipedia.org/wiki/Bilibili">Bilibili</a>. Here I gained exposure to the systems behind video playback, and worked on gRPC integration, audio–video decoding, and network protocols.</p>
+<p>Building AI agents at <a href="https://en.tezign.com/">Tezign</a> brought me closer to the product side of engineering. I worked with TypeScript, React, Node.js, Prisma (PostgreSQL), and Redis, and learned to think about how an AI feature feels to use as well as how it works.</p>
+<p>My last internship was with <a href="https://en.wikipedia.org/wiki/Meituan">Meituan</a>, where I contributed to their multimodal foundation model <a href="https://huggingface.co/meituan-longcat/LongCat-Flash-Omni">LongCat-Flash-Omni</a>. Working on data preparation, model evaluation, and pre-training gave me hands-on experience with data filtering and deduplication, importance sampling, data annealing, and pre-training experiments.</p>
+<style>
+    .double-image-container { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+    .double-image-container img { box-sizing: border-box; width: 100%; max-width: 100%; margin: 0; max-height: 300px; object-fit: cover; }
+    @media (min-width: 600px) {
+        .double-image-container { flex-direction: row; }
+        .double-image-container img { width: calc(50% - 5px); max-width: calc(50% - 5px); height: auto; }
+    }
+    .double-image-container.photo-pair img { box-sizing: border-box; width: 100%; max-width: 100%; height: 300px; max-height: none; margin: 0; object-fit: cover; }
+    @media (min-width: 600px) {
+        .double-image-container.photo-pair img { width: calc(50% - 5px); max-width: calc(50% - 5px); }
+    }
+    .double-image-container.landscape-pair img { height: auto; aspect-ratio: 3 / 2; }
+</style>
+<div class="double-image-container">
+    <img src="/about/tezign_window.png" alt="Photo" loading="lazy">
+    <img src="/about/meituan_building.jpeg" alt="Photo" loading="lazy">
+</div>
+<p>⬆ Tezign &amp; Meituan</p>
+<h3>Notes</h3>
+<p>I've collected some notes and resources along the way. I hope you find them useful too.</p>
+<p><a href="/blogs/cs-resources/">CS resources →</a></p>
 
 
 
 
 
 
-<ul class="titleList">
 
-  <li>
-    <a href="https://guochenmeinian.github.io/blogs/ssh/">Useful SSH Techniques</a>
-  </li>
-
-  <li>
-    <a href="https://guochenmeinian.github.io/blogs/ffmpeg/">intro to FFmpeg &amp; SDL2</a>
-  </li>
-
-  <li>
-    <a href="https://guochenmeinian.github.io/blogs/machine-learning/">machine learning</a>
-  </li>
-
-  <li>
-    <a href="https://guochenmeinian.github.io/blogs/blog-tutorial/">how to make this blog website</a>
-  </li>
-
-  <li>
-    <a href="https://guochenmeinian.github.io/blogs/docker-cheatsheet/">docker cheatsheet</a>
-  </li>
-
-  <li>
-    <a href="https://guochenmeinian.github.io/blogs/surrounded-region/">surrounded region</a>
-  </li>
-
-  <li>
-    <a href="https://guochenmeinian.github.io/blogs/cs-resources/">cs recourses</a>
-  </li>
-
-</ul>
 
 
 
          </main>
-
          <footer>
             
             <hr>
@@ -151,7 +118,6 @@
                   </p>
                </div>
                <div class="footRight">
-                  <!-- Size 46x46 -->
                   <img class="footGif noStyle" loading="lazy" src="https://i.ibb.co/XYDpfcs/foot.gif" alt="footGif">
                   <a class="metaData" target="_blank" rel="noopener noreferrer" href="/atom.xml" title="Subscribe via RSS for updates.">RSS</a>
                </div>
