@@ -87,6 +87,7 @@ class Builder:
                 {"name": "/about/", "url": "/about/"},
                 {"name": "/work/", "url": "/work/"},
                 {"name": "/interests/", "url": "/interests/"},
+                {"name": "/blogs/", "url": "/blogs/"},
             ],
         }
 
@@ -173,7 +174,8 @@ class Builder:
             name, args = match.group(1), parse_shortcode_arguments(match.group(2))
             if name == "resize_image":
                 src = html.escape(self.resized_image(args), quote=True)
-                return f'<img src="{src}" />'
+                attributes = ' class="full-width-image"' if args.get("full_width") else ''
+                return f'<img src="{src}"{attributes} />'
             if name == "double_image" and args.pop("resize", False):
                 for side in ("path1", "path2"):
                     args[side] = self.resized_image({"path": args[side], "width": args["width"],
@@ -225,20 +227,11 @@ class Builder:
 
     def render_listing(self, route: str, section: dict, pages: list[dict]) -> None:
         section["pages"] = pages
-        chunks = [pages[i:i + 10] for i in range(0, len(pages), 10)] or [[]]
-        for index, chunk in enumerate(chunks, 1):
-            paginator = None
-            if len(chunks) > 1:
-                paginator = {
-                    "pages": chunk, "current_index": index, "number_pagers": len(chunks),
-                    "first": route, "last": f"{route}page/{len(chunks)}/",
-                    "previous": route if index == 2 else (f"{route}page/{index - 1}/" if index > 2 else None),
-                    "next": f"{route}page/{index + 1}/" if index < len(chunks) else None,
-                }
-            rendered = self.render("section.html", section=section, paginator=paginator)
-            self.write(route if index == 1 else f"{route}page/{index}/", rendered)
-            if index == 1 and len(chunks) > 1:
-                self.write(f"{route}page/1/", self.env.get_template("redirect.html").render(target=route))
+        tags = sorted({tag for page in pages for tag in page["taxonomies"].get("tags", [])})
+        self.write(route, self.render("blogs.html", section=section, tags=tags))
+        # Keep former pagination links working now that the archive is one list.
+        for index in range(1, max(2, (len(pages) + 9) // 10) + 1):
+            self.write(f"{route}page/{index}/", self.env.get_template("redirect.html").render(target=route))
 
     def build(self) -> None:
         if self.output == ROOT or self.output == CONTENT:

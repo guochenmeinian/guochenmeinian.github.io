@@ -5,16 +5,16 @@ date = 2023-09-04
 tags = []
 +++
 
-Hi there 👋 
+Hi there 👋
 
-My name is **Chenmeinian Guo 「郭陈美年」**. I'm from Shanghai and now work here as a machine learning engineer. I studied Computer Science at [NYU Courant](https://cims.nyu.edu/dynamic/) and [the Ohio State University](https://www.osu.edu). Outside work, I spend time on my guitar skills.
+I'm **Chenmeinian Guo**, born and raised in Shanghai. After spending about six years studying in the US, I'm now back in Shanghai working as a machine learning engineer. I studied computer science at [NYU Courant](https://cims.nyu.edu/dynamic/) and [the Ohio State University](https://www.osu.edu). Outside work, I spend much of my free time practicing guitar. I also enjoy working out, playing badminton, and playing tennis.
 
-{{ resize_image(path="about/lay.png", height=1400, width=650, op="fit", format="png") }}
+{{ resize_image(path="about/lay.png", height=1400, width=650, op="fit", format="png", full_width=True) }}
 
-⬆ Me on Friday night 
+⬆ Me on Friday night
 
 
-My primary interests lie in software development and large language models. At NYU Courant, I took courses such as Efficient AI Computing, Machine Learning, Reinforcement Learning, Big Data Application, and DevOps. Through coursework and engineering roles — from backend systems to AI agents and model training — I’ve seen how different parts of the AI stack connect, from infrastructure to applications. I’m still learning how to build useful systems across that stack.
+My primary interests lie in software development and large language models. Through engineering roles — from backend systems to AI agents and model training — I’ve seen how different parts of the AI stack connect, from infrastructure to applications. I’m still learning how to build useful systems across that stack.
 
 
 {{ double_image(path1="about/view.jpg", path2="about/courant.jpg", height=1400, width=650, op="fit_height") }}
@@ -23,7 +23,7 @@ My primary interests lie in software development and large language models. At N
 
 
 
-Beyond coding and algorithms, I enjoy playing guitar. Music, especially exploring different genres and blending them (e.g. fusion), fascinates me just as much as any engineering puzzle. Although I’m currently at a beginer-intermediate level, my goal is to reach an advanced stage where I can play by ear and jam with friends and fellow music enthusiasts. I'm also interested in learning finance and how to invest. On the travel front, I attended my first live metal concert last summer in Milano, Italy.
+Music is a big part of my life, both listening and learning to play. My taste moves across genres, and I enjoy discovering new sounds and hearing familiar songs in a different way. I'm still developing my guitar skills, with the goal of playing by ear and jamming with other people. I'm also interested in learning finance and how to invest. On the travel front, I attended my first live metal concert last summer in Milano, Italy.
 
 
 

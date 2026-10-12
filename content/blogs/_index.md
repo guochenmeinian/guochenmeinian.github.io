@@ -1,5 +1,5 @@
 +++
-title = "Posts by Time Created"
+title = "Blogs"
 +++
 
-## all blogs
+## Blogs

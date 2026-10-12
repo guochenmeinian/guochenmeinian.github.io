@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+{{ section.content | safe }}
+<div class="blog-archive">
+  <div class="blog-filters" hidden>
+    <div class="blog-categories" role="group" aria-label="Filter by category">
+      {% for value, label in [("", "All"), ("work", "Work"), ("interests", "Interests")] %}
+      <button type="button" data-category="{{ value }}" aria-pressed="{{ 'true' if not value else 'false' }}">{{ label }}</button>
+      {% endfor %}
+    </div>
+    <div class="blog-tags" role="group" aria-label="Filter by tag">
+      <button type="button" data-tag="" aria-pressed="true">all tags</button>
+      {% for tag in tags %}
+      <button type="button" data-tag="{{ tag }}" aria-pressed="false">#{{ tag }}</button>
+      {% endfor %}
+    </div>
+  </div>
+  <p class="blog-count" role="status" aria-live="polite">{{ section.pages | length }} posts</p>
+  <ul class="blog-list" aria-label="Blog posts">
+    {% for post in section.pages %}
+    <li class="blog-row" data-category="{{ post.category }}" data-tags='{{ post.taxonomies.get("tags", []) | tojson }}'>
+      {% if post.date %}<time datetime="{{ post.date }}">{{ post.date }}</time>{% else %}<span></span>{% endif %}
+      <a class="blog-title" href="{{ post.route }}">{{ post.title }}</a>
+      <span class="blog-row-tags">{% for tag in post.taxonomies.get("tags", []) %}<span>#{{ tag }}</span>{% endfor %}</span>
+    </li>
+    {% endfor %}
+  </ul>
+  <p class="blog-empty" hidden>No posts match these filters. <button type="button">Show all posts</button></p>
+  <noscript><p>Browse by <a href="/tags/">tag</a>.</p></noscript>
+</div>
+<script src="/js/blogs.js" defer></script>
+{% endblock content %}

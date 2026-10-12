@@ -61,7 +61,13 @@ class SiteBuildTest(unittest.TestCase):
                 "tags/new-tag/index.html", "atom.xml", "sitemap.xml",
             ):
                 self.assertTrue((output / route).is_file(), route)
-            self.assertIn("New interactive post", (output / "blogs/index.html").read_text())
+            blogs_html = (output / "blogs/index.html").read_text()
+            self.assertIn("New interactive post", blogs_html)
+            self.assertIn('data-tag="new-tag"', blogs_html)
+            # Filtering must include older articles that were formerly on page 2.
+            self.assertIn('href="/blogs/finance/"', blogs_html)
+            self.assertIn('href="/blogs/music-resources/"', blogs_html)
+            self.assertIn('href="/blogs/"', (output / "blogs/page/2/index.html").read_text())
             work_html = (output / "work/index.html").read_text()
             self.assertIn("Bilibili", work_html)
             self.assertIn("TCL heyAiMe", work_html)
@@ -76,7 +82,8 @@ class SiteBuildTest(unittest.TestCase):
             self.assertFalse((output / "search_index.en.js").exists())
             about_html = (output / "about/index.html").read_text()
             self.assertNotIn("graduate student", about_html)
-            self.assertIn("I'm from Shanghai and now work here", about_html)
+            self.assertIn("Shanghai", about_html)
+            self.assertIn("machine learning engineer", about_html)
             self.assertNotIn('href="/blogs/cs-resources/"', about_html)
             self.assertNotIn("Markdown (Emoji)", about_html)
             interests_html = (output / "interests/index.html").read_text()

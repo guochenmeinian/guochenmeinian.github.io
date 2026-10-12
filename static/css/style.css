@@ -162,6 +162,14 @@ img {
     border-radius: 15px
 }
 
+.full-width-image {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+}
+
 pre {
     border: 1px solid var(--metaColor);
     padding: 1rem;
@@ -268,6 +276,70 @@ textarea {
 
 .titleList {
     line-height: 1.8;
+}
+
+.blog-categories,
+.blog-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .6rem;
+}
+
+.blog-categories { margin-bottom: 1.2rem; }
+.blog-tags { gap: .4rem .8rem; }
+
+.blog-filters button,
+.blog-empty button {
+    font: inherit;
+    color: var(--linkColor);
+    background: transparent;
+    cursor: pointer;
+    border: 1px solid transparent;
+    padding: .4rem .8rem;
+}
+
+.blog-categories button { border-color: var(--metaColor); }
+.blog-tags button { font-size: 1.3rem; padding: .3rem .4rem; }
+.blog-tags button[aria-pressed="true"] { border-color: var(--metaColor); }
+.blog-categories button[aria-pressed="true"],
+.blog-filters button:hover,
+.blog-empty button:hover {
+    color: var(--bgColor);
+    background: var(--linkColor);
+}
+
+.blog-archive :focus-visible { outline: 2px solid var(--metaColor); outline-offset: 3px; }
+.blog-count { font-size: 1.3rem; color: var(--metaColor); margin: 2rem 0 .6rem; }
+.blog-list { padding: 0; margin: 0; }
+.blog-row {
+    display: grid;
+    grid-template-columns: 10ch minmax(0, 1fr) 16ch;
+    align-items: baseline;
+    gap: .5rem 1.6rem;
+    padding: 1.2rem 0;
+    border-top: 1px dashed var(--metaColor);
+}
+.blog-row::marker { content: ''; }
+.blog-row:hover { transform: none; }
+.blog-row[hidden] { display: none; }
+.blog-row time { font-size: 1.3rem; color: var(--metaColor); }
+.blog-title { justify-self: start; text-decoration: none; }
+.blog-title:hover { text-decoration: underline; }
+.blog-row-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .3rem 1rem;
+    font-size: 1.2rem;
+    color: var(--metaColor);
+}
+.blog-empty button { padding: 0; text-decoration: underline; }
+@media (max-width: 600px) {
+    .blog-row { grid-template-columns: 10ch minmax(0, 1fr); }
+    .blog-row-tags { grid-column: 2; }
+}
+@media (max-width: 420px) {
+    .blog-row { column-gap: 1rem; grid-template-columns: 9ch minmax(0, 1fr); }
+    .blog-row time { font-size: 1.2rem; }
 }
 
 .footnote-definition {
