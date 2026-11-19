@@ -19,6 +19,7 @@
       <link rel="icon" href="/favicon.ico">
       <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
       <link rel="stylesheet" href="/css/style.css">
+      <script src="/js/photos.js" defer></script>
    </head>
    <body>
       <div class="wrapper">
@@ -52,71 +53,94 @@
          </header>
          <main>
             
-<h2>Work</h2>
-<p>Hi there 👋</p>
-<p>These days I work as a machine learning engineer at TCL in Shanghai. One project I've contributed to is <a href="https://www.tcl.com/global/en/tcl-design/design-works/tcl-ai-me-design-story">AiMe</a>, a modular AI companion robot.</p>
-<style>
-    .double-image-container { display: flex; flex-direction: column; align-items: center; gap: 10px; }
-    .double-image-container img { box-sizing: border-box; width: 100%; max-width: 100%; margin: 0; max-height: 300px; object-fit: cover; }
-    @media (min-width: 600px) {
-        .double-image-container { flex-direction: row; }
-        .double-image-container img { width: calc(50% - 5px); max-width: calc(50% - 5px); height: auto; }
-    }
-    .double-image-container.photo-pair img { box-sizing: border-box; width: 100%; max-width: 100%; height: 300px; max-height: none; margin: 0; object-fit: cover; }
-    @media (min-width: 600px) {
-        .double-image-container.photo-pair img { width: calc(50% - 5px); max-width: calc(50% - 5px); }
-    }
-    .double-image-container.landscape-pair img { height: auto; aspect-ratio: 3 / 2; }
-</style>
-<div class="double-image-container photo-pair landscape-pair">
-    <img src="/processed_images/aime-1.672f863e7838.png" alt="TCL heyAiMe wearing a yellow knit hat" loading="lazy">
-    <img src="/processed_images/aime-2.155aad27b4b7.png" alt="TCL heyAiMe being dressed in a fluffy costume" loading="lazy">
+<div class="pf">
+  <h2>Work</h2>
+  <div class="pf-text"><p>I'm a machine learning engineer at <a href="https://www.tcl.com/global/en">TCL</a> in Shanghai. My interests lie in software development and large language models, and my roles so far have taken me across the AI stack — from backend systems to AI agents and model finetuning.</p>
 </div>
-<p>⬆ AiMe</p>
-<p>I began my career with my first internship at <a href="https://en.wikipedia.org/wiki/Bilibili">Bilibili</a>. Here I gained exposure to the systems behind video playback, and worked on gRPC integration, audio–video decoding, and network protocols.</p>
-<p>Building AI agents at <a href="https://en.tezign.com/">Tezign</a> brought me closer to the product side of engineering. I worked with TypeScript, React, Node.js, Prisma (PostgreSQL), and Redis, and learned to think about how an AI feature feels to use as well as how it works.</p>
-<p>My last internship was with <a href="https://en.wikipedia.org/wiki/Meituan">Meituan</a>, where I contributed to their multimodal foundation model <a href="https://huggingface.co/meituan-longcat/LongCat-Flash-Omni">LongCat-Flash-Omni</a>. Working on data preparation, model evaluation, and pre-training gave me hands-on experience with data filtering and deduplication, importance sampling, data annealing, and pre-training experiments.</p>
-<style>
-    .double-image-container { display: flex; flex-direction: column; align-items: center; gap: 10px; }
-    .double-image-container img { box-sizing: border-box; width: 100%; max-width: 100%; margin: 0; max-height: 300px; object-fit: cover; }
-    @media (min-width: 600px) {
-        .double-image-container { flex-direction: row; }
-        .double-image-container img { width: calc(50% - 5px); max-width: calc(50% - 5px); height: auto; }
-    }
-    .double-image-container.photo-pair img { box-sizing: border-box; width: 100%; max-width: 100%; height: 300px; max-height: none; margin: 0; object-fit: cover; }
-    @media (min-width: 600px) {
-        .double-image-container.photo-pair img { width: calc(50% - 5px); max-width: calc(50% - 5px); }
-    }
-    .double-image-container.landscape-pair img { height: auto; aspect-ratio: 3 / 2; }
-</style>
-<div class="double-image-container">
-    <img src="/about/tezign_window.png" alt="Photo" loading="lazy">
-    <img src="/about/meituan_building.jpeg" alt="Photo" loading="lazy">
+  <dl class="pf-facts">
+    <div><dt>focus</dt><dd>LLMs · AI agents · Duplex Voice</dd></div>
+    <div><dt>education</dt><dd>
+      
+      <span class="edu">MS CS · <a class="school" href="https://cims.nyu.edu/dynamic/" target="_blank" rel="noopener noreferrer">NYU Courant<span class="school-pop" aria-hidden="true"><img src="/processed_images/courant.eb3a92ff0dae.jpg" alt=""></span></a></span><span class="edu">BS CIS · <a class="school" href="https://www.osu.edu" target="_blank" rel="noopener noreferrer">The Ohio State University<span class="school-pop" aria-hidden="true"><img src="/processed_images/osu-campus.123ec0899835.jpg" alt=""></span></a> <span class="edu-note">(transferred from <a class="school" href="https://www.syracuse.edu" target="_blank" rel="noopener noreferrer">Syracuse University<span class="school-pop" aria-hidden="true"><img src="/processed_images/syracuse-1.7ca8e998ef7f.jpg" alt=""></span></a>)</span></span>
+    </dd></div>
+  </dl>
+
+  <h2>Experience</h2>
+  <div class="jobs">
+    
+    <a class="job" href="https://www.tcl.com/global/en/tcl-design/design-works/tcl-ai-me-design-story" target="_blank" rel="noopener noreferrer">
+      <span class="job-media">
+        <img src="/processed_images/aime.689c81ec8860.jpg" alt="TCL" loading="lazy">
+        <span class="job-index">01</span>
+        <span class="job-tags"><span>agentic model</span><span>function call</span><span>voice agent</span><span>PoC</span></span>
+      </span>
+      <span class="job-org">TCL <span aria-hidden="true">↗</span></span>
+      <span class="job-line">MLE · HeyAiMe</span>
+    </a>
+    
+    <a class="job" href="https://www.sohu.com" target="_blank" rel="noopener noreferrer">
+      <span class="job-media">
+        <img src="/processed_images/sohu.764ad60bedbf.jpg" alt="Sohu" loading="lazy">
+        <span class="job-index">02</span>
+        <span class="job-tags"><span>RAG</span><span>TypeScript</span></span>
+      </span>
+      <span class="job-org">Sohu <span aria-hidden="true">↗</span></span>
+      <span class="job-line">SDE Intern · AI Agents</span>
+    </a>
+    
+    <a class="job" href="https://huggingface.co/meituan-longcat/LongCat-Flash-Omni" target="_blank" rel="noopener noreferrer">
+      <span class="job-media">
+        <img src="/processed_images/meituan.3ad2ac522d70.jpg" alt="Meituan" loading="lazy">
+        <span class="job-index">03</span>
+        <span class="job-tags"><span>data filtering &amp; dedup</span><span>importance sampling</span><span>data annealing</span><span>pre-training</span></span>
+      </span>
+      <span class="job-org">Meituan <span aria-hidden="true">↗</span></span>
+      <span class="job-line">MLE Intern · LongCat-Flash-Omni</span>
+    </a>
+    
+    <a class="job" href="https://www.tezign.com/en" target="_blank" rel="noopener noreferrer">
+      <span class="job-media">
+        <img src="/processed_images/tezign.44b62574bcd2.jpg" alt="Tezign" loading="lazy">
+        <span class="job-index">04</span>
+        <span class="job-tags"><span>TypeScript</span><span>React</span><span>Node.js</span><span>PostgreSQL</span><span>Redis</span></span>
+      </span>
+      <span class="job-org">Tezign <span aria-hidden="true">↗</span></span>
+      <span class="job-line">SDE Intern · AI agents</span>
+    </a>
+    
+    <a class="job" href="https://en.wikipedia.org/wiki/Bilibili" target="_blank" rel="noopener noreferrer">
+      <span class="job-media">
+        <img src="/processed_images/bilibili.27507a2c034c.jpg" alt="Bilibili" loading="lazy">
+        <span class="job-index">05</span>
+        <span class="job-tags"><span>gRPC</span><span>audio–video decoding</span><span>network protocols</span></span>
+      </span>
+      <span class="job-org">Bilibili <span aria-hidden="true">↗</span></span>
+      <span class="job-line">SDE Intern · Video Playback</span>
+    </a>
+    
+  </div>
+
+  <h2>Notes</h2>
+  
+  <p class="pf-text">I&#39;ve collected some notes and resources along the way. I hope you find them useful too.</p>
+  <p class="pf-notes"><a href="/blogs/cs-resources/">CS resources →</a></p>
+  
+
+  <div class="pf-closing">
+    <p>Feel free to reach out for research, hackathons, or projects — Looking forward to building something fun together :)</p>
+    <p class="pf-notes">
+      <a href="mailto:guochenmeinian@outlook.com">guochenmeinian@outlook.com</a>
+      <a href="https://www.linkedin.com/in/guochenmeinian" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+    </p>
+  </div>
 </div>
-<p>⬆ Tezign &amp; Meituan</p>
-<h3>Notes</h3>
-<p>I've collected some notes and resources along the way. I hope you find them useful too.</p>
-<p><a href="/blogs/cs-resources/">CS resources →</a></p>
-
-
-
-
-
-
-
-
-
 
          </main>
          <footer>
             
             <hr>
             <div class=footContainer>
-               <div class="footLeft">
-                  <p>Licensed under <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Licence_MIT">MIT</a><br>
-                     Built with <a target="_blank" rel="noopener noreferrer" href="https://jinja.palletsprojects.com/">Jinja</a> using <a target="_blank" rel="noopener noreferrer" href="https://github.com/Speyll/anemone">anemone</a> theme &amp; <a target="_blank" rel="noopener noreferrer" href="https://github.com/Speyll/veqev">veqev</a> colors.<br>
-                  </p>
-               </div>
+               <div class="footLeft"></div>
                <div class="footRight">
                   <img class="footGif noStyle" loading="lazy" src="https://i.ibb.co/XYDpfcs/foot.gif" alt="footGif">
                   <a class="metaData" target="_blank" rel="noopener noreferrer" href="/atom.xml" title="Subscribe via RSS for updates.">RSS</a>

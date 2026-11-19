@@ -19,6 +19,7 @@
       <link rel="icon" href="/favicon.ico">
       <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
       <link rel="stylesheet" href="/css/style.css">
+      <script src="/js/photos.js" defer></script>
    </head>
    <body>
       <div class="wrapper">
@@ -52,80 +53,55 @@
          </header>
          <main>
             
-<p>Hi there 👋</p>
-<p>I'm <strong>Chenmeinian Guo</strong>, born and raised in Shanghai. After spending about six years studying in the US, I'm now back in Shanghai working as a machine learning engineer. I studied computer science at <a href="https://cims.nyu.edu/dynamic/">NYU Courant</a> and <a href="https://www.osu.edu">the Ohio State University</a>. Outside work, I spend much of my free time practicing guitar. I also enjoy working out, playing badminton, and playing tennis.</p>
-<img src="/processed_images/lay.b602c8a13c0d0b76.png" class="full-width-image" />
-<p>⬆ Me on Friday night</p>
-<p>My primary interests lie in software development and large language models. Through engineering roles — from backend systems to AI agents and model training — I’ve seen how different parts of the AI stack connect, from infrastructure to applications. I’m still learning how to build useful systems across that stack.</p>
-<style>
-    .double-image-container { display: flex; flex-direction: column; align-items: center; gap: 10px; }
-    .double-image-container img { box-sizing: border-box; width: 100%; max-width: 100%; margin: 0; max-height: 300px; object-fit: cover; }
-    @media (min-width: 600px) {
-        .double-image-container { flex-direction: row; }
-        .double-image-container img { width: calc(50% - 5px); max-width: calc(50% - 5px); height: auto; }
-    }
-    .double-image-container.photo-pair img { box-sizing: border-box; width: 100%; max-width: 100%; height: 300px; max-height: none; margin: 0; object-fit: cover; }
-    @media (min-width: 600px) {
-        .double-image-container.photo-pair img { width: calc(50% - 5px); max-width: calc(50% - 5px); }
-    }
-    .double-image-container.landscape-pair img { height: auto; aspect-ratio: 3 / 2; }
-</style>
-<div class="double-image-container">
-    <img src="/about/view.jpg" alt="Photo" loading="lazy">
-    <img src="/about/courant.jpg" alt="Photo" loading="lazy">
-</div>
-<p>⬆ Manhattan &amp; Courant</p>
-<p>Music is a big part of my life, both listening and learning to play. My taste moves across genres, and I enjoy discovering new sounds and hearing familiar songs in a different way. I'm still developing my guitar skills, with the goal of playing by ear and jamming with other people. I'm also interested in learning finance and how to invest. On the travel front, I attended my first live metal concert last summer in Milano, Italy.</p>
-<style>
-    .double-image-container { display: flex; flex-direction: column; align-items: center; gap: 10px; }
-    .double-image-container img { box-sizing: border-box; width: 100%; max-width: 100%; margin: 0; max-height: 300px; object-fit: cover; }
-    @media (min-width: 600px) {
-        .double-image-container { flex-direction: row; }
-        .double-image-container img { width: calc(50% - 5px); max-width: calc(50% - 5px); height: auto; }
-    }
-    .double-image-container.photo-pair img { box-sizing: border-box; width: 100%; max-width: 100%; height: 300px; max-height: none; margin: 0; object-fit: cover; }
-    @media (min-width: 600px) {
-        .double-image-container.photo-pair img { width: calc(50% - 5px); max-width: calc(50% - 5px); }
-    }
-    .double-image-container.landscape-pair img { height: auto; aspect-ratio: 3 / 2; }
-</style>
-<div class="double-image-container">
-    <img src="/about/metallica_green.jpg" alt="Photo" loading="lazy">
-    <img src="/about/metallica_red.jpg" alt="Photo" loading="lazy">
-</div>
-<p>⬆ I-Days Milano - <a href="https://www.metallica.com/">Metallica</a></p>
-<p>Whether you're into tech, tunes, or just talking about life's curious twists, feel free to reach out. Let’s share insights, jam, or just chat about anything under the sun :)</p>
-<p><strong>Latest status</strong> 🎸 <br>
-Eager to learn and practice guitar, but swamped with work.</p>
-<h3>Online presence</h3>
-<ul>
-<li><strong>Email</strong>: guochenmeinian@nyu.edu</li>
-<li><strong>Code repositories</strong>: <a href="https://github.com/guochenmeinian">guochenmeinian@github.com</a></li>
-<li><strong>Social</strong>: <a href="https://www.instagram.com/__arist/">instagram</a> | <a href="https://www.linkedin.com/in/guochenmeinian">linkedin</a> | <a href="https://leetcode.com/guochenmeinian/">leetcode</a></li>
-</ul>
-<h3>More</h3>
-<ul>
-<li>🔗 <a href="/work/">Work</a></li>
-<li>🎼 <a href="/blogs/music-resources/">Music</a></li>
-<li>📃 <a href="/blogs/miscancellous/">Miscancellous</a></li>
-<li>🐩 <a href="https://txstc55.github.io/simple-avatar/">Avatar Generator</a></li>
-</ul>
+<div class="pf">
+  <div class="pf-cover" style="background-image:url('/processed_images/view.480af1da47c1.jpg')" role="img" aria-label="Manhattan skyline at dusk"></div>
+  <div class="pf-hero">
+    <span class="avatar-wrap" tabindex="0">
+      <img class="pf-avatar" src="/processed_images/lay.24aad79405c9.jpg" alt="Me on Friday night">
+      <span class="avatar-pop" aria-hidden="true"><img src="/processed_images/lay.e415aaa702d5.jpg" alt=""><span>Me on Friday night</span></span>
+    </span>
+    <div>
+      <p class="pf-name">Chenmeinian Guo</p>
+      <p class="pf-tagline">machine learning engineer · Shanghai</p>
+    </div>
+  </div>
+  <div class="pf-grid">
+    <div class="pf-intro">
+      <p>Hi there 👋</p>
+<p>I'm <strong>Chenmeinian Guo</strong>, a machine learning engineer from Shanghai, China. I received my B.S. in Computer and Information Science from <a class="school" href="https://www.osu.edu" target="_blank" rel="noopener noreferrer">the Ohio State University<span class="school-pop" aria-hidden="true"><img src="/processed_images/osu-campus.123ec0899835.jpg" alt=""></span></a> and my M.S. in Computer Science from <a class="school" href="https://cims.nyu.edu/dynamic/" target="_blank" rel="noopener noreferrer">NYU Courant<span class="school-pop" aria-hidden="true"><img src="/processed_images/courant.eb3a92ff0dae.jpg" alt=""></span></a>.</p>
+<p>My interests lie in software development and large language models, and these days I mostly work on LLMs and AI agents. Outside work, I spend much of my free time practicing guitar and going to live shows.</p>
 
+      <p class="pf-status"><strong>Latest status</strong> 🎸<br>Eager to learn and practice guitar, but swamped with work.</p>
+    </div>
+    <nav class="pf-links" aria-label="Elsewhere">
+      <a href="https://github.com/guochenmeinian" target="_blank" rel="noopener noreferrer">GitHub<span aria-hidden="true">↗</span></a><a href="https://www.linkedin.com/in/guochenmeinian" target="_blank" rel="noopener noreferrer">LinkedIn<span aria-hidden="true">↗</span></a><a href="https://www.instagram.com/__arist/" target="_blank" rel="noopener noreferrer">Instagram<span aria-hidden="true">↗</span></a><a href="https://leetcode.com/guochenmeinian/" target="_blank" rel="noopener noreferrer">LeetCode<span aria-hidden="true">↗</span></a><a href="mailto:guochenmeinian@outlook.com">Email<span aria-hidden="true">↗</span></a>
+    </nav>
+  </div>
+  <h2>Moments</h2>
+  <div class="carousel">
+<div class="car-track" tabindex="0" aria-label="Photos — drag, swipe, or use the arrow keys">
+<a class="shot car-item" href="/processed_images/courant.306788fcde53.jpg" data-caption="Courant" style="--r: 0.5607"><img src="/processed_images/courant.fb03010df90a.jpg" alt="Courant" loading="lazy"><span>Courant</span></a>
+<a class="shot car-item" href="/processed_images/metallica_green.0f2b6c8ce165.jpg" data-caption="I-Days Milano · Metallica #1" style="--r: 1.3333"><img src="/processed_images/metallica_green.317deab672f1.jpg" alt="I-Days Milano · Metallica #1" loading="lazy"><span>I-Days Milano · Metallica #1</span></a>
+<a class="shot car-item" href="/processed_images/metallica_red.3e5e530c4fdd.jpg" data-caption="I-Days Milano · Metallica #2" style="--r: 1.3296"><img src="/processed_images/metallica_red.102e65c98959.jpg" alt="I-Days Milano · Metallica #2" loading="lazy"><span>I-Days Milano · Metallica #2</span></a>
+<a class="shot car-item" href="/processed_images/shanghai-guitar.a07e6245ce77.jpg" data-caption="Jamming with friends" style="--r: 0.5596"><img src="/processed_images/shanghai-guitar.1a2735357ad2.jpg" alt="Jamming with friends" loading="lazy"><span>Jamming with friends</span></a>
+<a class="shot car-item" href="/processed_images/jz-club.7ce86af1fa7b.jpg" data-caption="A night at JZ Club" style="--r: 0.75"><img src="/processed_images/jz-club.c4f571e3e4b1.jpg" alt="A night at JZ Club" loading="lazy"><span>A night at JZ Club</span></a>
+<a class="shot car-item" href="/processed_images/syracuse-1.13d9f2fffebc.jpg" data-caption="Syracuse in the snow #1" style="--r: 1.3333"><img src="/processed_images/syracuse-1.2d9b4e99b188.jpg" alt="Syracuse in the snow #1" loading="lazy"><span>Syracuse in the snow #1</span></a>
+<a class="shot car-item" href="/processed_images/syracuse-2.4dc9dd40f94c.jpg" data-caption="Syracuse in the snow #2" style="--r: 1.0"><img src="/processed_images/syracuse-2.7aef838240f1.jpg" alt="Syracuse in the snow #2" loading="lazy"><span>Syracuse in the snow #2</span></a>
+</div>
+<div class="car-controls"><div class="car-progress"><span></span></div><button class="car-btn car-prev" type="button" aria-label="Scroll left">←</button><button class="car-btn car-next" type="button" aria-label="Scroll right">→</button></div>
+</div>
+
+  <div class="pf-closing">
+    <p>Whether you&#39;re into tech, tunes, or just talking about life&#39;s curious twists, feel free to connect :)</p>
+  </div>
+</div>
 
          </main>
          <footer>
             
-<p class="tagsData">
-
-</p>
-
             <hr>
             <div class=footContainer>
-               <div class="footLeft">
-                  <p>Licensed under <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Licence_MIT">MIT</a><br>
-                     Built with <a target="_blank" rel="noopener noreferrer" href="https://jinja.palletsprojects.com/">Jinja</a> using <a target="_blank" rel="noopener noreferrer" href="https://github.com/Speyll/anemone">anemone</a> theme &amp; <a target="_blank" rel="noopener noreferrer" href="https://github.com/Speyll/veqev">veqev</a> colors.<br>
-                  </p>
-               </div>
+               <div class="footLeft"></div>
                <div class="footRight">
                   <img class="footGif noStyle" loading="lazy" src="https://i.ibb.co/XYDpfcs/foot.gif" alt="footGif">
                   <a class="metaData" target="_blank" rel="noopener noreferrer" href="/atom.xml" title="Subscribe via RSS for updates.">RSS</a>
