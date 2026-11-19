@@ -1,0 +1,6 @@
+<div class="carousel">
+<div class="car-track" tabindex="0" aria-label="Photos — drag, swipe, or use the arrow keys">
+{% for p in photos %}<a class="shot car-item" href="{{ p.large }}" data-caption="{{ p.caption }}" style="--r: {{ p.ratio }}"><img src="{{ p.strip }}" alt="{{ p.caption }}" loading="lazy"><span>{{ p.caption }}</span></a>
+{% endfor %}</div>
+<div class="car-controls"><div class="car-progress"><span></span></div><button class="car-btn car-prev" type="button" aria-label="Scroll left">←</button><button class="car-btn car-next" type="button" aria-label="Scroll right">→</button></div>
+</div>

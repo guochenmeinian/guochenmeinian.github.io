@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% set x = section.extra %}
+{% block content %}
+<div class="pf">
+  <h2>Work</h2>
+  <div class="pf-text">{{ x.intro | markdown | safe }}</div>
+  <dl class="pf-facts">
+    <div><dt>focus</dt><dd>{{ x.focus }}</dd></div>
+    <div><dt>education</dt><dd>
+      {% macro school(s) %}<a class="school" href="{{ s.url }}" target="_blank" rel="noopener noreferrer">{{ s.school }}<span class="school-pop" aria-hidden="true"><img src="{{ img(s.photo, 560, 560, 'fit') }}" alt=""></span></a>{% endmacro %}
+      {% for e in x.education %}<span class="edu">{{ e.degree }} · {{ school(e) }}{% if e.transfer %} <span class="edu-note">(transferred from {{ school(e.transfer) }})</span>{% endif %}</span>{% endfor %}
+    </dd></div>
+  </dl>
+
+  <h2>Experience</h2>
+  <div class="jobs">
+    {% for j in x.jobs %}
+    <a class="job" href="{{ j.url }}" target="_blank" rel="noopener noreferrer">
+      <span class="job-media">
+        <img src="{{ img(j.photo, 720, 900) }}" alt="{{ j.org }}" loading="lazy">
+        <span class="job-index">{{ "%02d" | format(loop.index) }}</span>
+        {% if j.tags %}<span class="job-tags">{% for t in j.tags %}<span>{{ t }}</span>{% endfor %}</span>{% endif %}
+      </span>
+      <span class="job-org">{{ j.org }} <span aria-hidden="true">↗</span></span>
+      <span class="job-line">{{ j.line }}</span>
+    </a>
+    {% endfor %}
+  </div>
+
+  <h2>Notes</h2>
+  {% for n in x.notes %}
+  <p class="pf-text">{{ n.text }}</p>
+  <p class="pf-notes"><a href="{{ n.url }}">{{ n.title }} →</a></p>
+  {% endfor %}
+
+  <div class="pf-closing">
+    <p>{{ x.closing }}</p>
+    <p class="pf-notes">
+      <a href="mailto:{{ x.email }}">{{ x.email }}</a>
+      <a href="{{ x.linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+    </p>
+  </div>
+</div>
+{% endblock content %}

@@ -70,7 +70,7 @@ class SiteBuildTest(unittest.TestCase):
             self.assertIn('href="/blogs/"', (output / "blogs/page/2/index.html").read_text())
             work_html = (output / "work/index.html").read_text()
             self.assertIn("Bilibili", work_html)
-            self.assertIn("TCL heyAiMe", work_html)
+            self.assertEqual(work_html.count('class="job"'), 5)
             self.assertIn('href="/blogs/cs-resources/"', work_html)
             self.assertNotIn("New interactive post", work_html)
             self.assertNotIn("resume_sde.png", work_html)
@@ -86,10 +86,19 @@ class SiteBuildTest(unittest.TestCase):
             self.assertIn("machine learning engineer", about_html)
             self.assertNotIn('href="/blogs/cs-resources/"', about_html)
             self.assertNotIn("Markdown (Emoji)", about_html)
+            self.assertIn("guochenmeinian@outlook.com", about_html)
+            self.assertNotIn("guochenmeinian@nyu.edu", about_html)
+            # Moments: each photo keeps its proportions and links to a larger copy.
+            moments = re.findall(r'class="shot[^"]*" href="([^"]+)"[^>]*><img src="([^"]+)"', about_html)
+            self.assertEqual(len(moments), 7)
+            for large, thumb in moments:
+                for src in (large, thumb):
+                    self.assertTrue((output / src.lstrip("/")).is_file(), src)
+            self.assertNotIn("<p><div", about_html)
             interests_html = (output / "interests/index.html").read_text()
             self.assertIn('href="/blogs/music-resources/"', interests_html)
-            interest_images = re.findall(r'<img src="(/processed_images/[^"]+)"', interests_html)
-            self.assertEqual(len(interest_images), 4)
+            interest_images = re.findall(r'class="shot" href="[^"]+"[^>]*><img src="(/processed_images/[^"]+)"', interests_html)
+            self.assertEqual(len(interest_images), 7)
             for src in interest_images:
                 self.assertTrue((output / src.lstrip("/")).is_file(), src)
             jz_club_image = next(src for src in interest_images if "/jz-club." in src)
@@ -110,6 +119,9 @@ class SiteBuildTest(unittest.TestCase):
                 parser.feed(html_file.read_text(encoding="utf-8"))
                 route = "/" + str(html_file.relative_to(output)).replace("index.html", "")
                 for tag, reference in parser.references:
+                    # A separate GitHub Pages project, not built by this site.
+                    if reference == "https://guochenmeinian.github.io/improv_tool/":
+                        continue
                     if tag == "a":
                         self.assertFalse(reference.startswith(site_builder.BASE_URL), reference)
                     if not reference or reference.startswith(("#", "mailto:", "javascript:")):

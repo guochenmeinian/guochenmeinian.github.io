@@ -10,7 +10,6 @@ import argparse
 import ast
 import hashlib
 import html
-import json
 import re
 import shutil
 import tomllib
@@ -75,11 +74,15 @@ class Builder:
             trim_blocks=False,
         )
         self.env.globals["get_url"] = self.get_url
+        self.env.globals["img"] = self.image_url
+        self.env.globals["moment_photos"] = self.moment_photos
+        self.env.globals["photo_rows"] = self.photo_rows
+        self.env.filters["link_photos"] = self.link_photos
         self.env.filters["slugify"] = slugify
         self.markdown = MarkdownIt("default", {"html": True, "highlight": self.highlight_code})
         self.markdown.enable("table")
+        self.env.filters["markdown"] = self.markdown.render
         self.images: dict[tuple, str] = {}
-        self.legacy_images = json.loads((ROOT / "image_manifest.json").read_text(encoding="utf-8"))
         self.config = {
             "title": "Chenmeinian Guo",
             "base_url": BASE_URL,
@@ -139,15 +142,7 @@ class Builder:
         kind = args.get("format", "auto")
         key = (str(source), width, height, op, kind)
         if key not in self.images:
-            source_bytes = source.read_bytes()
-            original = self.legacy_images.get(args["path"])
-            if (original and original["sha256"] == hashlib.sha256(source_bytes).hexdigest()
-                    and all(original[field] == value for field, value in
-                            {"width": width, "height": height, "op": op, "format": kind}.items())
-                    and (ROOT / "static" / "processed_images" / original["file"]).is_file()):
-                self.images[key] = "/processed_images/" + original["file"]
-                return self.images[key]
-            digest = hashlib.sha256(source_bytes + repr(key[1:]).encode()).hexdigest()[:12]
+            digest = hashlib.sha256(source.read_bytes() + repr(key[1:]).encode()).hexdigest()[:12]
             suffix = ".jpg" if kind == "jpg" else source.suffix.lower()
             if suffix not in (".png", ".jpg", ".jpeg", ".webp"):
                 suffix = ".png"
@@ -160,27 +155,90 @@ class Builder:
                     size = (width, max(1, round(image.height * width / image.width)))
                 elif op == "fit_height":
                     size = (max(1, round(image.width * height / image.height)), height)
+                elif op == "fill":
+                    image = ImageOps.fit(image, (width, height), Image.Resampling.LANCZOS, bleed=0.015)
+                    size = (width, height)
                 elif op == "fit":
                     ratio = min(width / image.width, height / image.height)
                     size = (max(1, round(image.width * ratio)), max(1, round(image.height * ratio)))
                 else:
                     raise ValueError(f"Unsupported image operation: {op}")
-                image.resize(size, Image.Resampling.LANCZOS).save(destination)
+                image = image.resize(size, Image.Resampling.LANCZOS)
+                if suffix == ".jpg":
+                    image = image.convert("RGB")
+                    image.save(destination, quality=85, optimize=True, progressive=True)
+                else:
+                    image.save(destination)
             self.images[key] = "/processed_images/" + name
         return self.images[key]
+
+    def image_url(self, path: str, width: int, height: int, op: str = "fill", format: str = "jpg") -> str:
+        """Template helper: a resized copy of a content image (cropped to fill by default)."""
+        return self.resized_image({"path": path, "width": width, "height": height, "op": op, "format": format})
+
+    def moment_photos(self, photos: list) -> list[dict]:
+        """Moments keep each photo's own proportions: a width-limited thumbnail plus a larger copy."""
+        result = []
+        for path, caption in photos:
+            with Image.open(CONTENT / path) as opened:
+                width, height = opened.size
+                if opened.getexif().get(274) in (5, 6, 7, 8):  # EXIF says the photo is rotated 90°
+                    width, height = height, width
+            result.append({"thumb": self.image_url(path, 720, 2400, "fit_width"),
+                           "strip": self.image_url(path, 2400, 640, "fit_height"),
+                           "large": self.image_url(path, 1800, 1800, "fit"),
+                           "caption": caption, "ratio": round(width / height, 4)})
+        return result
+
+    def link_photos(self, rendered: str, photos: dict) -> str:
+        """Give each link whose URL is a key of `photos` a hover popover showing that photo."""
+        def replace(match: re.Match) -> str:
+            url, text = match.group(1), match.group(2)
+            if url not in photos:
+                return match.group(0)
+            src = self.image_url(photos[url], 560, 560, "fit")
+            return (f'<a class="school" href="{url}" target="_blank" rel="noopener noreferrer">{text}'
+                    f'<span class="school-pop" aria-hidden="true"><img src="{src}" alt=""></span></a>')
+        return re.sub(r'<a href="([^"]+)">(.*?)</a>', replace, rendered)
+
+    def photo_rows(self, photos: list, row_ratio: float = 3.6) -> list[list[dict]]:
+        """Split photos (in order) into rows that each fill the page width at a similar height.
+
+        A row's height is width / sum(ratios), so rows are balanced by making their summed
+        width-to-height ratios as close as possible to each other (minimum squared deviation).
+        """
+        items = self.moment_photos(photos)
+        ratios = [item["ratio"] for item in items]
+        count = max(1, round(sum(ratios) / row_ratio))
+        target = sum(ratios) / count
+        best: dict[tuple[int, int], tuple[float, list[int]]] = {(0, 0): (0.0, [])}
+        for start in range(len(items)):
+            for rows_so_far in range(count):
+                if (start, rows_so_far) not in best:
+                    continue
+                cost, cuts = best[(start, rows_so_far)]
+                for end in range(start + 1, len(items) + 1):
+                    candidate = (cost + (sum(ratios[start:end]) - target) ** 2, cuts + [end])
+                    key = (end, rows_so_far + 1)
+                    if key not in best or candidate[0] < best[key][0]:
+                        best[key] = candidate
+        cuts = best.get((len(items), count), (0.0, [len(items)]))[1]
+        return [items[a:b] for a, b in zip([0, *cuts], cuts)]
 
     def render_body(self, raw: str) -> str:
         def replace(match: re.Match) -> str:
             name, args = match.group(1), parse_shortcode_arguments(match.group(2))
             if name == "resize_image":
                 src = html.escape(self.resized_image(args), quote=True)
-                attributes = ' class="full-width-image"' if args.get("full_width") else ''
-                return f'<img src="{src}"{attributes} />'
+                return f'<img src="{src}" />'
             if name == "double_image" and args.pop("resize", False):
                 for side in ("path1", "path2"):
                     args[side] = self.resized_image({"path": args[side], "width": args["width"],
                                                      "height": args["height"], "op": args.get("op", "fit"),
                                                      "format": args.get("format", "auto")})
+            if name == "moments":
+                return self.env.get_template("shortcodes/moments.html").render(
+                    photos=self.moment_photos(args["photos"]))
             if name in ("double_image", "youtube"):
                 return self.env.get_template(f"shortcodes/{name}.html").render(**args)
             raise ValueError(f"Unsupported shortcode: {name}")
@@ -217,6 +275,9 @@ class Builder:
                 "date": meta.get("date"), "taxonomies": meta.get("taxonomies", {"tags": []}),
                 "content": self.render_body(raw),
                 "category": category,
+                # Optional: a page-specific template fed by the [extra] front matter table.
+                "template": meta.get("template"),
+                "extra": meta.get("extra", {}),
             }
             if path.name == "_index.md":
                 entry["pages"] = []
@@ -249,7 +310,7 @@ class Builder:
                         destination = self.output / page["route"].lstrip("/") / asset.name
                         destination.parent.mkdir(parents=True, exist_ok=True)
                         shutil.copy2(asset, destination)
-            self.write(page["route"], self.render("page.html", page=page))
+            self.write(page["route"], self.render(page["template"] or "page.html", page=page))
 
         blogs = sorted((page for page in pages if page["category"] in ("work", "interests")),
                        key=lambda page: (-(page["date"].toordinal() if page["date"] else 0), page["source"].name))
@@ -259,7 +320,7 @@ class Builder:
             elif route == "/":
                 self.write(route, self.env.get_template("redirect.html").render(target="/about/"))
             else:
-                self.write(route, self.render("section.html", section=section))
+                self.write(route, self.render(section["template"] or "section.html", section=section))
 
         # Preserve URLs for content replaced by the current pages.
         for old, new in {"/resume/": "/work/", "/about/2024/": "/about/",

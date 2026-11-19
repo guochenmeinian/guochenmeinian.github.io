@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% set x = page.extra %}
+{% block content %}
+<div class="pf">
+  <div class="pf-cover" style="background-image:url('{{ img(x.cover, 2000, 640) }}')" role="img" aria-label="Manhattan skyline at dusk"></div>
+  <div class="pf-hero">
+    <span class="avatar-wrap" tabindex="0">
+      <img class="pf-avatar" src="{{ img(x.avatar, 320, 320) }}" alt="{{ x.avatar_caption }}">
+      <span class="avatar-pop" aria-hidden="true"><img src="{{ img(x.avatar, 900, 900, 'fit') }}" alt=""><span>{{ x.avatar_caption }}</span></span>
+    </span>
+    <div>
+      <p class="pf-name">{{ x.name }}</p>
+      <p class="pf-tagline">{{ x.tagline }}</p>
+    </div>
+  </div>
+  <div class="pf-grid">
+    <div class="pf-intro">
+      {{ x.intro | markdown | link_photos(x.link_photos or {}) | safe }}
+      <p class="pf-status"><strong>Latest status</strong> 🎸<br>{{ x.status }}</p>
+    </div>
+    <nav class="pf-links" aria-label="Elsewhere">
+      {% for label, url in x.links %}<a href="{{ url }}"{% if url.startswith("http") %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ label }}<span aria-hidden="true">↗</span></a>{% endfor %}
+    </nav>
+  </div>
+  <h2>Moments</h2>
+  {% with photos = moment_photos(x.moments) %}{% include "shortcodes/carousel.html" %}{% endwith %}
+
+  <div class="pf-closing">
+    <p>{{ x.closing }}</p>
+  </div>
+</div>
+{% endblock content %}

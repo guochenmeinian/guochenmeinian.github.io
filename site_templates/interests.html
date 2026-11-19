@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% set x = section.extra %}
+{% block content %}
+<div class="pf">
+  <h2>Interests</h2>
+  <div class="pf-text">{{ x.intro | markdown | safe }}</div>
+  {% with rows = photo_rows(x.photos) %}{% include "shortcodes/photo_rows.html" %}{% endwith %}
+  <div class="pf-text">{{ x.more | markdown | safe }}</div>
+  <h3>Notes</h3>
+  <div class="pf-text">{{ x.notes | markdown | safe }}</div>
+</div>
+{% endblock content %}

@@ -1,23 +1,32 @@
 +++
 title = "Interests"
-+++
+template = "interests.html"
 
-## Interests
+[extra]
+intro = """
+Outside work, I enjoy listening to music and learning guitar. I listen to lots of different kinds of music and like going to live shows.
+"""
 
-Outside work, I spend a lot of time listening to music and learning guitar. My taste wanders across genres, and I enjoy discovering new sounds and hearing music live. Learning guitar gives me another way to explore it, one song, chord, or rhythm at a time.
+# One ["path", "caption"] per photo, in order. They are laid out in full-width rows
+# of similar height, each photo at its own proportions; click to enlarge.
+photos = [
+    ["interests/guitar-ny.jpg", "Practicing guitar"],
+    ["interests/band.jpg", "My band at Ohio State"],
+    ["interests/mateus-asato.jpg", "Mateus Asato live"],
+    ["interests/shanghai-guitar.jpg", "Jamming with friends"],
+    ["interests/jazz-class.jpg", "JZ School"],
+    ["interests/jz-club.jpg", "A night at JZ Club"],
+    ["interests/jz-calendar.jpg", "JZ Club calendar"],
+]
 
-{{ double_image(path1="interests/photos/shanghai-guitar.jpg", path2="interests/photos/jazz-class.jpg", width=650, height=650, op="fit_width", format="jpg", resize=True, equal_height=True, alt1="Guitar by a window overlooking Shanghai", alt2="Guitar chords on a classroom whiteboard") }}
+more = """
+I also made a [guitar practice tool](https://guochenmeinian.github.io/improv_tool/) to help me practice scales and improvisation. I'm also interested in finance and fitness.
+"""
 
-⬆ Jamming with friends & JZ School
 
-{{ double_image(path1="interests/photos/jz-club.jpg", path2="interests/photos/jz-calendar.jpg", width=650, height=650, op="fit_width", format="jpg", resize=True, equal_height=True, alt1="JZ Club sign at night", alt2="JZ Club's music calendar") }}
-
-⬆ A night at JZ Club
-
-I also enjoy learning about finance, fitness, and the small things that make everyday life interesting.
-
-### Notes
-
-I've collected some notes and resources along the way. I hope you find them useful too.
+notes = """
+Here are some notes and resources I've found useful.
 
 [Music resources →](/blogs/music-resources/)
+"""
++++

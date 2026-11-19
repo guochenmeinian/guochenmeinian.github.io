@@ -1,0 +1,3 @@
+{% set rr = row_ratio or 3.6 %}<div class="photo-rows moments{% if compact %} compact{% endif %}">
+{% for row in rows %}{% set total = row | sum(attribute="ratio") %}<div class="photo-row"{% if total < rr * 0.89 %} style="max-width: {{ (total / rr * 100) | round(1) }}%"{% endif %}>{% for p in row %}<a class="shot" href="{{ p.large }}" data-caption="{{ p.caption }}" title="{{ p.caption }}" style="--r: {{ p.ratio }}"><img src="{{ p.thumb }}" alt="{{ p.caption }}" loading="lazy"><span>{{ p.caption }}</span></a>{% endfor %}</div>
+{% endfor %}</div>

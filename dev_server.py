@@ -15,7 +15,7 @@ from urllib.parse import urlsplit
 
 
 ROOT = Path(__file__).resolve().parent
-WATCHED = ("content", "site_templates", "static", "site_builder.py", "image_manifest.json")
+WATCHED = ("content", "site_templates", "static", "site_builder.py")
 VERSION_PATH = "/__dev/version"
 
 

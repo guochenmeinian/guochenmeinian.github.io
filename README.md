@@ -1,62 +1,68 @@
-# Guochenmeinian's Blog
+# guochenmeinian.github.io
 
-This personal site keeps the original Anemone appearance. The navigation has
-four sections: About, Work, Interests, and Blogs. Work and Interests link to
-their respective resources; Blogs collects all articles in reverse chronological
-order, with category and tag filters above a compact row list. Filters apply to
-the full archive and are saved in the URL. Existing article URLs under `/blogs/`
-remain available; former archive pagination links redirect to `/blogs/`.
+Personal site with four sections: About, Work, Interests, and Blogs. It keeps the
+original [anemone](https://github.com/Speyll/anemone) look (license in
+`ANEMONE-LICENSE.txt`). A small Python script (`site_builder.py`) turns Markdown
+into static HTML; GitHub Actions publishes it to `gh-pages` whenever `main` is
+pushed.
 
-A small Python script builds the static HTML, tags, resized images,
-sitemap, and Atom feed.
-GitHub Actions publishes the output to the existing `gh-pages` branch.
+## Layout
+
+```
+content/
+  about/index.md        homepage text + Moments photos
+  work/_index.md        work page
+  interests/_index.md   interests page
+  blogs/                articles (each needs category = "work" or "interests")
+  about/ work/ interests/   photos live next to the page that uses them
+site_templates/         Jinja templates and shortcodes
+static/                 CSS, JS, favicon — copied as-is
+site_builder.py         the build
+dev_server.py           live-reload preview
+tests/test_build.py     build + link checks (run in CI before publishing)
+```
+
+## Writing pages
+
+About, Work, and Interests are photo-led: their text, links, and photo lists sit
+in the `[extra]` front matter of `content/<section>/…md` (rendered by
+`site_templates/about.html`, `work.html`, `interests.html`). Edit that file to
+change wording or swap photos.
+
+Blog articles are plain Markdown. Images go through shortcodes, which resize them at
+build time (originals stay in `content/`):
+
+```
+{{ resize_image(path="blogs/x/diagram.png", width=800, height=500, op="fit_width") }}
+
+{{ double_image(path1="work/a.jpg", path2="work/b.jpg", width=650, height=650,
+                op="fit_width", format="jpg", resize=True) }}
+
+{{ moments(photos=[
+    ["about/view.jpg", "Manhattan"],
+    ["about/courant.jpg", "Courant"],
+]) }}
+```
+
+`moments` shows photos in a masonry grid at their own proportions; clicking one
+opens it larger, with previous/next. The homepage strip, the Interests photo rows, and
+link popovers (e.g. hovering a school) are driven by `static/js/photos.js`.
 
 ## Local development
 
-From the repository directory, create a Python environment once:
-
 ```sh
 python3 -m venv .venv
-source .venv/bin/activate
-python -m pip install -r requirements.txt
+.venv/bin/python -m pip install -r requirements.txt
+.venv/bin/python dev_server.py            # http://127.0.0.1:8000/about/
 ```
 
-Start the live preview:
-
-```sh
-.venv/bin/python dev_server.py
-```
-
-Open `http://localhost:8000/work/` and leave the terminal running. Saving Markdown,
-templates, CSS, or images automatically rebuilds the site and refreshes the browser,
-usually within 1–2 seconds. A failed build is reported in the terminal; the last
-working preview stays available until you fix the source and save again. Restart
-the server after editing `dev_server.py` itself. Use `--port 8001` if needed.
-
-The preview uses a temporary output directory. Its refresh script is added only
-to local HTTP responses and is never included in the published site. To build
-`public/` for deployment and run checks:
+Saving anything under `content/`, `site_templates/`, or `static/` rebuilds and
+refreshes the browser. To build `public/` and run the CI checks:
 
 ```sh
 .venv/bin/python site_builder.py
 .venv/bin/python -m unittest discover -s tests
 ```
 
-Python 3.12 is used in the publishing workflow.
-
-The input content is in `content/`, the rendered page templates are in
-`site_templates/`, and the original CSS is in
-`static/css/style.css`. The theme license is retained in `ANEMONE-LICENSE.txt`.
-Publishing happens automatically when `main` is pushed.
-
-`/work/` begins with the experience summary and links to CS resources.
-`/interests/` introduces personal interests with four photos and links to Music resources.
-Old `/resume/`, `/about/2024/`, and `/blogs/blog-tutorial/` links redirect to
-current pages. There is no downloadable resume.
-
-New articles can go in `content/work/` or `content/interests/`; add a link from
-the relevant section page when you want them visible there. Existing articles
-remain in `content/blogs/` to keep their URLs; each has a `category = "work"`
-or `category = "interests"` front matter field. The `/blogs/` archive is in the
-main navigation; tags remain available through existing links. Site links
-use local paths so they work in both local preview and the published site.
+Old `/resume/`, `/about/2024/`, `/blogs/blog-tutorial/`, and `/blogs/page/N/`
+URLs redirect to current pages.
