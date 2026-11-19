@@ -74,6 +74,7 @@ class Builder:
             trim_blocks=False,
         )
         self.env.globals["get_url"] = self.get_url
+        self.env.globals["asset"] = self.asset_url
         self.env.globals["img"] = self.image_url
         self.env.globals["moment_photos"] = self.moment_photos
         self.env.globals["photo_rows"] = self.photo_rows
@@ -93,6 +94,12 @@ class Builder:
                 {"name": "/blogs/", "url": "/blogs/"},
             ],
         }
+
+    @staticmethod
+    def asset_url(path: str) -> str:
+        """URL of a file in static/ with a content hash, so browsers refetch it after each deploy."""
+        digest = hashlib.sha256((ROOT / "static" / path.lstrip("/")).read_bytes()).hexdigest()[:10]
+        return f"/{path.lstrip('/')}?v={digest}"
 
     @staticmethod
     def get_url(path: str, trailing_slash: bool = False) -> str:
