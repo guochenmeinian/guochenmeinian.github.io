@@ -548,3 +548,6 @@ textarea {
 @media (max-width: 600px) { .avatar-pop { left: 0; bottom: auto; top: calc(100% + .8rem); width: 80vw; transform-origin: left top; } }
 .school.pop-below .school-pop { bottom: auto; top: calc(100% + .8rem); }
 .school.pop-right .school-pop { left: auto; right: 0; }
+/* Hidden popovers must not widen the page (horizontal scroll on phones). */
+.pf { overflow-x: clip; }
+@media (max-width: 600px) { .school-pop img { max-width: 70vw; max-height: 50vh; } }
