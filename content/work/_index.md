@@ -46,13 +46,13 @@ tags = ["RAG", "TypeScript"]
 [[extra.jobs]]
 org = "Meituan"
 line = "MLE Intern · LongCat-Flash-Omni"
-url = "https://huggingface.co/meituan-longcat/LongCat-Flash-Omni"
+url = "https://en.wikipedia.org/wiki/Meituan"
 photo = "work/meituan.jpeg"
 tags = ["data filtering & dedup", "importance sampling", "data annealing", "pre-training"]
 
 [[extra.jobs]]
 org = "Tezign"
-line = "SDE Intern · AI agents"
+line = "SDE Intern · AI Agents"
 url = "https://www.tezign.com/en"
 photo = "work/tezign.png"
 tags = ["TypeScript", "React", "Node.js", "PostgreSQL", "Redis"]

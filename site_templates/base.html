@@ -4,17 +4,25 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
       <meta name="robots" content="index, follow">
-      {% set title = page.title or section.title or config.title %}
+      {# Tab title: the name everywhere, except a blog post keeps its own title #}
+      {% set title = page.title if (page.title and not page.template) else config.title %}
       {% set url = page.permalink or section.permalink or config.base_url %}
       <title>{{ title }}</title>
       <meta name="title" content="{{ title }}">
       <meta property="og:type" content="website">
       <meta property="og:url" content="{{ url }}">
       <meta property="og:site_name" content="{{ config.title }}">
-      <meta property="og:title" content="{{ title }}">
+      {# Link preview card (LinkedIn, Slack, iMessage...): title and cover photo with the round avatar #}
+      {% set share_title = config.title %}
+      {% set share_img = config.base_url ~ share_image("about/view.jpg", "about/lay.png", config.title) %}
+      <meta property="og:title" content="{{ share_title }}">
+      <meta property="og:image" content="{{ share_img }}">
+      <meta property="og:image:width" content="1200">
+      <meta property="og:image:height" content="630">
       <meta property="twitter:card" content="summary_large_image">
       <meta property="twitter:url" content="{{ url }}">
-      <meta property="twitter:title" content="{{ title }}">
+      <meta property="twitter:title" content="{{ share_title }}">
+      <meta property="twitter:image" content="{{ share_img }}">
       <link rel="canonical" href="{{ url }}">
       <link rel="icon" href="/favicon.ico">
       <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">

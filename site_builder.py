@@ -20,7 +20,7 @@ from xml.etree import ElementTree as ET
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 from markdown_it import MarkdownIt
-from PIL import Image, ImageOps
+from PIL import Image, ImageDraw, ImageFont, ImageOps
 from pygments.lexers import get_lexer_by_name
 from pygments.token import Comment, Keyword, Name, Number, String
 from pygments.util import ClassNotFound
@@ -76,6 +76,7 @@ class Builder:
         self.env.globals["get_url"] = self.get_url
         self.env.globals["asset"] = self.asset_url
         self.env.globals["img"] = self.image_url
+        self.env.globals["share_image"] = self.share_image
         self.env.globals["moment_photos"] = self.moment_photos
         self.env.globals["photo_rows"] = self.photo_rows
         self.env.filters["link_photos"] = self.link_photos
@@ -178,6 +179,47 @@ class Builder:
                     image.save(destination)
             self.images[key] = "/processed_images/" + name
         return self.images[key]
+
+    def share_image(self, cover: str, avatar: str, name: str) -> str:
+        """Link-preview picture (1200×630) laid out like the About header: cover on top,
+        round avatar overlapping its bottom-left edge, name to the right of the avatar."""
+        W, H, cover_h = 1200, 630, 400
+        sources = [CONTENT / cover, CONTENT / avatar]
+        digest = hashlib.sha256(b"".join(p.read_bytes() for p in sources) + name.encode()).hexdigest()[:12]
+        name_file = f"share.{digest}.jpg"
+        destination = self.output / "processed_images" / name_file
+        if not destination.exists():
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            card = Image.new("RGB", (W, H), "white")
+            with Image.open(sources[0]) as opened:
+                card.paste(ImageOps.fit(ImageOps.exif_transpose(opened).convert("RGB"), (W, cover_h), Image.Resampling.LANCZOS))
+            size, ring, scale = 250, 10, 4  # circle drawn 4× larger, then shrunk, for smooth edges
+            outer = size + 2 * ring
+            with Image.open(sources[1]) as opened:
+                face = ImageOps.fit(ImageOps.exif_transpose(opened).convert("RGB"), (size, size), Image.Resampling.LANCZOS)
+            big = Image.new("L", (outer * scale, outer * scale), 0)
+            ImageDraw.Draw(big).ellipse((0, 0, outer * scale, outer * scale), fill=255)
+            mask = big.resize((outer, outer), Image.Resampling.LANCZOS)
+            disc = Image.new("RGB", (outer, outer), "white")
+            disc.paste(face, (ring, ring), big.resize((size, size), Image.Resampling.LANCZOS))
+            left, top = 70, cover_h - outer // 2
+            card.paste(disc, (left, top), mask)
+            font = self.mono_font(60)
+            draw = ImageDraw.Draw(card)
+            text_x = left + outer + 50
+            text_y = (cover_h + H) // 2 + 10  # middle of the white band, nudged down past the avatar's centre
+            draw.text((text_x, text_y), name, font=font, fill="#000000", anchor="lm")
+            card.save(destination, quality=88, optimize=True, progressive=True)
+        return "/processed_images/" + name_file
+
+    @staticmethod
+    def mono_font(size: int):
+        """A monospace font like the site's: Menlo on macOS, DejaVu Sans Mono on the Linux build machine."""
+        for path in ("/System/Library/Fonts/Menlo.ttc", "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf",
+                     "/usr/share/fonts/dejavu/DejaVuSansMono.ttf"):
+            if Path(path).is_file():
+                return ImageFont.truetype(path, size)
+        return ImageFont.load_default(size)
 
     def image_url(self, path: str, width: int, height: int, op: str = "fill", format: str = "jpg") -> str:
         """Template helper: a resized copy of a content image (cropped to fill by default)."""
